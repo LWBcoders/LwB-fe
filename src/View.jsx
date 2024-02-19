@@ -6,11 +6,11 @@ const baseApi = axios.create({
 });
 
 function View() {
-    const videoRef = useRef();
-
+    const videoRef = useRef(null);
+    
     function viewStream (){
-      console.log("viewing")
       init()
+      console.log("viewing")
     }
 
     async function init() {
@@ -39,11 +39,12 @@ function View() {
       const payload = {
           sdp: peer.localDescription
       };
-  
+     
      try {
             const { data } = await baseApi.post('/consumer', payload);
             const desc = new RTCSessionDescription(data.sdp);
             await peer.setRemoteDescription(desc);
+
         } catch (e) {
             console.log(e);
         }
@@ -51,16 +52,15 @@ function View() {
 
   function handleTrackEvent(e) {
 
-    videoRef.current.srcObject = e.streams[0];
-    // document.getElementById("video").srcObject = e.streams[0];
-       
+   // videoRef.current.srcObject = e.streams[0];
+   document.getElementById("video").srcObject = e.streams[0];
   }
 
   return (
     <div>
       <h1>Viewer</h1>
       <video id="video" autoPlay ref={videoRef} controls></video>
-      <button id="view-stream" onClick={viewStream}>View Stream</button>
+      <button onClick={viewStream}>View Stream</button>
     </div>
   );
 }
