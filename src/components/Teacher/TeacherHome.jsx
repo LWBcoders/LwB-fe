@@ -12,6 +12,8 @@ function TeacherHome(){
       <Link to="/teacher/home/add-lesson" className="home-button">teacher add lesson</Link>
       <br></br>
       <Link to="/teacher/home/live" className="home-button">teacher go live</Link>
+      <br></br>
+      <Link to="/teacher/home/view-content" className="home-button">teacher view content</Link>
 
       <Routes>
      <Route path="calender" element={<TeacherCalender/>}/>

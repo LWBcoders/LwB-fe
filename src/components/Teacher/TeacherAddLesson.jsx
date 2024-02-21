@@ -1,5 +1,5 @@
 import { Link, Routes, Route } from "react-router-dom";
-import TeacherAddQuiz from "./TeacherQuiz";
+import TeacherAddQuiz from "./TeacherAddQuiz";
 import TeacherAddNotes from "./TeacherAddNotes";
 import TeacherAddVideo from "./TeacherAddVideo";
 

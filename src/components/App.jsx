@@ -5,6 +5,7 @@ import Student from "./Student/Student"
 import StudentHome from "./Student/StudentHome";
 import TeacherHome from "./Teacher/TeacherHome";
 import TeacherAddLesson from "./Teacher/TeacherAddLesson";
+import TeacherViewContent from "./Teacher/TeacherViewContent"
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
      <Route path="/student/home/*" element={<StudentHome/>}/>
      <Route path="/teacher/home/*" element={<TeacherHome/>}/>
      <Route path="/teacher/home/add-lesson/*" element={<TeacherAddLesson/>}/>
+     <Route path="/teacher/home/view-content/*" element={<TeacherViewContent/>}/>
      </Routes>
     </>
   )
