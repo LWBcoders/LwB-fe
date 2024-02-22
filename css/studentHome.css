@@ -33,4 +33,34 @@
     color:#fff;
     font-size: 1.2rem;
   }
-  
+
+  @media screen and (max-width: 600px){
+    .studentsMainScreen{
+      margin-top: 2rem;
+    }
+    .studentblock-wrapper{
+      width: 55%;
+    }
+  }
+  @media screen and (max-width: 460px){
+    
+    .studentblock-wrapper{
+      width: 66%;
+    }
+    .studentblock-item {
+      font-size: 1rem;
+    }
+  }
+  @media screen and (max-width: 300px){
+    
+    .studentblock-wrapper{
+      width: 70%;
+      height: 70px;
+    }
+    .studentblock-item {
+      font-size: 0.8rem;
+   }
+   .studentsMainScreen {
+    margin-top: 1.5rem;
+  }
+  }

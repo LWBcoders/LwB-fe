@@ -4,6 +4,8 @@ import TeacherBroadcast from "./TeacherBroadcast";
 import TeacherAddQuiz from "./TeacherAddQuiz";
 import TeacherHeader from "./TeacherHeader";
 import TeacherNavigation from "./TeacherNavigation";
+import TeacherAddLesson from "./TeacherAddLesson";
+
 
 function TeacherHome(){
 
@@ -12,6 +14,7 @@ function TeacherHome(){
         <TeacherHeader />
 
         <Routes>
+        <Route path="add-lesson/*" element={<TeacherAddLesson/>}/>
             <Route path="/" element={<TeacherNavigation />}/>
              <Route path="calender" element={<TeacherCalender/>}/>
             <Route path="live" element={<TeacherBroadcast/>}/>
