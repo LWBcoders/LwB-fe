@@ -1,0 +1,36 @@
+.studentsMainScreen{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 4rem;
+  }
+  .studentblock-wrapper{
+    width: 44%;
+    height: 80px;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90deg, #43c6ac 0%, #191654 100%);
+    transition: 0.9s ease;
+    box-shadow: 3px 8px 9px 1.5px #707275;
+    cursor: pointer;
+  }
+  .studentblock-wrapper:hover{
+    transform: scale(1.1);
+    box-shadow: 5px 10px 9px 1.5px #707275;
+    text-shadow: 1px 3px 2px #55575a;
+  }
+  .icon-studentBlock{
+    margin-right: 1rem;
+    color:#fff;
+    font-size: 1.1rem;
+  }
+  .studentblock-item{
+    text-decoration: none;
+    color:#fff;
+    font-size: 1.2rem;
+  }
+  

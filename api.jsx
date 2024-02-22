@@ -65,12 +65,18 @@ export const getAllYears = () => {
 
 
 // GET ALL QUIZZES
-export const getAllQuizzes = (yearQuery) => {
-  return baseApi.get(`/quiz`, {params: {"schoolyear": yearQuery}} ).then((response) => {
+export const getAllQuizzes = (yearQuery, subjectQuery) => {
+  return baseApi.get(`/quiz`, {params: {"schoolyear": yearQuery, "subject": subjectQuery}} ).then((response) => {
     return response.data;
   });
 };
 
+// GET quiz by id
+export const getQuizById = (id)=>{
+  return  baseApi.get(`/quiz/${id}`).then((response)=>{
+    return response.data;
+  })
+}
 
 // .catch((err) => {
 //   setError(err.response.data.message);
