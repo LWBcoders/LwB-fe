@@ -1,11 +1,29 @@
 import { Link, Routes, Route } from "react-router-dom";
+import { useState, useEffect } from 'react';
 import StudentCalender from "./StudentCalender";
 import StudentVideo from "./StudentVideo";
 import StudentNotes from "./StudentNotes";
 import StudentQuiz from "./StudentQuiz";
 import StudentViewStream from "./StudentViewStream";
+import { getAllSubjects, getAllYears } from "../../../api";
+import StudentQuizSingleDisplay from "./StudentQuizSingleDisplay";
 
 function StudentHome() {
+  // GET ALL SUBJECTS/YEARS/TEACHERS to use in sorting:
+  const [subjectToDisplay, setSubjectToDisplay] = useState([])
+  const [yearsToDisplay, setYearsToDisplay] = useState([])
+  
+  useEffect(()=>{
+    getAllSubjects()
+    .then((response)=>[
+        setSubjectToDisplay(response.subjects)
+    ])
+    getAllYears()
+    .then((response)=>{
+        setYearsToDisplay(response.years)
+    })
+}, [])
+
   return (
     <>
       <p>student home </p>
@@ -23,7 +41,9 @@ function StudentHome() {
                 <Link className="studentblock-item" to='/student/home/quiz'><i className="fa-solid fa-circle-question icon-studentBlock"></i> Quiz</Link>
             </div>
             <div className="studentblock-wrapper">
-                <Link className="studentblock-item" to='/student/home/view'><i className="fa-solid fa-circle-question icon-studentBlock"></i> View Stream</Link>
+                <Link className="studentblock-item" to='/student/home/view'>
+                <i className="fa-solid fa-video icon-studentBlock"></i>
+                  View Stream</Link>
             </div>
 
         </section>
@@ -41,7 +61,8 @@ function StudentHome() {
      <Route path="calender" element={<StudentCalender/>}/>
      <Route path="videos" element={<StudentVideo/>}/>
      <Route path="notes" element={<StudentNotes/>}/>
-     <Route path="quiz" element={<StudentQuiz/>}/>
+     <Route path="quiz" element={<StudentQuiz subjectToDisplay={subjectToDisplay} yearsToDisplay={yearsToDisplay}/>}/>
+     <Route path="/quiz/quiz/:id" element={<StudentQuizSingleDisplay/>}/>
      <Route path="view" element={<StudentViewStream/>}/>
      </Routes>
     </>
