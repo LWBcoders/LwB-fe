@@ -49,18 +49,29 @@ export const getTeachers = () => {
 
 
 // GET ALL SUBJECTS
-export const getAllSubjects = ()=>{
-    return  axios.get('https://lwb.onrender.com/subjects')
-}
 
+export const getAllSubjects = () => {
+  return baseApi.get(`/subjects`).then((response) => {
+    return response.data;
+  });
+};
 
 // GET ALL YEARS
-export const getAllYears = ()=>{
-    return   axios.get('https://lwb.onrender.com/years')
-}
+export const getAllYears = () => {
+  return baseApi.get(`/years`).then((response) => {
+    return response.data;
+  });
+};
+
 
 // GET ALL QUIZZES
-export const getAllQuizzes = (yearQuery)=>{
-    console.log(yearQuery)
-  return  axios.get('https://lwb.onrender.com/quiz', {params: {"schoolyear": yearQuery}})
-}
+export const getAllQuizzes = (yearQuery) => {
+  return baseApi.get(`/quiz`, {params: {"schoolyear": yearQuery}} ).then((response) => {
+    return response.data;
+  });
+};
+
+
+// .catch((err) => {
+//   setError(err.response.data.message);
+// });
