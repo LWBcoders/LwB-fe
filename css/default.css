@@ -1,6 +1,9 @@
 @import url('./studentHome.css');
 @import url('./studentQuiz.css');
 @import url('./quizGame.css');
+@import url('./teacherAddQuiz.css');
+@import url('./studentNavbar.css');
+@import url('./teacherAddLessons.css');
 
 *{
     margin: 0;

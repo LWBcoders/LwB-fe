@@ -82,7 +82,7 @@ function StudentQuizGame({quizDataArr, quizObj}) {
 
 
     return (
-    <section>
+    <section className="quizGameField">
         
         <h1 className="mainTitleQuiz">{quizObj.title}</h1>
         <div className="quizDesc"><p>{quizObj.subject.toUpperCase()}</p> <p>Year {quizObj.schoolyear}</p></div>

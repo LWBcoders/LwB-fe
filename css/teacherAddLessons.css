@@ -1,0 +1,28 @@
+.addLessonsWrapper{
+    margin-top: 2rem;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height:50px;
+   
+}
+.addLessons-option{
+    width: 200px;
+    height: 40px;
+    background: linear-gradient(90deg, #43c6ac 0%, #191654 100%);;
+    margin-right: 2.5rem;
+    box-shadow: 3px 8px 9px 1.5px #707275;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s ease;
+}
+.addLessons-option:hover{
+    transform: scale(1.05);
+}
+.addLesson-link{
+    color: #fff;
+    text-decoration: none;
+}
