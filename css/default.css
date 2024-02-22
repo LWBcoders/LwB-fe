@@ -4,6 +4,7 @@
 @import url('./teacherAddQuiz.css');
 @import url('./studentNavbar.css');
 @import url('./teacherAddLessons.css');
+@import url('./home.css');
 
 *{
     margin: 0;

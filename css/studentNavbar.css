@@ -12,6 +12,7 @@
     -moz-text-fill-color: transparent;
     background-size: 100%;
     background-repeat: repeat;
+  
     animation: rainbow-text-simple-animation-rev 0.95s ease forwards;
   }
   .companyName:hover{

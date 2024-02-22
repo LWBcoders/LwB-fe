@@ -11,7 +11,7 @@ function TeacherHome(){
         <section className="teacherHome">
         <TeacherHeader />
 
-            <Routes>
+        <Routes>
             <Route path="/" element={<TeacherNavigation />}/>
              <Route path="calender" element={<TeacherCalender/>}/>
             <Route path="live" element={<TeacherBroadcast/>}/>
@@ -28,15 +28,6 @@ function TeacherHome(){
     )
 }
 
-/* <p>teacher home </p>
-      <Link to="/teacher/home/calender" className="home-button">teacher calender</Link>
-      <br></br>
-      <Link to="/teacher/home/add-lesson" className="home-button">teacher add lesson</Link>
-      <br></br>
-      <Link to="/teacher/home/live" className="home-button">teacher go live</Link>
-      <br></br>
-      <Link to="/teacher/home/add-quiz" className="home-button">teacher add quiz</Link>
-      <br></br>
-      <Link to="/teacher/home/view-content" className="home-button">teacher view content</Link> */
+
 
 export default TeacherHome
