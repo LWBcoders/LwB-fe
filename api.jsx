@@ -47,3 +47,20 @@ export const getTeachers = () => {
     });
   };
 
+
+// GET ALL SUBJECTS
+export const getAllSubjects = ()=>{
+    return  axios.get('https://lwb.onrender.com/subjects')
+}
+
+
+// GET ALL YEARS
+export const getAllYears = ()=>{
+    return   axios.get('https://lwb.onrender.com/years')
+}
+
+// GET ALL QUIZZES
+export const getAllQuizzes = (yearQuery)=>{
+    console.log(yearQuery)
+  return  axios.get('https://lwb.onrender.com/quiz', {params: {"schoolyear": yearQuery}})
+}
