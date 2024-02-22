@@ -103,3 +103,101 @@
   .year{
   font-style: italic;
   }
+  @media screen and (min-width: 781px){
+    .dropdownQueries{
+      top: 61px;
+    }
+  }
+
+  @media screen and (max-width: 780px){
+    .listOfQuizzes{
+      width: 90%;
+    }
+    .dropdownQueries{
+      top: 62px;
+    }
+  }
+
+  @media screen and (max-width: 470px){
+    .querieswrapper {
+      margin-top: 1.2rem;
+      flex-direction: column;
+      align-items: center;
+    }
+    .querieswrapper .subjectWrapper, .querieswrapper .yearWrapper {
+      max-width: 80%;
+    }
+    .dropdownQueries{
+      width: 284px;
+      z-index: 101;
+    }
+  }
+  @media screen and (max-width: 400px){
+    .querieswrapper .subjectWrapper, .querieswrapper .yearWrapper {
+      max-width: 82%;
+    }
+    .dropdownQueries{
+      width: 263px;
+    }
+    .listOfQuizzes h1 {
+      font-size: 1.2rem;
+    }
+  }
+
+  @media screen and (max-width: 360px){
+    .listOfQuizzes{
+      margin-top: 1.1rem;
+    }
+    .querieswrapper .subjectWrapper, .querieswrapper .yearWrapper {
+      max-width: 82%;
+    }
+    .querieswrapper {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+    .dropdownQueries{
+      width: 240px;
+    }
+    .listOfQuizzes h1 {
+      font-size: 1.1rem;
+    }
+    .queryBox{
+      font-size: 1rem;
+    }
+    .quizLink, .year{
+      font-size: 0.9rem;
+    }
+  }
+  @media screen and (max-width: 290px){
+    .listOfQuizzes h1 {
+      font-size: 0.9rem;
+      padding: 0.7rem;
+    }
+    .querieswrapper {
+      margin-top: 0.3rem;
+      margin-bottom: 0.3rem;
+  }
+  .queryBox {
+    font-size: 0.8rem;
+  }
+  .dropdownQueries {
+    width: 180px;
+  }
+  .queryItem{
+    font-size: 0.8rem;
+  }
+  .quizUnOrdList{
+    padding-left: 5px;
+    padding-right: 7px;
+  }
+  .quizUnOrdList li{
+    padding-top: 0;
+  }
+  .quizLink, .year {
+    font-size: 0.8rem;
+  }
+  .navmenu {
+    height: 56px;
+  }
+
+  }

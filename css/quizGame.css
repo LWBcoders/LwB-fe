@@ -110,3 +110,40 @@
     align-items: center;
    padding-top: 10%;
   }
+
+  @media screen and (max-width: 690px){
+    .questionBoxWrapper{
+      width: 90%;
+    }
+  }
+
+  @media screen and (max-width: 440px){
+    .quizGameField {
+      margin-top: 1.3rem;
+      margin-bottom: 3rem;
+    }
+    .mainTitleQuiz {
+      font-size: 1.1rem;
+    } 
+    .quizDesc p {
+      margin-top: 0.8rem;
+    }
+    .questionBoxWrapper{
+      margin-top: 1.1rem;
+    }
+    .questionQuiz {
+      font-size: 1.1rem;
+    }
+    .resultQuizSection{
+      width: 92%;
+      margin: 0 auto;
+    }
+    .resultQuizWrapper{
+      width: 100%;
+    }
+    .correctAnswersDisplay{
+      text-align: center;
+    }
+    
+
+  }
