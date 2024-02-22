@@ -1,4 +1,6 @@
-
+.quizGameField{
+  margin-top: 2rem;
+}
 .questionBoxWrapper{
     margin: 2rem auto;
     width: 650px;
@@ -97,4 +99,14 @@
   .quizDesc p{
     margin-top:1rem;
     margin-right: 2rem;
+  }
+  .quizDesc p:last-child{
+   
+    margin-right: 0;
+  }
+  .resultQuizSection{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   padding-top: 10%;
   }

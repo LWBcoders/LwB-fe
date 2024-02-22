@@ -71,7 +71,7 @@ export const getAllQuizzes = (yearQuery, subjectQuery) => {
   });
 };
 
-// GET quiz by id
+// GET QUIZ BY ID
 export const getQuizById = (id)=>{
   return  baseApi.get(`/quiz/${id}`).then((response)=>{
     return response.data;
@@ -81,3 +81,11 @@ export const getQuizById = (id)=>{
 // .catch((err) => {
 //   setError(err.response.data.message);
 // });
+
+// POST new QUIZ
+
+export const addQuiz = (newQuiz)=>{
+  return baseApi.post('https://lwb.onrender.com/quiz', newQuiz).then((response)=>{
+    return response;
+  })
+}

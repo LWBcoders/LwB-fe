@@ -12,11 +12,10 @@ function StudentQuizSingleDisplay() {
     const [isLoading, setIsloading] = useState(true)
 
 
-    console.log(id)
+   
     useEffect(()=>{
         getQuizById(id)
         .then((response)=>{
-            console.log(response, "<<<<")
             setQuizDataById(response.quizData)
             setQuiz(response)
             setIsloading(false)

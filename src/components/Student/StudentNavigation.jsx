@@ -1,16 +1,8 @@
-import { Link, Routes, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useState, useEffect } from 'react';
-import StudentCalender from "./StudentCalender";
-import StudentVideo from "./StudentVideo";
-import StudentNotes from "./StudentNotes";
-import StudentQuiz from "./StudentQuiz";
-import StudentViewStream from "./StudentViewStream";
 import { getAllSubjects, getAllYears } from "../../../api";
-import StudentQuizSingleDisplay from "./StudentQuizSingleDisplay";
-import StudentHeader from "./StudentHeader";
-import StudentNavigation from "./StudentNavigation";
 
-function StudentHome() {
+function StudentNavigation() {
   // GET ALL SUBJECTS/YEARS/TEACHERS to use in sorting:
   const [subjectToDisplay, setSubjectToDisplay] = useState([])
   const [yearsToDisplay, setYearsToDisplay] = useState([])
@@ -28,8 +20,8 @@ function StudentHome() {
 
   return (
     <>
-      <StudentHeader />
-      {/* <section className="studentsMainScreen">
+     
+      <section className="studentsMainScreen">
             <div className="studentblock-wrapper">
                 <Link className="studentblock-item" to='/student/home/calender'> <i className="fa-regular fa-calendar-days icon-studentBlock"></i> Calender of Events</Link>
             </div>
@@ -48,20 +40,12 @@ function StudentHome() {
                   View Stream</Link>
             </div>
 
-        </section> */}
+        </section>
+    
 
-      <Routes>
-      <Route path="/" element={<StudentNavigation/>}/>
-     <Route path="calender" element={<StudentCalender/>}/>
-     <Route path="videos" element={<StudentVideo/>}/>
-     <Route path="notes" element={<StudentNotes/>}/>
-     
-     <Route path="/quiz/quiz/:id" element={<StudentQuizSingleDisplay/>}/>
-     <Route path="quiz" element={<StudentQuiz subjectToDisplay={subjectToDisplay} yearsToDisplay={yearsToDisplay}/>}/>
-     <Route path="view" element={<StudentViewStream/>}/>
-     </Routes>
+    
     </>
   );
 }
 
-export default StudentHome;
+export default StudentNavigation;
