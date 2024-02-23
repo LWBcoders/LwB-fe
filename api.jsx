@@ -85,7 +85,23 @@ export const getQuizById = (id)=>{
 // POST new QUIZ
 
 export const addQuiz = (newQuiz)=>{
-  return baseApi.post('https://lwb.onrender.com/quiz', newQuiz).then((response)=>{
+  return baseApi.post('/quiz', newQuiz).then((response)=>{
     return response;
   })
 }
+
+
+  //add videos
+
+  export const addVideo = (item) => {
+    return baseApi.post(`/videos`, item).then((response) => {
+      return response.data;
+    });
+  };
+
+  // get videos
+  export const getAllVideos = () => {
+    return baseApi.get(`/videos`).then((response) => {
+      return response.data;
+    });
+  };
