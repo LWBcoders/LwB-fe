@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getVideo } from "../../../api";
+import "../../../css/viewVideo.css";
 
 
 function SingleVideo(){
