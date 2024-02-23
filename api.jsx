@@ -65,8 +65,8 @@ export const getAllYears = () => {
 
 
 // GET ALL QUIZZES
-export const getAllQuizzes = (yearQuery, subjectQuery) => {
-  return baseApi.get(`/quiz`, {params: {"schoolyear": yearQuery, "subject": subjectQuery}} ).then((response) => {
+export const getAllQuizzes = (yearQuery, subjectQuery, teacherQuery) => {
+  return baseApi.get(`/quiz`, {params: {"schoolyear": yearQuery, "subject": subjectQuery, "teacher": teacherQuery}} ).then((response) => {
     return response.data;
   });
 };

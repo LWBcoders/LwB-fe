@@ -5,6 +5,8 @@ import TeacherAddQuiz from "./TeacherAddQuiz";
 import TeacherHeader from "./TeacherHeader";
 import TeacherNavigation from "./TeacherNavigation";
 import TeacherAddLesson from "./TeacherAddLesson";
+import TeacherViewMyContent from "./TeacherViewMyContent";
+import TeacherViewContent from "./TeacherViewContent";
 
 
 function TeacherHome(){
@@ -19,6 +21,10 @@ function TeacherHome(){
              <Route path="calender" element={<TeacherCalender/>}/>
             <Route path="live" element={<TeacherBroadcast/>}/>
             <Route path="add-quiz" element={<TeacherAddQuiz/>}/>
+            <Route path="view-my-content/*" element={<TeacherViewMyContent/>}/>
+
+            <Route path="view-content/*" element={<TeacherViewContent/>}/>
+            
      </Routes>
 
 

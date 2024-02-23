@@ -23,7 +23,7 @@ function App() {
      <Route path="/student/home/*" element={<StudentHome/>}/>
      <Route path="/teacher/home/*" element={<TeacherHome/>}/>
      {/* <Route path="/teacher/home/add-lesson/*" element={<TeacherAddLesson/>}/> */}
-     <Route path="/teacher/home/view-content/*" element={<TeacherViewContent/>}/>
+     {/* <Route path="/teacher/home/view-content/*" element={<TeacherViewContent/>}/> */}
      </Routes>
      </UserContext.Provider>
     </>

@@ -57,12 +57,7 @@ const handleSubjectClick = (e, val)=>{
   setSubjectQuery(val)
   setSubjectDropdownClass(null)
 }
-const hanleSubjectQueryChange = ()=>{
-        
-}
 
-const hanleYearQueryChange = ()=>{
-}
 
     return (
       <>
