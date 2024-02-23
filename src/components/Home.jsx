@@ -1,6 +1,15 @@
 import { Link } from "react-router-dom";
+import { useContext, useEffect } from "react";
+import UserContext from "../../contexts/UserContext";
 
 function Home(){
+    const { loggedInUser, setLoggedInUser } = useContext(UserContext);
+
+    useEffect(() => {
+        setLoggedInUser({});
+        localStorage.clear()
+      }, []);
+
     return(<main>
          <h1 className="companyName">Learning without Boarders</h1>
         <section className="main-firstPage">
