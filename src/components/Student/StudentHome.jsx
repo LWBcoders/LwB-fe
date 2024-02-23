@@ -9,6 +9,7 @@ import { getAllSubjects, getAllYears } from "../../../api";
 import StudentQuizSingleDisplay from "./StudentQuizSingleDisplay";
 import StudentHeader from "./StudentHeader";
 import StudentNavigation from "./StudentNavigation";
+import SingleVideo from "./SingleVideo";
 
 function StudentHome() {
   // GET ALL SUBJECTS/YEARS/TEACHERS to use in sorting:
@@ -59,6 +60,7 @@ function StudentHome() {
      <Route path="/quiz/quiz/:id" element={<StudentQuizSingleDisplay/>}/>
      <Route path="quiz" element={<StudentQuiz subjectToDisplay={subjectToDisplay} yearsToDisplay={yearsToDisplay}/>}/>
      <Route path="view" element={<StudentViewStream/>}/>
+     <Route path="/videos/:id" element={<SingleVideo/>}/>
      </Routes>
     </>
   );
