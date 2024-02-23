@@ -43,6 +43,9 @@ function StudentHeader() {
                     <li className="nav-item" onClick={closeDropdown}>
                         <Link className="nav-link" to='/quiz' >All Quizzes</Link>
                     </li>
+                    <li className="nav-item" onClick={closeDropdown}>
+                        <Link className="nav-link sign-out" to='/' >Sign out</Link>
+                    </li>
 
                 </ul>
                 
@@ -53,6 +56,10 @@ function StudentHeader() {
             <div className="right-side">
                 <p className="active-use"> Mike</p>
             </div>
+         
+               
+           
+
             
         </header>
         <h1 className="companyName">Learning without Boarders</h1>
