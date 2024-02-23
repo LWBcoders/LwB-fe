@@ -6,9 +6,9 @@ import TeacherAddVideo from "./TeacherAddVideo";
 import { getAllSubjects, getAllYears, getTeachers } from "../../../api"
 
 function TeacherAddLesson() {
-    const [allSubjects, setAllSubjects] = useState("");
-    const [allTeachers, setAllTeachers] = useState("");
-    const [allYears, setAllYears] = useState("");
+    const [allSubjects, setAllSubjects] = useState([]);
+    const [allTeachers, setAllTeachers] = useState([]);
+    const [allYears, setAllYears] = useState([]);
     const [completed, setCompleted] = useState(false);
 
 
