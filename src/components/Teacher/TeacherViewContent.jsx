@@ -11,22 +11,22 @@ import { getAllSubjects, getAllYears, getTeachers } from "../../../api";
 
 function TeacherViewContent() {
   // GET ALL SUBJECTS/YEARS/TEACHERS to use in sorting:
-  const [subjectToDisplay1, setSubjectToDisplay1] = useState([])
-  const [yearsToDisplay1, setYearsToDisplay1] = useState([])
-  const [teacherToDisplay1, setTeacherToDisplay1] = useState([])
+  const [subjectToDisplay, setSubjectToDisplay] = useState([])
+  const [yearsToDisplay, setYearsToDisplay] = useState([])
+  const [teacherToDisplay, setTeacherToDisplay] = useState([])
   
   useEffect(()=>{
     getAllSubjects()
     .then((response)=>[
-        setSubjectToDisplay1(response.subjects)
+        setSubjectToDisplay(response.subjects)
     ])
     getAllYears()
     .then((response)=>{
-        setYearsToDisplay1(response.years)
+        setYearsToDisplay(response.years)
     })
     getTeachers()
     .then((response)=>{
-      setTeacherToDisplay1(response);
+      setTeacherToDisplay(response);
     })
 }, [])
 
@@ -37,9 +37,9 @@ function TeacherViewContent() {
 
       <Routes>
         <Route path="/" element={<TeacherViewContentOptions />} />
-        <Route path="quiz" element={<TeacherViewQuiz yearsToDisplay1={yearsToDisplay1} subjectToDisplay1={subjectToDisplay1} teacherToDisplay1={teacherToDisplay1}/>} />
-        <Route path="notes" element={<TeacherViewNotes yearsToDisplay1={yearsToDisplay1} subjectToDisplay1={subjectToDisplay1}/>} />
-        <Route path="videos" element={<TeacherViewVideos yearsToDisplay1={yearsToDisplay1} subjectToDisplay1={subjectToDisplay1}/>} />
+        <Route path="quiz" element={<TeacherViewQuiz yearsToDisplay={yearsToDisplay} subjectToDisplay={subjectToDisplay} teacherToDisplay={teacherToDisplay}/>} />
+        <Route path="notes" element={<TeacherViewNotes yearsToDisplay={yearsToDisplay} subjectToDisplay={subjectToDisplay} teacherToDisplay={teacherToDisplay}/>} />
+        <Route path="videos" element={<TeacherViewVideos yearsToDisplay={yearsToDisplay} subjectToDisplay={subjectToDisplay} teacherToDisplay={teacherToDisplay}/>} />
       </Routes>
     </>
   );

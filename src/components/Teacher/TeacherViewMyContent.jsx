@@ -1,8 +1,37 @@
 import TeacherViewMyQuiz from "./TeacherViewMyQuiz";
+import { useState, useEffect } from 'react';
 import { Link, Routes, Route } from "react-router-dom";
 import TeacherViewMyNotes from "./TeacherViewMyNotes";
 import TeacherViewMyVideo from "./TeacherViewMyVideo";
+import { getAllSubjects, getTeachers, getAllYears } from "../../../api";
+
 function TeacherViewMyContent() {
+
+  const [subjectToDisplay, setSubjectToDisplay] = useState([])
+  const [yearsToDisplay, setYearsToDisplay] = useState([])
+  const [teacherToDisplay, setTeacherToDisplay] = useState([])
+  
+  useEffect(()=>{
+    getAllSubjects()
+    .then((response)=>[
+        setSubjectToDisplay(response.subjects)
+    ])
+    getAllYears()
+    .then((response)=>{
+        setYearsToDisplay(response.years)
+    })
+    getTeachers()
+    .then((response)=>{
+      setTeacherToDisplay(response);
+    })
+}, [])
+
+
+
+
+
+
+
     return ( <>
    <section className="addLessons-section">
 
