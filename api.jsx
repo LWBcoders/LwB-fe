@@ -100,8 +100,21 @@ export const addQuiz = (newQuiz)=>{
   };
 
   // get videos
-  export const getAllVideos = () => {
-    return baseApi.get(`/videos`).then((response) => {
+  export const getAllVideos = (subject, teacher, year) => {
+    let endPointString = "/videos";
+  
+    const queries = {};
+  
+    if (subject !== "") {
+      queries.subject = subject;
+    }
+    if (teacher !== "") {
+      queries.teacher = teacher;
+    }
+    if (year !== "") {
+      queries.year = year;
+    }
+    return baseApi.get(endPointString, {params: queries}).then((response) => {
       return response.data;
     });
   };
