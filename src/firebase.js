@@ -3,13 +3,13 @@ import { getStorage } from "firebase/storage"
 import { getFirestore } from "@firebase/firestore"
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAC_vUZviRfJT7FULTUciy745qET2SNbZI",
-  authDomain: "video-upload-7754a.firebaseapp.com",
-  projectId: "video-upload-7754a",
-  storageBucket: "video-upload-7754a.appspot.com",
-  messagingSenderId: "405551236443",
-  appId: "1:405551236443:web:dfab4aae5ce675df7e867e",
-  measurementId: "G-RB81XPV9CZ"
+  apiKey: "AIzaSyCcyv_2Z1C1u5SljfXfir-MSUqlOpLBP1M",
+  authDomain: "lwb-the-coders.firebaseapp.com",
+  projectId: "lwb-the-coders",
+  storageBucket: "lwb-the-coders.appspot.com",
+  messagingSenderId: "734162474889",
+  appId: "1:734162474889:web:9d427b01b6c751c14cf358",
+  measurementId: "G-N7E0CEVSPY"
 };
 
 
