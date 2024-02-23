@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react';
 // import TeacherAddNotes from "./TeacherAddNotes";
 // import TeacherAddVideo from "./TeacherAddVideo";
 import TeacherViewNotes from "./TeacherViewNotes";
-import TeacherViewVideos from "./TeacherViewVideos";
 import TeacherViewQuiz from "./TeacherViewQuiz";
 import TeacherViewContentOptions from "./TeacherViewContentOptions";
 import { getAllSubjects, getAllYears, getTeachers } from "../../../api";
