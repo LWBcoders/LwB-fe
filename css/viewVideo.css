@@ -1,0 +1,36 @@
+.video-wrapper{
+    margin: 2rem auto;
+    width: 650px;
+    height: auto;
+    border: 1px solid #808097;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 1px solid #808097;
+    box-shadow: 3px 6px 6px 2.5px #D3D3D3;
+    padding-bottom: 25px;
+}
+.all-videos-title{
+    padding: 1rem;
+    background: linear-gradient(90deg, #43c6ac 0%, #191654 100%);
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    font-size: 1.3rem;
+    text-shadow: 1px 3px 2px #55575a;
+    cursor: pointer;
+}
+.video-item{
+    margin: 2rem auto;
+    width: 650px;
+    height: auto;
+    border: 1px solid #808097;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 1px solid #808097;
+    box-shadow: 3px 6px 6px 2.5px #D3D3D3;
+    padding-bottom: 25px;
+}
