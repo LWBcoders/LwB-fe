@@ -20,6 +20,11 @@ function TeacherNavigation() {
             <div className="studentblock-wrapper">
                 <Link className="studentblock-item" to='/teacher/home/view-content'> 
                 <i class="fa-solid fa-book icon-studentBlock"></i>
+                View All Lessons</Link>
+            </div>
+            <div className="studentblock-wrapper">
+                <Link className="studentblock-item" to='/teacher/home/view-my-content'> 
+                <i class="fa-solid fa-book icon-studentBlock"></i>
                 View My Lessons</Link>
             </div>
           

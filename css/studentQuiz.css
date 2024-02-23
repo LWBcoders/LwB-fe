@@ -39,10 +39,16 @@
   .quizUnOrdList li:hover{
     background: linear-gradient(90deg, #4ac29a 0%, #bdfff3 100%);
   }
-  
+  .querieswrapper-teacher{
+    justify-content: center;
+  }
+  .teacherWrapper-query{
+    margin-left: 29%;
+  }
   .querieswrapper{
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     max-width: 100%;
     width: 100%;
     padding-left: 1rem;
@@ -81,8 +87,9 @@
     display:none;
   }
  
-  .dropdownQueries_active, .dropdownSubjQueries_active{
+  .dropdownQueries_active, .dropdownSubjQueries_active, .dropdownTeacherQueries_active{
     display:block;
+    z-index: 89;
   }
   .dropdownQueries ul{
     list-style-type: none;
@@ -96,7 +103,7 @@
   .queryItem:hover{
     background: linear-gradient(90deg, #4ac29a 0%, #bdfff3 100%);
   }
-  .yearWrapper-query, .subjwrapper-query{
+  .yearWrapper-query, .subjwrapper-query, .teacherWrapper-query{
     position:relative;
     max-width: 42%;
   }

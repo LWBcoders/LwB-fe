@@ -5,6 +5,7 @@
 @import url('./studentNavbar.css');
 @import url('./teacherAddLessons.css');
 @import url('./home.css');
+@import url('./viewAllContentTeacher.css');
 
 *{
     margin: 0;
@@ -12,4 +13,4 @@
     box-sizing: border-box;
     font-size: 16px;
     font-family: "Open Sans", sans-serif;
-  }
+}
