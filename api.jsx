@@ -105,3 +105,10 @@ export const addQuiz = (newQuiz)=>{
       return response.data;
     });
   };
+
+   //get single video
+   export const getVideo = (id) => {
+    return baseApi.get(`/videos/${id}`).then((response) => {
+      return response.data;
+    });
+  };
