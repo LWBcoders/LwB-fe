@@ -26,12 +26,6 @@ function TeacherViewMyContent() {
     })
 }, [])
 
-
-
-
-
-
-
     return ( <>
    <section className="addLessons-section">
 
@@ -52,7 +46,7 @@ function TeacherViewMyContent() {
         <Routes>
         <Route path="my-quiz" element={<TeacherViewMyQuiz />} />
         <Route path="my-notes" element={<TeacherViewMyNotes />} />
-        <Route path="my-videos" element={<TeacherViewMyVideo />} />
+        <Route path="my-videos" element={<TeacherViewMyVideo yearsToDisplay={yearsToDisplay} subjectToDisplay={subjectToDisplay}/>} />
       </Routes>
     </section>
 
