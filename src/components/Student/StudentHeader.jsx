@@ -62,7 +62,7 @@ function StudentHeader() {
 
             
         </header>
-        <h1 className="companyName">Learning without Boarders</h1>
+        <h1 className="companyName">Learning without Borders</h1>
     
     
     

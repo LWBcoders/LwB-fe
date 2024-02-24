@@ -7,6 +7,7 @@ import TeacherViewNotes from "./TeacherViewNotes";
 import TeacherViewQuiz from "./TeacherViewQuiz";
 import TeacherViewContentOptions from "./TeacherViewContentOptions";
 import { getAllSubjects, getAllYears, getTeachers } from "../../../api";
+import StudentQuizSingleDisplay from "../Student/StudentQuizSingleDisplay";
 import StudentVideo from "../Student/StudentVideo";
 
 function TeacherViewContent() {
@@ -38,6 +39,7 @@ function TeacherViewContent() {
       <Routes>
         <Route path="/" element={<TeacherViewContentOptions />} />
         <Route path="quiz" element={<TeacherViewQuiz yearsToDisplay={yearsToDisplay} subjectToDisplay={subjectToDisplay} teacherToDisplay={teacherToDisplay}/>} />
+        <Route path="quiz/quiz/:id" element={<StudentQuizSingleDisplay/>} />
         <Route path="notes" element={<TeacherViewNotes yearsToDisplay={yearsToDisplay} subjectToDisplay={subjectToDisplay} teacherToDisplay={teacherToDisplay}/>} />
         <Route path="videos" element={<StudentVideo yearsToDisplay={yearsToDisplay} subjectToDisplay={subjectToDisplay} teacherToDisplay={teacherToDisplay}/>} />
       </Routes>

@@ -70,6 +70,7 @@
     height: 250px;
     border-radius: 15px;
     padding: 2rem;
+    padding-top: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -106,10 +107,26 @@
   }
   .resultQuizSection{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-   padding-top: 10%;
+    padding-top: 4%;
   }
+  .restartQuiz{
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.4s;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+  .restartQuiz:hover{
+    color:#45a247;
+  }
+.noquizyet{
+  margin-top: 2rem;
+}
 
   @media screen and (max-width: 690px){
     .questionBoxWrapper{

@@ -70,11 +70,17 @@ export const getAllQuizzes = (yearQuery, subjectQuery, teacherQuery) => {
 };
 
 // GET QUIZ BY ID
+<<<<<<< HEAD
+export const getQuizById = (id)=>{
+  return  baseApi.get(`/quiz/${id}`)
+}
+=======
 export const getQuizById = (id) => {
   return baseApi.get(`/quiz/${id}`).then((response) => {
     return response.data;
   });
 };
+>>>>>>> main
 
 // .catch((err) => {
 //   setError(err.response.data.message);
@@ -85,8 +91,19 @@ export const getQuizById = (id) => {
 export const addQuiz = (newQuiz) => {
   return baseApi.post("/quiz", newQuiz).then((response) => {
     return response;
+<<<<<<< HEAD
+  })
+}
+// DELETE QUIZ BY ID
+
+export const deleteQuizById = (id)=>{
+  console.log(id, "<<<in api")
+  return baseApi.delete(`/quiz/${id}`)
+}
+=======
   });
 };
+>>>>>>> main
 
 //add videos
 

@@ -3,9 +3,12 @@ import { useState, useEffect } from 'react';
 import { Link, Routes, Route } from "react-router-dom";
 import TeacherViewMyNotes from "./TeacherViewMyNotes";
 import TeacherViewMyVideo from "./TeacherViewMyVideo";
+import StudentQuizSingleDisplay from "../Student/StudentQuizSingleDisplay";
 import { getAllSubjects, getTeachers, getAllYears } from "../../../api";
 
 function TeacherViewMyContent() {
+
+
 
   const [subjectToDisplay, setSubjectToDisplay] = useState([])
   const [yearsToDisplay, setYearsToDisplay] = useState([])
@@ -45,6 +48,7 @@ function TeacherViewMyContent() {
 
         <Routes>
         <Route path="my-quiz" element={<TeacherViewMyQuiz />} />
+        <Route path="my-quiz/quiz/:id" element={<StudentQuizSingleDisplay />} />
         <Route path="my-notes" element={<TeacherViewMyNotes />} />
         <Route path="my-videos" element={<TeacherViewMyVideo yearsToDisplay={yearsToDisplay} subjectToDisplay={subjectToDisplay}/>} />
       </Routes>
