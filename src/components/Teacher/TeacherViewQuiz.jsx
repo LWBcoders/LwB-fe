@@ -4,7 +4,7 @@ import { useSearchParams } from 'react-router-dom';
 import { getAllQuizzes } from '../../../api';
 
 
-function TeacherViewQuiz({subjectToDisplay1, yearsToDisplay1, teacherToDisplay1}) {
+function TeacherViewQuiz({subjectToDisplay, yearsToDisplay, teacherToDisplay}) {
   const [quizList, setQuizList] = useState([]);
   const [isError, setIsError] = useState(null)
   const [subjectQuery, setSubjectQuery] = useState("");
@@ -87,7 +87,7 @@ const handleTeacherClick = (e, val)=>{
   <div className="queryBox" onClick={subjectDropdownHandle}>Choose Subject  <i className="fa-solid fa-caret-down iconQ"></i> </div>
     <div className={`dropdownQueries ${subjectDropdownClass}`}>
         <ul>
-    {subjectToDisplay1.map((subj)=>{
+    {subjectToDisplay.map((subj)=>{
         return <li className="queryItem" key={subj._id} value={subj.subject} onClick={e=>handleSubjectClick(e, subj['subject'])}> {subj.subject}</li>
     })}
     </ul>
@@ -98,7 +98,7 @@ const handleTeacherClick = (e, val)=>{
       <div className="queryBox" onClick={yearDropdownHandle}>Choose School Year  <i className="fa-solid fa-caret-down iconQ"></i> </div>
         <div className={`dropdownQueries ${yearDropdownClass}`}>
             <ul>
-        {yearsToDisplay1.map((year)=>{
+        {yearsToDisplay.map((year)=>{
             return <li className="queryItem" key={year._id} value={year.year} onClick={e=>handleYearClick(e, year['year'])}>Year {year.year}</li>
         })}
         </ul>
@@ -108,7 +108,7 @@ const handleTeacherClick = (e, val)=>{
       <div className="queryBox" onClick={teacherDropdownHandle}>Choose Teacher <i className="fa-solid fa-caret-down iconQ"></i> </div>
         <div className={`dropdownQueries ${teacherDropdownClass}`}>
             <ul>
-        {teacherToDisplay1.map((teacher)=>{
+        {teacherToDisplay.map((teacher)=>{
             return <li className="queryItem" key={teacher._id} value={teacher.userName} onClick={e=>handleTeacherClick(e, teacher['userName'])}> {teacher.firstName} {teacher.lastName}</li>
         })}
         </ul>

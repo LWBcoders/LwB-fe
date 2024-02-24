@@ -5,7 +5,7 @@ import StudentVideo from "./StudentVideo";
 import StudentNotes from "./StudentNotes";
 import StudentQuiz from "./StudentQuiz";
 import StudentViewStream from "./StudentViewStream";
-import { getAllSubjects, getAllYears } from "../../../api";
+import { getAllSubjects, getAllYears, getTeachers } from "../../../api";
 import StudentQuizSingleDisplay from "./StudentQuizSingleDisplay";
 import StudentHeader from "./StudentHeader";
 import StudentNavigation from "./StudentNavigation";
@@ -15,6 +15,8 @@ function StudentHome() {
   // GET ALL SUBJECTS/YEARS/TEACHERS to use in sorting:
   const [subjectToDisplay, setSubjectToDisplay] = useState([])
   const [yearsToDisplay, setYearsToDisplay] = useState([])
+  const [teachersToDisplay, setTeachersToDisplay] = useState([])
+
   
   useEffect(()=>{
     getAllSubjects()
@@ -24,6 +26,9 @@ function StudentHome() {
     getAllYears()
     .then((response)=>{
         setYearsToDisplay(response.years)
+    })
+    getTeachers().then((response)=>{
+      setTeachersToDisplay(response)
     })
 }, [])
 
@@ -54,13 +59,13 @@ function StudentHome() {
       <Routes>
       <Route path="/" element={<StudentNavigation/>}/>
      <Route path="calender" element={<StudentCalender/>}/>
-     <Route path="videos" element={<StudentVideo/>}/>
+     <Route path="videos" element={<StudentVideo subjectToDisplay={subjectToDisplay} yearsToDisplay={yearsToDisplay} teachersToDisplay={teachersToDisplay}/>}/>
      <Route path="notes" element={<StudentNotes/>}/>
      
      <Route path="/quiz/quiz/:id" element={<StudentQuizSingleDisplay/>}/>
-     <Route path="quiz" element={<StudentQuiz subjectToDisplay={subjectToDisplay} yearsToDisplay={yearsToDisplay}/>}/>
+     <Route path="quiz" element={<StudentQuiz subjectToDisplay={subjectToDisplay} yearsToDisplay={yearsToDisplay} teachersToDisplay={teachersToDisplay}/>}/>
      <Route path="view" element={<StudentViewStream/>}/>
-     <Route path="/videos/:id" element={<SingleVideo/>}/>
+     <Route path="/videos/:id" element={<SingleVideo/>} />
      </Routes>
     </>
   );
