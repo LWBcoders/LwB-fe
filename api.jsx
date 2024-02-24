@@ -73,9 +73,7 @@ export const getAllQuizzes = (yearQuery, subjectQuery, teacherQuery) => {
 
 // GET QUIZ BY ID
 export const getQuizById = (id)=>{
-  return  baseApi.get(`/quiz/${id}`).then((response)=>{
-    return response.data;
-  })
+  return  baseApi.get(`/quiz/${id}`)
 }
 
 // .catch((err) => {
@@ -88,6 +86,12 @@ export const addQuiz = (newQuiz)=>{
   return baseApi.post('/quiz', newQuiz).then((response)=>{
     return response;
   })
+}
+// DELETE QUIZ BY ID
+
+export const deleteQuizById = (id)=>{
+  console.log(id, "<<<in api")
+  return baseApi.delete(`/quiz/${id}`)
 }
 
 

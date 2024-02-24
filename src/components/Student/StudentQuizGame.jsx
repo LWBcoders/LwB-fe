@@ -14,7 +14,7 @@ const reorderAnswers = question =>{
 
 function StudentQuizGame({quizDataArr, quizObj}) {
     let quizData = [...quizDataArr]
-
+console.log(quizDataArr)
     quizData.map((quiz)=>{
     let incorrect = [];
     incorrect.push(quiz["incorrect1"])
@@ -79,13 +79,14 @@ function StudentQuizGame({quizDataArr, quizObj}) {
         return console.log({err}) 
     }
 
+    console.log(quizObj)
 
 
     return (
     <section className="quizGameField">
         
-        <h1 className="mainTitleQuiz">{quizObj.title}</h1>
-        <div className="quizDesc"><p>{quizObj.subject.toUpperCase()}</p> <p>Year {quizObj.schoolyear}</p></div>
+        <h1 className="mainTitleQuiz">{quizObj.data.title}</h1>
+        <div className="quizDesc"><p>{quizObj.data.subject.toUpperCase()}</p> <p>Year {quizObj.data.schoolyear}</p></div>
           <p className="displayNumberQuestion">Question {currentQuestionIndex + 1}/{quizDataLength}</p>
         <div className="questionBoxWrapper">
                 <h3 className="questionQuiz">{currentQuestion.question}</h3>

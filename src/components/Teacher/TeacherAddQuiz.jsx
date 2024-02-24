@@ -92,13 +92,13 @@ const hanleFormQuizSubmit = (e)=>{
 
             <form className="teacherQuizForm" onSubmit={hanleFormQuizSubmit}>
                 <label className="labelQuizTeahcer" htmlFor="quizTitle">Quiz Title</label>
-                <input className="inputTeachersQuiz" type="text"  id="quizTitle" placeholder="Type your Quiz Title" value={newTitle} onChange={e=> setNewTitle(e.target.value)}/>
+                <input className="inputTeachersQuiz" type="text"  id="quizTitle" placeholder="Type your Quiz Title" value={newTitle} onChange={e=> setNewTitle(e.target.value)} required/>
 
                 <div className="selectWrapperBox">
                     
                    <div className="subjectWrapper">
             
-                <select value={choosenSubject} name="" id="quizSubject" onChange={hanleSubjectChange}>
+                <select value={choosenSubject} name="" id="quizSubject" onChange={hanleSubjectChange} required>
                     <option value="null">Choose Subject</option>
                     {subjectListObj.map((subj)=>{
                         return <option key={subj._id} value={subj.subject}>{subj.subject}</option>
@@ -110,7 +110,7 @@ const hanleFormQuizSubmit = (e)=>{
                  
                 <div className="yearWrapper">
                 {/* <label className="labelQuizTeahcer" htmlFor="quizYear" >What school year is this Quiz for?</label> */}
-                <select value={choosenYear} name="" id="quizYear" onChange={hanleYearChange}>
+                <select value={choosenYear} name="" id="quizYear" onChange={hanleYearChange} required>
                     <option value="null">Choose School Year</option>
                     {yearList.map((year)=>{
                         return <option key={year._id} value={year.year}>Year {year.year}</option>
@@ -124,12 +124,12 @@ const hanleFormQuizSubmit = (e)=>{
                 {data.map((val, i)=>{
                     return(<div key={i} className="questionInputBlock">
                         <label className="labelQuizTeahcer" htmlFor="teacherQuestion">Type your question: </label>
-                        <input className="inputTeachersQuiz inputQuestionTeacher"id="teacherQuestion" value={val.question} onChange={(e)=>handleChange(e,i)} name="question"/>
+                        <input className="inputTeachersQuiz inputQuestionTeacher"id="teacherQuestion" value={val.question} onChange={(e)=>handleChange(e,i)} name="question" required/>
                         <h4 className="answerTitle" >Answers:</h4>
-                        <input className="inputAnswers" type="text" placeholder="Correct answer" value={val.correct} onChange={(e)=>handleChange(e,i)} name="correct"/>
-                        <input className="inputAnswers"  type="text" placeholder="Other incorrect answer" value={val.incorrect1} onChange={(e)=>handleChange(e,i)} name="incorrect1"/>
-                        <input className="inputAnswers"  type="text" placeholder="Other incorrect answer" value={val.incorrect2} onChange={(e)=>handleChange(e,i)} name="incorrect2"/>
-                        <input className="inputAnswers"  type="text" placeholder="Other incorrect answer" value={val.incorrect3} onChange={(e)=>handleChange(e,i)} name="incorrect3"/>
+                        <input className="inputAnswers" type="text" placeholder="Correct answer" value={val.correct} onChange={(e)=>handleChange(e,i)} name="correct" required/>
+                        <input className="inputAnswers"  type="text" placeholder="Other incorrect answer" value={val.incorrect1} onChange={(e)=>handleChange(e,i)} name="incorrect1" required/>
+                        <input className="inputAnswers"  type="text" placeholder="Other incorrect answer" value={val.incorrect2} onChange={(e)=>handleChange(e,i)} name="incorrect2" required/>
+                        <input className="inputAnswers"  type="text" placeholder="Other incorrect answer" value={val.incorrect3} onChange={(e)=>handleChange(e,i)} name="incorrect3" required/>
                         <div className="funcBtnWrapper">
                         <button onClick={(e)=> handleDelete(e,i)} className="deleteQBlock">Delete Question Block</button>
                         <button className="addQBtn" onClick={handleAdd}>Add a new Question</button>

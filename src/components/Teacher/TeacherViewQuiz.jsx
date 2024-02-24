@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link } from "react-router-dom";
+import { Link, Routes, Route  } from "react-router-dom";
 import { useSearchParams } from 'react-router-dom';
 import { getAllQuizzes } from '../../../api';
 
@@ -129,6 +129,9 @@ const handleTeacherClick = (e, val)=>{
     </ul>
   }
         </section>
+
+       
+
       </>
     );
   }

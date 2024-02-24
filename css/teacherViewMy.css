@@ -1,0 +1,27 @@
+.showMystuffLi{
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    width: 100%;
+    padding: 1rem 1rem;
+    margin-bottom: 1rem;
+}
+.showMyLink{
+    width: 44%;
+    text-align: start;
+}
+.deletemyquizBtn{
+    background: linear-gradient(90deg, #cb2d3e 0%, #ef473a 100%);
+    width: 200px;
+      height: 45px;
+      border-radius: 5px;
+      cursor: pointer;
+      color: #fff;
+      font-size: 18px;
+      box-shadow: 0 0 5px 0.5px #D3D3D3;
+      border:none;
+      transition: 0.3;
+}
+.deletemyquizBtn:hover{
+    font-weight: 600;
+}

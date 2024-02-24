@@ -6,6 +6,7 @@
 @import url('./teacherAddLessons.css');
 @import url('./home.css');
 @import url('./viewAllContentTeacher.css');
+@import url('./teacherViewMy.css');
 
 *{
     margin: 0;

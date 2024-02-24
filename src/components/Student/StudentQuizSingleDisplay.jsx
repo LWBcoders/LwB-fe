@@ -16,7 +16,7 @@ function StudentQuizSingleDisplay() {
     useEffect(()=>{
         getQuizById(id)
         .then((response)=>{
-            setQuizDataById(response.quizData)
+            setQuizDataById(response.data.quizData)
             setQuiz(response)
             setIsloading(false)
           
