@@ -1,5 +1,5 @@
 import { Link, Routes, Route } from "react-router-dom";
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 import StudentCalender from "./StudentCalender";
 import StudentVideo from "./StudentVideo";
 import StudentNotes from "./StudentNotes";
@@ -13,24 +13,21 @@ import SingleVideo from "./SingleVideo";
 
 function StudentHome() {
   // GET ALL SUBJECTS/YEARS/TEACHERS to use in sorting:
-  const [subjectToDisplay, setSubjectToDisplay] = useState([])
-  const [yearsToDisplay, setYearsToDisplay] = useState([])
-  const [teachersToDisplay, setTeachersToDisplay] = useState([])
+  const [subjectToDisplay, setSubjectToDisplay] = useState([]);
+  const [yearsToDisplay, setYearsToDisplay] = useState([]);
+  const [teachersToDisplay, setTeachersToDisplay] = useState([]);
 
-  
-  useEffect(()=>{
-    getAllSubjects()
-    .then((response)=>[
-        setSubjectToDisplay(response.subjects)
-    ])
-    getAllYears()
-    .then((response)=>{
-        setYearsToDisplay(response.years)
-    })
-    getTeachers().then((response)=>{
-      setTeachersToDisplay(response)
-    })
-}, [])
+  useEffect(() => {
+    getAllSubjects().then((response) => [
+      setSubjectToDisplay(response.subjects),
+    ]);
+    getAllYears().then((response) => {
+      setYearsToDisplay(response.years);
+    });
+    getTeachers().then((response) => {
+      setTeachersToDisplay(response);
+    });
+  }, []);
 
   return (
     <>
@@ -57,16 +54,34 @@ function StudentHome() {
         </section> */}
 
       <Routes>
-      <Route path="/" element={<StudentNavigation/>}/>
-     <Route path="calender" element={<StudentCalender/>}/>
-     <Route path="videos" element={<StudentVideo subjectToDisplay={subjectToDisplay} yearsToDisplay={yearsToDisplay} teachersToDisplay={teachersToDisplay}/>}/>
-     <Route path="notes" element={<StudentNotes/>}/>
-     
-     <Route path="/quiz/quiz/:id" element={<StudentQuizSingleDisplay/>}/>
-     <Route path="quiz" element={<StudentQuiz subjectToDisplay={subjectToDisplay} yearsToDisplay={yearsToDisplay} teachersToDisplay={teachersToDisplay}/>}/>
-     <Route path="view" element={<StudentViewStream/>}/>
-     <Route path="/videos/:id" element={<SingleVideo/>} />
-     </Routes>
+        <Route path="/" element={<StudentNavigation />} />
+        <Route path="calender" element={<StudentCalender />} />
+        <Route
+          path="videos"
+          element={
+            <StudentVideo
+              subjectToDisplay={subjectToDisplay}
+              yearsToDisplay={yearsToDisplay}
+              teachersToDisplay={teachersToDisplay}
+            />
+          }
+        />
+        <Route path="notes" element={<StudentNotes />} />
+
+        <Route path="/quiz/quiz/:id" element={<StudentQuizSingleDisplay />} />
+        <Route
+          path="quiz"
+          element={
+            <StudentQuiz
+              subjectToDisplay={subjectToDisplay}
+              yearsToDisplay={yearsToDisplay}
+              teachersToDisplay={teachersToDisplay}
+            />
+          }
+        />
+        <Route path="view" element={<StudentViewStream />} />
+        <Route path="/videos/:id" element={<SingleVideo />} />
+      </Routes>
     </>
   );
 }

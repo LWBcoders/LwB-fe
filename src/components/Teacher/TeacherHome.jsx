@@ -14,8 +14,8 @@ function TeacherHome() {
       <TeacherHeader />
 
       <Routes>
-        <Route path="add-lesson/*" element={<TeacherAddLesson />} />
         <Route path="/" element={<TeacherNavigation />} />
+        <Route path="add-lesson/*" element={<TeacherAddLesson />} />
         <Route path="calender" element={<TeacherCalendar />} />
         <Route path="live" element={<TeacherBroadcast />} />
         <Route path="add-quiz" element={<TeacherAddQuiz />} />
