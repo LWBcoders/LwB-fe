@@ -85,6 +85,7 @@
     position: absolute;
     top: 42px;
     display:none;
+    max-width: 100%;
   }
  
   .dropdownQueries_active, .dropdownSubjQueries_active, .dropdownTeacherQueries_active{
@@ -122,8 +123,21 @@
     }
     .dropdownQueries{
       top: 62px;
+      max-width: 100%;
     }
   }
+  @media screen and (max-width: 748px){
+    .dropdownSubjQueries_active{
+      max-width:100% ;
+    }
+  }
+
+  @media screen and (max-width: 550px){
+    .queryBox{
+font-size: 1rem;
+    }
+  }
+
 
   @media screen and (max-width: 470px){
     .querieswrapper {
@@ -135,7 +149,6 @@
       max-width: 80%;
     }
     .dropdownQueries{
-      width: 284px;
       z-index: 101;
     }
   }
@@ -143,9 +156,7 @@
     .querieswrapper .subjectWrapper, .querieswrapper .yearWrapper {
       max-width: 82%;
     }
-    .dropdownQueries{
-      width: 263px;
-    }
+
     .listOfQuizzes h1 {
       font-size: 1.2rem;
     }
@@ -162,9 +173,7 @@
       margin-top: 1rem;
       margin-bottom: 1rem;
     }
-    .dropdownQueries{
-      width: 240px;
-    }
+
     .listOfQuizzes h1 {
       font-size: 1.1rem;
     }
@@ -187,9 +196,7 @@
   .queryBox {
     font-size: 0.8rem;
   }
-  .dropdownQueries {
-    width: 180px;
-  }
+ 
   .queryItem{
     font-size: 0.8rem;
   }

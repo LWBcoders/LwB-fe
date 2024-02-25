@@ -79,6 +79,9 @@
   .nav-link:hover{
     color:#d1b607;
   }
+  .sign-out:hover{
+    color: #fa7773;
+  }
   .hamburger{
     display:none;
     cursor:pointer;
