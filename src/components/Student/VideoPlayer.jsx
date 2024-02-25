@@ -1,4 +1,3 @@
-// VideoPlayer.jsx
 import React from "react";
 
 const VideoPlayer = ({ user, showCamera, cameraStatus }) => {

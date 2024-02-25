@@ -1,4 +1,3 @@
-// StudentViewStream.jsx
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AgoraRTC from "agora-rtc-sdk-ng";
@@ -38,7 +37,7 @@ export default function StudentViewStream() {
       setUsers((prevUsers) => [...prevUsers, user]);
       setCameraStatus((prevStatus) => ({
         ...prevStatus,
-        [user.uid]: true, // Assume camera is initially on
+        [user.uid]: true,
       }));
     }
 
@@ -52,7 +51,7 @@ export default function StudentViewStream() {
       setUsers((prevUsers) => prevUsers.filter((u) => u.uid !== user.uid));
       setCameraStatus((prevStatus) => ({
         ...prevStatus,
-        [user.uid]: false, // Camera is turned off
+        [user.uid]: false,
       }));
     }
   };

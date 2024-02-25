@@ -3,11 +3,12 @@ import { useNavigate } from "react-router-dom";
 import AgoraRTC from "agora-rtc-sdk-ng";
 import { VideoPlayer } from "./VideoPlayer";
 
+/////////////////// currently hard-set, need to create automatic token generator//////////////////////////////////////
 const APP_ID = "9a856e8086954a67b2e3422ba6868fcd";
 const TOKEN =
   "007eJxTYNB1l+Z9lmPUGKNafErC56II++JjDFMUv0svVb6wPqq3/6YCg2WihalZqoWBhZmlqUmimXmSUaqxiZFRUqKZhZlFWnLKY5fbqQ2BjAznk3cxMTJAIIjPwlCSWlzCwAAAgyMd7w==";
-const CHANNEL = "test"; // teachers name or lesson name in future
-
+const CHANNEL = "test";
+////////////////////////////////////////////////////////////
 const client = AgoraRTC.createClient({ mode: `rtc`, codec: `vp8` });
 
 export default function TeacherBroadcast() {
@@ -76,7 +77,8 @@ export default function TeacherBroadcast() {
         onClick={() => {
           navigate("/teacher/home");
           window.location.reload();
-          //explain UseNavigate over Link
+          //explain UseNavigate over Link needed on other exit buttons
+          // or could make live stream it's own page with custom header/ect...
         }}
       >
         Leave Stream
