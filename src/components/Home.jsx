@@ -11,7 +11,7 @@ function Home(){
       }, []);
 
     return(<main>
-         <h1 className="companyName">Learning without Borders</h1>
+         <h1 className="companyName homePageCompanyName">Learning without Borders</h1>
         <section className="main-firstPage">
 
             <div className="main-teacherWrapper">
