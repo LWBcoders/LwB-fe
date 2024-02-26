@@ -47,10 +47,13 @@ function StudentHeader() {
                     </li>
 
                     <li className="nav-item" onClick={closeDropdown}>
-                        <Link className="nav-link" to='/add-quiz' >Settings</Link>
+                        <Link className="nav-link" to='/student/home/notes' >Notes</Link>
                     </li>
                     <li className="nav-item" onClick={closeDropdown}>
-                        <Link className="nav-link" to='/quiz' >All Quizzes</Link>
+                        <Link className="nav-link" to='/student/home/videos' >Videos</Link>
+                    </li>
+                    <li className="nav-item" onClick={closeDropdown}>
+                        <Link className="nav-link" to='/student/home/quiz' >Quizzes</Link>
                     </li>
                     <li className="nav-item" onClick={closeDropdown}>
                         <Link className="nav-link sign-out" to='/' >Sign out</Link>
