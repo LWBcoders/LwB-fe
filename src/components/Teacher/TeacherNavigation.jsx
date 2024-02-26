@@ -8,7 +8,7 @@ function TeacherNavigation() {
         <Link className="studentblock-item" to="/teacher/home/calender">
           {" "}
           <i className="fa-regular fa-calendar-days icon-studentBlock"></i>{" "}
-          Calender of Events
+          Calendar of Events
         </Link>
       </div>
       <div className="studentblock-wrapper">
