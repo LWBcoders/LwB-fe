@@ -143,8 +143,6 @@ const TeacherCalendar = () => {
         deleteButton.textContent = "Delete";
         eventElement.appendChild(editButton);
         eventElement.appendChild(deleteButton);
-
-        // Add click listeners to the edit and delete buttons
         editButton.addEventListener("click", () => handleEditEvent(info));
         deleteButton.addEventListener("click", () => handleDeleteEvent(info));
       }
