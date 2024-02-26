@@ -1,0 +1,70 @@
+.showMystuffLi{
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    width: 100%;
+    padding: 1rem 1rem;
+    margin-bottom: 1rem;
+}
+.showMyLink{
+    width: 44%;
+    text-align: start;
+}
+.deletemyNoteBtn{
+    background: linear-gradient(90deg, #cb2d3e 0%, #ef473a 100%);
+    width: 200px;
+      height: 45px;
+      border-radius: 5px;
+      cursor: pointer;
+      color: #fff;
+      font-size: 18px;
+      box-shadow: 0 0 5px 0.5px #D3D3D3;
+      border:none;
+      transition: 0.3;
+}
+.deletemyNoteBtn:hover{
+    font-weight: 600;
+}
+
+.listOfNotes{
+    margin: 2rem auto;
+    width: 750px;
+   
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 2rem;
+    box-shadow: 3px 8px 9px 1.5px #D3D3D3;
+    min-height: 450px;
+  }
+  .listOfNotes h1{
+    padding: 1rem;
+    background: linear-gradient(90deg, #43c6ac 0%, #191654 100%);
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    font-size: 1.3rem;
+    text-shadow: 1px 3px 2px #55575a;
+    cursor: pointer;
+  }
+  .noteUnOrdList{
+    list-style: none;
+    width: 100%;
+    text-align: center;
+  }
+  .noteUnOrdList li{
+    /* margin-top: 1rem; */
+    cursor:pointer;
+    padding-top:0.5rem;
+    padding-bottom: 0.5rem;
+    width: 100%;
+  }
+  .noteLink{
+    text-decoration: none;
+    color: #000;
+    width:100%;
+  }
+  .noteUnOrdList li:hover{
+    background: linear-gradient(90deg, #4ac29a 0%, #bdfff3 100%);
+  }
+

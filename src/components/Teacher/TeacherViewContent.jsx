@@ -9,6 +9,7 @@ import TeacherViewContentOptions from "./TeacherViewContentOptions";
 import { getAllSubjects, getAllYears, getTeachers } from "../../../api";
 import StudentQuizSingleDisplay from "../Student/StudentQuizSingleDisplay";
 import StudentVideo from "../Student/StudentVideo";
+import StudentNotes from "../Student/StudentNotes";
 
 function TeacherViewContent() {
   // GET ALL SUBJECTS/YEARS/TEACHERS to use in sorting:
@@ -40,7 +41,7 @@ function TeacherViewContent() {
         <Route path="/" element={<TeacherViewContentOptions />} />
         <Route path="quiz" element={<TeacherViewQuiz yearsToDisplay={yearsToDisplay} subjectToDisplay={subjectToDisplay} teacherToDisplay={teacherToDisplay}/>} />
         <Route path="quiz/quiz/:id" element={<StudentQuizSingleDisplay/>} />
-        <Route path="notes" element={<TeacherViewNotes yearsToDisplay={yearsToDisplay} subjectToDisplay={subjectToDisplay} teacherToDisplay={teacherToDisplay}/>} />
+        <Route path="notes" element={<StudentNotes yearsToDisplay={yearsToDisplay} subjectToDisplay={subjectToDisplay} teachersToDisplay={teacherToDisplay}/>} />
         <Route path="videos" element={<StudentVideo yearsToDisplay={yearsToDisplay} subjectToDisplay={subjectToDisplay} teacherToDisplay={teacherToDisplay}/>} />
       </Routes>
     </>

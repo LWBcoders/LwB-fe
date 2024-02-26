@@ -35,7 +35,7 @@ function TeacherViewMyQuiz() {
     }
 
     if(isError){
-        return <p>{`Sory, but something went wrong... ${isError}`}</p>
+        return <p>{`Sorry, but something went wrong... ${isError}`}</p>
     }
     return ( <>
    <section className="listOfQuizzes">

@@ -170,3 +170,48 @@ export const updateEvent = (eventId, updatedData) => {
     throw error;
   });
 };
+
+//Post note
+export const postNote = (note) => {
+  return baseApi.post(`/notes/`, note).then(res => {
+    return res.data;
+  });
+};
+
+//GET all notes
+export const getAllNotes = (subject, teacher, year) => {
+  const queries = {};
+
+  if (subject !== "") {
+    queries.subject = subject;
+  }
+  if (teacher !== "") {
+    queries.teacher = teacher;
+  }
+  if (year !== "") {
+    queries.year = year;
+  }
+  return baseApi.get(`/notes`,{ params: queries }).then(response => {
+    console.log(response.data);
+    return response.data;
+  });
+};
+
+//get teacher's notes
+export const getNotesByTeacher = (teacherName) => {
+  return ncApi.get(`/items/?teacher=${teacherName}`).then((res) => {
+    return res.data;
+  });
+};
+
+//GET note by ID
+export const getNoteById = (id) => {
+  return baseApi.get(`/notes/${id}`).then((response) => {
+    return response.data;
+  });
+};
+
+export const deleteNoteById = (id)=>{
+  
+  return baseApi.delete(`/notes/${id}`)
+}
