@@ -49,6 +49,7 @@ function StudentSignin (){
           setSPasswordLogin("");
         })
         .catch((err) => {
+          setIsLoading(false)
           setError(err.response.data.message);
         });
     }
