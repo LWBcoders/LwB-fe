@@ -54,7 +54,7 @@
   overflow: hidden;
   transition: 0.5s;
   letter-spacing: 4px;
-  margin: 3.3rem auto;
+  margin: 3.3rem auto 2rem;
   display: block;
   border-radius: 10px;
   border: none;
@@ -91,6 +91,15 @@
 }
 .signInFormClass{
   padding: 2.3rem 1.2rem 0.6rem;
+}
+.linkDontHaveAccount{
+  color: #fff;
+  text-decoration: none;
+}
+.companyNameForms{
+  margin-bottom: 3.9rem;
+  margin-top: 2rem;
+
 }
 
 @media screen and (max-width: 630px){
