@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import { Link,useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import AgoraRTC from "agora-rtc-sdk-ng";
 import { VideoPlayer } from "./VideoPlayer";
 
 /////////////////// currently hard-set, need to create automatic token generator//////////////////////////////////////
 const APP_ID = "9a856e8086954a67b2e3422ba6868fcd";
 const TOKEN =
-  "007eJxTYNB1l+Z9lmPUGKNafErC56II++JjDFMUv0svVb6wPqq3/6YCg2WihalZqoWBhZmlqUmimXmSUaqxiZFRUqKZhZlFWnLKY5fbqQ2BjAznk3cxMTJAIIjPwlCSWlzCwAAAgyMd7w==";
+  "007eJxTYNA/qZmUIvCrMWSBiJRW5+Kpz1ZW9KxpSwpLMZjRoK/OsF6BwTLRwtQs1cLAwszS1CTRzDzJKNXYxMgoKdHMwswiLTlF8fad1IZARgYJRX8WRgYIBPFZGEpSi0sYGACOBhyb";
 const CHANNEL = "test";
 ////////////////////////////////////////////////////////////
 const client = AgoraRTC.createClient({ mode: `rtc`, codec: `vp8` });
@@ -73,18 +73,14 @@ export default function TeacherBroadcast() {
       </div>
       <button onClick={toggleMic}>Mic on</button>
       <button onClick={toggleVideo}>Camera Off</button>
-      <Link className="nav-link" to='/teacher/home' >
       <button
-        // onClick={() => {
-        //   navigate("/teacher/home");
-          // window.location.reload();
-          //explain UseNavigate over Link needed on other exit buttons
-          // or could make live stream it's own page with custom header/ect...
-        // }}
+        onClick={() => {
+          navigate("/teacher/home");
+          window.location.reload();
+        }}
       >
         Leave Stream
       </button>
-      </Link>
     </>
   );
 }
