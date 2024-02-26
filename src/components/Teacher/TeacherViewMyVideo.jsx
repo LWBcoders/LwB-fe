@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { getAllVideos } from "../../../api";
-import VideoCard from "../Student/VideoCard";
+import { getAllVideos, deleteVideo } from "../../../api";
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import UserContext from "../../../contexts/UserContext";
 
-function TeacherViewMyVideo({yearsToDisplay, subjectToDisplay}) {
+function TeacherViewMyVideo({ yearsToDisplay, subjectToDisplay }) {
   const [allVideos, setAllVideos] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState("");
+  const [isDeleted, setIsDeleted] = useState(false);
   const { loggedInUser, setLoggedInUser } = useContext(UserContext);
 
   useEffect(() => {
@@ -17,13 +18,11 @@ function TeacherViewMyVideo({yearsToDisplay, subjectToDisplay}) {
     setLoggedInUser(JSON.parse(storedUser));
   }, []);
 
-  
-  const teacher = loggedInUser.userName
+  const teacher = loggedInUser.userName;
   const subject = searchParams.get("subject") || "";
   const year = searchParams.get("year") || "";
 
   const newParams = new URLSearchParams(searchParams);
-  
 
   useEffect(() => {
     getAllVideos(subject, teacher, year)
@@ -35,7 +34,7 @@ function TeacherViewMyVideo({yearsToDisplay, subjectToDisplay}) {
       .catch((error) => {
         setError(error.response.data.message);
       });
-  }, [subject, year]);
+  }, [subject, year, teacher]);
 
   function handleYear(event) {
     newParams.set("year", event.target.value);
@@ -47,11 +46,19 @@ function TeacherViewMyVideo({yearsToDisplay, subjectToDisplay}) {
     setSearchParams(newParams);
   }
 
+  function handleDelete(id) {
+    deleteVideo(id)
+      .then(() => {
+        setIsDeleted(true);
+        window.location.reload();
+      })
+      .catch(() => {
+        setError("Couldn't delete video");
+      });
+  }
   if (error) {
     return <p>{error}</p>;
   }
-  
-
 
   return (
     <>
@@ -95,12 +102,42 @@ function TeacherViewMyVideo({yearsToDisplay, subjectToDisplay}) {
         ) : (
           allVideos.map((video) => {
             return (
+              // <>
+              //   <VideoCard
+              //     key={video.title}
+              //     video={video}
+              //     allVideos={allVideos}
+              //     setAllVideos={setAllVideos}
+
+              //   />
+              // </>
               <>
-                <VideoCard
-                  key={video.title}
-                  video={video}
-                  allVideos={allVideos}
-                />
+                <div className="video-wrapper">
+                  <Link
+                    className="video-titles"
+                    to={`/student/home/videos/${video._id}`}
+                  >
+                    {video.title}
+                  </Link>
+                  <p>Year: {video.year}</p>
+                  <p>{video.teacher}</p>
+                  <p>{video.subject}</p>
+                  <video height="150px" src={video.url} controls></video>
+                  {video.teacher === loggedInUser.userName ? (
+                    <button
+                      id="delete-button"
+                      disabled={isDeleted}
+                      onClick={() => handleDelete(video._id)}
+                    >
+                      Delete
+                    </button>
+                  ) : null}
+                  {error ? (
+                    error
+                  ) : (
+                    <p>{isDeleted ? "Video has been deleted" : null}</p>
+                  )}
+                </div>
               </>
             );
           })

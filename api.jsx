@@ -215,3 +215,7 @@ export const deleteNoteById = (id)=>{
   
   return baseApi.delete(`/notes/${id}`)
 }
+
+export const deleteVideo = (video_id) => {
+  return baseApi.delete(`/videos/${video_id}`).then(() => {});
+};
