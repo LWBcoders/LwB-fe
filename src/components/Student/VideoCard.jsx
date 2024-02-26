@@ -2,7 +2,7 @@ import "../../../css/viewVideo.css";
 import { Link } from "react-router-dom";
 import { useContext, useState, useEffect } from "react";
 import UserContext from "../../../contexts/UserContext";
-import { deleteVideo } from "../../../api";
+import { deleteVideo, viewVideo } from "../../../api";
 
 function VideoCard({ video, allVideos, setAllVideos,}) {
   const { loggedInUser, setLoggedInUser } = useContext(UserContext);
@@ -25,6 +25,12 @@ function VideoCard({ video, allVideos, setAllVideos,}) {
       });
   }
 
+  function handleView(){
+    viewVideo(video._id).then(()=>{
+     
+    })
+  }
+
   return (
     <>
       <div className="video-wrapper">
@@ -34,7 +40,8 @@ function VideoCard({ video, allVideos, setAllVideos,}) {
         <p>Year: {video.year}</p>
         <p>{video.teacher}</p>
         <p>{video.subject}</p>
-        <video height="150px" src={video.url} controls></video>
+        <video  onPlay={handleView} height="150px" src={video.url} controls on></video>
+        <p>{video.views} Views</p>
         {video.teacher === loggedInUser.userName ? (
           <button
             id="delete-button"
