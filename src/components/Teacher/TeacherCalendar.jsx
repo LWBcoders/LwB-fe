@@ -57,10 +57,7 @@ const TeacherCalendar = () => {
         : `http://${event.url}`;
       window.open(fullUrl, "_blank");
     } else {
-      // Set the current event being edited
       setCurrentEvent(event);
-
-      // Display the event details modal when an event is clicked
       setEventData(event);
       setShowModal(true);
     }
