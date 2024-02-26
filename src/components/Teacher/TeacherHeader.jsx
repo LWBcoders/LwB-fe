@@ -1,10 +1,18 @@
 import {Link} from 'react-router-dom'
 import { useState, useEffect } from 'react';
+import { useContext } from "react";
+import UserContext from "../../../contexts/UserContext";
 
 function TeacherHeader() {
     const [activeClass, setActiveClass] = useState(null);
     const [activeDropdownmenu, setActiveDropdownmenu] = useState(null)
+    const { loggedInUser, setLoggedInUser } = useContext(UserContext);
 
+    useEffect(() => {
+      const storedUser = localStorage.getItem("user");
+      setLoggedInUser(JSON.parse(storedUser));
+    }, []);
+  
     const handleBurger = (e)=>{
         e.preventDefault();
         if(activeClass){
@@ -54,7 +62,7 @@ function TeacherHeader() {
             </div>
             {/* <div className="mainLogo"><span>LwB</span> </div> */}
             <div className="right-side">
-                <p className="active-use"> Teacher</p>
+                <p className="active-use"> {loggedInUser.userName}</p>
             </div>
             
         </header>

@@ -2,15 +2,23 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { getAllVideos } from "../../../api";
 import VideoCard from "../Student/VideoCard";
+import { useContext } from "react";
+import UserContext from "../../../contexts/UserContext";
 
 function TeacherViewMyVideo({yearsToDisplay, subjectToDisplay}) {
   const [allVideos, setAllVideos] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState("");
+  const { loggedInUser, setLoggedInUser } = useContext(UserContext);
 
-  /// change to logged in user
-  const teacher = "kfields"
+  useEffect(() => {
+    const storedUser = localStorage.getItem("user");
+    setLoggedInUser(JSON.parse(storedUser));
+  }, []);
+
+  
+  const teacher = loggedInUser.userName
   const subject = searchParams.get("subject") || "";
   const year = searchParams.get("year") || "";
 
