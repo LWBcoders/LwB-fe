@@ -7,7 +7,7 @@
 }
 .authenFormWrapper {
   width: 600px;
-  height: 550px;
+  height: 620px;
   margin: 2rem auto;
   display: flex;
   flex-direction: column;
@@ -57,6 +57,7 @@
   margin: 3.3rem auto;
   display: block;
   border-radius: 10px;
+  border: none;
 }
 .joinBtn:hover:not(:disabled)  {
   background: #03e9f4;
@@ -83,5 +84,37 @@
   border-radius: 5px;
   box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4,
     0 0 100px #03e9f4;
+}
+
+.signInFormwrapper{
+  width: 500px;
+  height:420px;
+}
+.signInFormClass{
+  padding: 2.3rem 1.2rem 0.6rem;
+}
+
+@media screen and (max-width: 630px){
+  .authenFormWrapper{
+    max-width: 88%;
+  }
+}
+
+@media screen and (max-width: 542px){
+  .authenFormWrapper{
+    height: 600px;
+  }
+  .signInFormwrapper{
+    width: 88%;
+  }
+  .joinBtn{
+    margin: 2.3rem auto;
+  }
+}
+
+@media screen and (max-width: 330px){
+  .inputFields{
+    max-width: 92%;
+  }
 }
 
