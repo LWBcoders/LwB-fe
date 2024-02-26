@@ -54,10 +54,10 @@ function TeacherSignin() {
 
   return (
     <>
-      <div className="authenFormWrapper">
+      <div className="authenFormWrapper signInFormwrapper">
         <h2 className="formName">Welcome! Sign In</h2>
         {/* <p className=“descriptionForm”>We’re almost done. Before using our services you need to create an account</p> */}
-        <form className="registrationForm" onSubmit={teacherLogin}>
+        <form className="registrationForm signInFormClass" onSubmit={teacherLogin}>
           <label htmlFor="userName"></label>
           <input
             className="inputFields"
