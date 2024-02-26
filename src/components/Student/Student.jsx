@@ -5,12 +5,12 @@ import StudentSignup from "./StudentSignup";
 function Student(){
     return(
         <>
-        <p>student</p>
+        {/* <p>student</p>
         <div>
         <Link to="/student/signin" className="home-button">Student Sign In</Link>
         <br></br>
         <Link to="/student/signup" className="home-button">Student Sign Up</Link>
-      </div>
+      </div> */}
 
       <Routes>
         <Route path="signin" element={<StudentSignin/>} />
