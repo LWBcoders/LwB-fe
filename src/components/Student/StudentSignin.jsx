@@ -1,10 +1,12 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../../../css/signupStyling.css";
 import { useContext, useState } from "react";
 import UserContext from "../../../contexts/UserContext";
 import { studentSignin } from "../../../api";
 
+
 function StudentSignin (){
+  const navigate = useNavigate();
     const { loggedInUser, setLoggedInUser } = useContext(UserContext);
     const [sUsernameLogin, setSUsernameLogin] = useState("");
     const [sPasswordLogin, setSPasswordLogin] = useState("");
@@ -43,10 +45,13 @@ function StudentSignin (){
           setSuccess(true);
           setIsLoading(false);
           localStorage.setItem("user", JSON.stringify(user))
+           
         })
         .then(() => {
           setSUsernameLogin("");
           setSPasswordLogin("");
+          navigate("/student/home")
+         
         })
         .catch((err) => {
           setIsLoading(false)
