@@ -55,6 +55,7 @@ function TeacherSignin() {
 
   return (
     <>
+     <h1 className="companyName homePageCompanyName companyNameForms">Learning without Borders</h1>
       <div className="authenFormWrapper signInFormwrapper">
         <h2 className="formName">Welcome! Sign In</h2>
         {/* <p className=“descriptionForm”>We’re almost done. Before using our services you need to create an account</p> */}
@@ -87,7 +88,9 @@ function TeacherSignin() {
           <button disabled={success} className="joinBtn">
             Login
           </button>
+          <Link className="linkDontHaveAccount" to="/teacher/signup">Don't have an account? Sign Up!</Link>
         </form>
+
         <div hidden={!success}>
           <Link to="/teacher/home" className="home-button">
             <button className="homeBtn">Home</button>
