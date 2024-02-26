@@ -112,6 +112,7 @@ function StudentVideo({ subjectToDisplay, yearsToDisplay, teachersToDisplay }) {
                   key={video.title}
                   video={video}
                   allVideos={allVideos}
+                  setAllVideos={setAllVideos}
                 />
               </>
             );
