@@ -75,7 +75,7 @@ export default function TeacherBroadcast() {
       <button onClick={toggleVideo}>Camera Off</button>
       <button
         onClick={() => {
-          navigate("/teacher/home");
+          navigate("https://rococo-raindrop-5588ca.netlify.app/teacher/home");
           window.location.reload();
           //explain UseNavigate over Link needed on other exit buttons
           // or could make live stream it's own page with custom header/ect...
