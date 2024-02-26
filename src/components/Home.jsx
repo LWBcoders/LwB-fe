@@ -15,7 +15,7 @@ function Home(){
         <section className="main-firstPage">
 
             <div className="main-teacherWrapper">
-            <Link className="main-firstPage-link" to="/teacher" >Teacher</Link>
+            <Link className="main-firstPage-link" to="/teacher/signin" >Teacher</Link>
             </div>
 
             <div className="main-studentWrapper">

@@ -5,12 +5,13 @@ import TeacherSignup from "./TeacherSignup";
 function Teacher(){
     return(
         <>
-        <p>Teacher</p>
-      <div>
+        {/* <p>Teacher</p> */}
+        {/* <TeacherSignin/> */}
+      {/* <div>
         <Link to="/teacher/signin" className="home-button">Teacher Sign In</Link>
         <br></br>
         <Link to="/teacher/signup" className="home-button">Teacher Sign Up</Link>
-      </div>
+      </div> */}
 
       <Routes>
           <Route path="signin" element={<TeacherSignin/>} />
