@@ -11,7 +11,7 @@ function TeacherViewMyNotes() {
   const [editingNoteId, setEditingNoteId] = useState(null);
   const yearQuery = "";
   const subjectQuery = "";
-  const teacherQuery = "Sarah";
+  const teacherQuery = "jsmith";
 
   let copyState = [...myNoteList];
 
