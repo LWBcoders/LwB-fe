@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import { addQuiz, getAllSubjects, getAllYears } from '../../../api';
+import { useContext } from "react";
+import UserContext from "../../../contexts/UserContext";
 
 function TeacherAddQuiz() {
   const [data, setData] = useState([{question:"", correct: "", incorrect1: "", incorrect2: "",incorrect3: "" }])
@@ -13,7 +15,9 @@ function TeacherAddQuiz() {
 
     const [isListed, setIslisted] = useState(false)
     const [errorPost, setErrorPost] = useState("")
-      
+    
+    const { loggedInUser, setLoggedInUser } = useContext(UserContext);
+
     useEffect(()=>{
       getAllSubjects()
       .then((response)=>{
@@ -23,6 +27,8 @@ function TeacherAddQuiz() {
       .then((response)=>{
           setYearList(response.years)
       })
+      const storedUser = localStorage.getItem("user");
+      setLoggedInUser(JSON.parse(storedUser));
   }, [])
 
   const hanleSubjectChange = (e)=>{
@@ -53,7 +59,6 @@ const handleDelete = (e,i)=>{
     deleteBlock.splice(i,1)
     setData(deleteBlock)
 }
-  
 const hanleFormQuizSubmit = (e)=>{
   e.preventDefault();
 
@@ -61,7 +66,7 @@ const hanleFormQuizSubmit = (e)=>{
       "title": newTitle,
       "subject": choosenSubject,
       "schoolyear": choosenYear,
-      "teacher": "Ms Rich",
+      "teacher": loggedInUser.userName,
       "quizData": data
   }
 

@@ -85,7 +85,7 @@
       font-size: 18px;
       box-shadow: 0 0 5px 0.5px #D3D3D3;
       border:none;
-      transition: 0.3;
+      transition: 0.3s;
   }
   .addQBtn{
     background:linear-gradient(90deg, #44a08d 0%, #093637 100%)
@@ -154,3 +154,69 @@
   #quizSubject:hover{
     outline: none;
   }
+
+
+  @media screen and (max-width: 625px){
+    .teacherQuizWrapper{
+      width:90%;
+    }
+  }
+
+  @media screen and (max-width: 595px){
+    #quizSubject, #quizYear {
+      font-size: 0.95rem;
+    }
+    .teacherQuizWrapper h1{
+      font-size: 1.4rem;
+    }
+  }
+  @media screen and (max-width: 595px){
+    .inputTeachersQuiz, .inputAnswers{
+      font-size: 0.8rem;
+    }
+    .labelQuizTeahcer{
+      font-size: 0.9rem;
+    }
+    .answerTitle{
+      font-size: 0.9rem;
+    }
+    .deleteQBlock, .addQBtn, .createBtn{
+      font-size: 0.9rem;
+    }
+    .deleteQBlock, .addQBtn{
+      width: 170px;
+    }
+  }
+  @media screen and (max-width: 455px){
+    .selectWrapperBox{
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .subjectWrapper, .yearWrapper{
+      max-width: 80%;
+      width: 70%;
+      margin-bottom: 1rem;
+    }
+    .subjectWrapper{
+      margin-top: 1rem;
+    }
+    .selectWrapperBox{
+      height: 140px;
+    }
+  }
+  @media screen and (max-width: 371px){
+    .funcBtnWrapper{
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  @media screen and (max-width: 330px){
+    .subjectWrapper, .yearWrapper{
+      max-width: 90%;
+      width: 90%;
+      margin-bottom: 1rem;
+    }
+  }
+  
