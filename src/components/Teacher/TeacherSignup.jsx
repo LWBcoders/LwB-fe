@@ -73,7 +73,7 @@ function TeacherSignup() {
 
   return (
     <>
-      <div className="authenFormWrapper">
+      <div className="authenFormWrapper ">
         <h2 className="formName">Welcome! Sign Up</h2>
         {/* <p className=“descriptionForm”>We’re almost done. Before using our services you need to create an account</p> */}
         <form className="registrationForm" onSubmit={postTeacher}>
