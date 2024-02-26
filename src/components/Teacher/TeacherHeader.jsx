@@ -39,8 +39,11 @@ function TeacherHeader() {
               </div>
             </div>
             <div className="mainLogo">
-              <img src="../../../public/logo.png" alt="LwB logo" />
+              <img src="https://i.ibb.co/6yyxLWN/image-9.png" alt="LwB logo" />
             </div>
+{/*             <div className="mainLogo">
+              <img src="../../../public/logo.png" alt="LwB logo" />
+            </div> */}
             <ul className={`navmenu__list ${activeDropdownmenu}`}>
               <li className="nav-item" onClick={closeDropdown}>
                 <Link className="nav-link" to="/teacher/home">
