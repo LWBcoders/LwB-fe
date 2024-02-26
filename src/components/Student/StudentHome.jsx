@@ -10,6 +10,7 @@ import StudentQuizSingleDisplay from "./StudentQuizSingleDisplay";
 import StudentHeader from "./StudentHeader";
 import StudentNavigation from "./StudentNavigation";
 import SingleVideo from "./SingleVideo";
+import SingleNote from "./SingleNote";
 
 function StudentHome() {
   // GET ALL SUBJECTS/YEARS/TEACHERS to use in sorting:
@@ -66,7 +67,9 @@ function StudentHome() {
             />
           }
         />
-        <Route path="notes" element={<StudentNotes />} />
+        <Route path="notes" element={<StudentNotes subjectToDisplay={subjectToDisplay}
+              yearsToDisplay={yearsToDisplay}
+              teachersToDisplay={teachersToDisplay} />} />
 
         <Route path="/quiz/quiz/:id" element={<StudentQuizSingleDisplay />} />
         <Route
@@ -81,6 +84,7 @@ function StudentHome() {
         />
         <Route path="view" element={<StudentViewStream />} />
         <Route path="/videos/:id" element={<SingleVideo />} />
+        <Route path="/notes/:id" element={<SingleNote />} />
       </Routes>
     </>
   );
