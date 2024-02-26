@@ -19,7 +19,7 @@ function Home(){
             </div>
 
             <div className="main-studentWrapper">
-            <Link className="main-firstPage-link" to="/student" > Student</Link>
+            <Link className="main-firstPage-link" to="/student/signin" > Student</Link>
 
             </div>
         

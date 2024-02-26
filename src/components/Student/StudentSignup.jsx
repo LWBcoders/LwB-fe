@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { studentSignup } from "../../../api";
+import { Link } from "react-router-dom";
 import "../../../css/signupStyling.css";
 
 function StudentSignup() {
@@ -73,6 +74,7 @@ function StudentSignup() {
 
   return (
     <>
+    <h1 className="companyName homePageCompanyName companyNameForms">Learning without Borders</h1>
       <div className="authenFormWrapper">
         <h2 className="formName">Welcome! Sign Up</h2>
         {/* <p className=“descriptionForm”>We’re almost done. Before using our services you need to create an account</p> */}
@@ -137,6 +139,8 @@ function StudentSignup() {
           <button disabled={success} className="joinBtn">
             JOIN
           </button>
+
+          <Link className="linkDontHaveAccount" to="/student/signin">Already have an account? Sign in!</Link>
         </form>
       </div>
     </>
