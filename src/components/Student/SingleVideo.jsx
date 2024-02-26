@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { getVideo } from "../../../api";
+import { getVideo , viewVideo} from "../../../api";
 import "../../../css/viewVideo.css";
 
 
@@ -9,7 +9,6 @@ function SingleVideo(){
     const [video, setVideo] = useState({})
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState();
-    const [view, setView] = useState(false)
     
     useEffect(()=>{
         getVideo(id).then((response)=>{
@@ -32,6 +31,11 @@ function SingleVideo(){
         return <p>{error}</p>;
       }
     
+      function handleView(){
+        viewVideo(video._id).then(()=>{
+         
+        })
+      }
     return(
         <>
         <li className="video-item">
@@ -39,7 +43,8 @@ function SingleVideo(){
           <p className="video-teacher">{video.teacher}</p>
           <p className="video-subject">{video.subject}</p>
           <p className="video-year">{video.year}</p>
-            <video controls height="250px" src={video.url}></video>
+            <video onPlay={handleView} controls height="250px" src={video.url}></video>
+            <p>{video.views} Views</p>
           {/* <VideoComments id={id} video={video} setVideo={setVideo}/> */}
         </li>
         

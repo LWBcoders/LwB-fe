@@ -219,3 +219,9 @@ export const deleteNoteById = (id)=>{
 export const deleteVideo = (video_id) => {
   return baseApi.delete(`/videos/${video_id}`).then(() => {});
 };
+
+export const viewVideo = (video_id) => {
+  return baseApi.put(`/videos/view/${video_id}`).then((response) => {
+    return response.data;
+  });
+};

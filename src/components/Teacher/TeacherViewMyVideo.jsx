@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { getAllVideos, deleteVideo } from "../../../api";
+import { getAllVideos, deleteVideo, viewVideo } from "../../../api";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import UserContext from "../../../contexts/UserContext";
@@ -44,6 +44,12 @@ function TeacherViewMyVideo({ yearsToDisplay, subjectToDisplay }) {
   function handleSubject(event) {
     newParams.set("subject", event.target.value);
     setSearchParams(newParams);
+  }
+
+  function handleView(id){
+    viewVideo(id).then(()=>{
+     
+    })
   }
 
   function handleDelete(id) {
@@ -122,7 +128,8 @@ function TeacherViewMyVideo({ yearsToDisplay, subjectToDisplay }) {
                   <p>Year: {video.year}</p>
                   <p>{video.teacher}</p>
                   <p>{video.subject}</p>
-                  <video height="150px" src={video.url} controls></video>
+                  <video onPlay={() => handleView(video._id)} height="150px" src={video.url} controls></video>
+                  <p>{video.views} Views</p>
                   {video.teacher === loggedInUser.userName ? (
                     <button
                       id="delete-button"
