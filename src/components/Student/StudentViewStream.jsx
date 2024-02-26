@@ -73,7 +73,6 @@ export default function StudentViewStream() {
       <button
         onClick={() => {
           navigate("/student/home");
-          window.location.reload();
         }}
       >
         Leave Stream
