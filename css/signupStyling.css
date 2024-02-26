@@ -57,7 +57,7 @@
   margin: 3.3rem auto 2rem;
   display: block;
   border-radius: 10px;
-  border: none;
+  border: 1px solid #03e9f4;
 }
 .joinBtn:hover:not(:disabled)  {
   background: #03e9f4;
