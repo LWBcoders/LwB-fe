@@ -1,9 +1,18 @@
 import {Link} from 'react-router-dom'
 import { useState, useEffect } from 'react';
+import { useContext } from "react";
+import UserContext from "../../../contexts/UserContext";
+
 
 function StudentHeader() {
     const [activeClass, setActiveClass] = useState(null);
     const [activeDropdownmenu, setActiveDropdownmenu] = useState(null)
+    const { loggedInUser, setLoggedInUser } = useContext(UserContext);
+
+    useEffect(() => {
+      const storedUser = localStorage.getItem("user");
+      setLoggedInUser(JSON.parse(storedUser));
+    }, []);
 
     const handleBurger = (e)=>{
         e.preventDefault();
@@ -54,7 +63,7 @@ function StudentHeader() {
             </div>
             {/* <div className="mainLogo"><span>LwB</span> </div> */}
             <div className="right-side">
-                <p className="active-use"> Mike</p>
+                <p className="active-use"> {loggedInUser.userName}</p>
             </div>
          
                

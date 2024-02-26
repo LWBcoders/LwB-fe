@@ -3,7 +3,7 @@ import { useSearchParams } from "react-router-dom";
 import { getAllVideos } from "../../../api";
 import VideoCard from "./VideoCard";
 
-function StudentVideo({ subjectToDisplay, yearsToDisplay, teacherToDisplay }) {
+function StudentVideo({ subjectToDisplay, yearsToDisplay, teachersToDisplay }) {
   const [allVideos, setAllVideos] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
   const [isLoading, setIsLoading] = useState(true);
@@ -53,7 +53,7 @@ function StudentVideo({ subjectToDisplay, yearsToDisplay, teacherToDisplay }) {
   return (
     <>
       {isLoading ? <p>Loading Videos ...</p> : null}
-      <ul key="videosList" className="video-list">
+      <div key="videosList" className="video-list">
         <h2 className="all-videos-title">All videos</h2>
         <>
           <label htmlFor="subject"></label>
@@ -93,7 +93,7 @@ function StudentVideo({ subjectToDisplay, yearsToDisplay, teacherToDisplay }) {
             required
           >
             <option value="">All Teachers</option>
-            {teacherToDisplay.map((teacher, index) => (
+            {teachersToDisplay.map((teacher, index) => (
               <option key={index} value={teacher.userName}>
                 {teacher.userName}
               </option>
@@ -117,7 +117,7 @@ function StudentVideo({ subjectToDisplay, yearsToDisplay, teacherToDisplay }) {
             );
           })
         )}
-      </ul>
+      </div>
     </>
   );
 }

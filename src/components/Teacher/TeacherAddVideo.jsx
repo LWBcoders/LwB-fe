@@ -70,8 +70,7 @@ function TeacherAddVideo({ allSubjects, allYears, completed }) {
     const videoItem = {
       title: title,
       subject: subject,
-      teacher: "kfields",
-      //teacher: loggedInUser.userName,
+      teacher: loggedInUser.userName,
       year: year,
       url: url,
     };
@@ -103,7 +102,7 @@ function TeacherAddVideo({ allSubjects, allYears, completed }) {
         <input
           className="inputFields"
           disabled
-        //   value={loggedInUser.userName}
+          value={loggedInUser.userName}
         />
         <br></br>
         <label htmlFor="title"></label>

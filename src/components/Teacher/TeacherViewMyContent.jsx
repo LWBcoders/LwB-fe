@@ -34,7 +34,7 @@ function TeacherViewMyContent() {
 
 <nav className="addLessonsWrapper">
   <div className="addLessons-option">
-    <Link className="addLesson-link" to='/teacher/home/view-my-content/my-videos'>My Video</Link>
+    <Link className="addLesson-link" to='/teacher/home/view-my-content/my-videos'>My Videos</Link>
   </div>
 
   <div className="addLessons-option">
