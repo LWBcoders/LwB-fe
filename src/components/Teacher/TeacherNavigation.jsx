@@ -31,7 +31,7 @@ function TeacherNavigation() {
       </div>
       <div className="studentblock-wrapper">
         <Link className="studentblock-item" to="/teacher/home/view-my-content">
-          <i classNmae="fa-solid fa-book icon-studentBlock"></i>
+          <i className="fa-solid fa-book icon-studentBlock"></i>
           View My Lessons
         </Link>
       </div>
