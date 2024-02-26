@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import AgoraRTC from "agora-rtc-sdk-ng";
 import { VideoPlayer } from "./VideoPlayer";
 
@@ -73,16 +73,18 @@ export default function TeacherBroadcast() {
       </div>
       <button onClick={toggleMic}>Mic on</button>
       <button onClick={toggleVideo}>Camera Off</button>
+      <Link className="nav-link" to='/teacher/home' >
       <button
-        onClick={() => {
-          navigate("/teacher/home");
-          window.location.reload();
+        // onClick={() => {
+        //   navigate("/teacher/home");
+          // window.location.reload();
           //explain UseNavigate over Link needed on other exit buttons
           // or could make live stream it's own page with custom header/ect...
-        }}
+        // }}
       >
         Leave Stream
       </button>
+      </Link>
     </>
   );
 }
