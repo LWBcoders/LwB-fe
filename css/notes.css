@@ -149,13 +149,39 @@
   .filter-container {
     display: flex;
     align-items: center;
+    margin-top: 30px;
   }
   
   .filter-options {
     margin-left: 10px; 
   }
   
+  .note-preview {
+    margin: 2rem auto;
+    width: 800px;
+    height: auto;
+    border: 1px solid #808097;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 1px solid #808097;
+    box-shadow: 3px 6px 6px 2.5px #D3D3D3;
+    padding-bottom: 25px;
+    margin-bottom: 50px;
+  }
   
+  .note-preview img {
+    width: 600px;
+    height: auto; 
+    display: block; 
+    margin: 10px auto; 
+  }
+  
+  .note-preview h1 {
+    text-align: center;
+    margin-top: 20px;
+  }
   
   
   

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, Link } from "react-router-dom";
 import { getAllNotes } from "../../../api";
 import NoteCard from "./NoteCard";
 import "../../../css/notes.css"
@@ -115,11 +115,17 @@ function StudentNotes({ subjectToDisplay, yearsToDisplay, teachersToDisplay }) {
           allNotes.map((note) => {
             return (
               <>
-                <NoteCard
+                {/* <NoteCard
                   key={note.title}
                   note={note}
                   allNotes={allNotes}
-                />
+                /> */}
+                 <div key={note._id} className="note-preview">
+              <Link to={`/student/home/notes/${note._id}`}>
+                <img src={note.img_url} alt="Note Preview" />
+                <h1>{note.title}</h1>
+              </Link>
+            </div>
               </>
             );
           })
