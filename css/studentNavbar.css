@@ -1,4 +1,9 @@
 
+.mainLogo{
+  width: 80px;
+ margin-right: 1.2rem;
+}
+
 .companyName{
     text-align: center;
     margin-top: 2rem;
@@ -50,9 +55,7 @@
     color: #fff;
     background: linear-gradient(90deg, #283c86 0%, #45a247 100%);
   }
-  .mainLogo{
-    margin-right: 1.2rem;
-  }
+  
   .left-side{
     display: flex;
     align-items: center;
