@@ -11,7 +11,9 @@ function Home(){
       }, []);
 
     return(<main>
-         <h1 className="companyName homePageCompanyName">Learning without Borders</h1>
+         {/* <h1 className="companyName homePageCompanyName">Learning without Borders</h1> */}
+         {/* <img className="logoImg" src="./src/public/Frame1.png" alt="Learning without Borders log" /> */}
+         <img className="logoImg" src="./src/public/Frame2.png" alt="Learning without Borders log" />
         <section className="main-firstPage">
 
             <div className="main-teacherWrapper">

@@ -46,10 +46,10 @@ function TeacherHeader() {
                     </li>
 
                     <li className="nav-item" onClick={closeDropdown}>
-                        <Link className="nav-link" to='/add-quiz' >My Lessons</Link>
+                        <Link className="nav-link" to='/teacher/home/view-my-content' >My Lessons</Link>
                     </li>
                     <li className="nav-item" onClick={closeDropdown}>
-                        <Link className="nav-link" to='/quiz' >All Quizzes</Link>
+                        <Link className="nav-link" to='/teacher/home/add-lesson' >Add new Lesson</Link>
                     </li>
                     <li className="nav-item" onClick={closeDropdown}>
                         <Link className="nav-link sign-out" to='/' >Sign out</Link>
