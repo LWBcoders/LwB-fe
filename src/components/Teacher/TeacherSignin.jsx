@@ -48,6 +48,7 @@ function TeacherSignin() {
         setTPasswordLogin("");
       })
       .catch((err) => {
+        setIsLoading(false)
         setError(err.response.data.message);
       });
   }
