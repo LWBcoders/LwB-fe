@@ -1,10 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../../../css/signupStyling.css";
 import { useContext, useState } from "react";
 import UserContext from "../../../contexts/UserContext";
 import { teacherSignin } from "../../../api";
 
 function TeacherSignin() {
+  const navigate = useNavigate();
   const { loggedInUser, setLoggedInUser } = useContext(UserContext);
   const [tUsernameLogin, setTUsernameLogin] = useState("");
   const [tPasswordLogin, setTPasswordLogin] = useState("");
@@ -46,6 +47,7 @@ function TeacherSignin() {
       .then(() => {
         setTUsernameLogin("");
         setTPasswordLogin("");
+        navigate("/teacher/home")
       })
       .catch((err) => {
         setIsLoading(false)
