@@ -68,3 +68,9 @@
     background: linear-gradient(90deg, #4ac29a 0%, #bdfff3 100%);
   }
 
+img{
+  width: 120px;
+  height: auto; 
+  display: block; 
+  margin: 10px auto;
+}

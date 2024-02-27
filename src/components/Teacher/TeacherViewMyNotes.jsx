@@ -79,7 +79,7 @@ function TeacherViewMyNotes() {
                     className="noteLink showMyLink"
                     to={`${note["_id"]}`}
                   >
-                    {note.title} -{" "}
+                    {note.title} -{" "}<img src={note.img_url} alt= 'preview image' />
                     <span className="year">Year {note.year} </span>
                   </Link>
                   {/* <button className="deletemyNoteBtn" onClick={()=>{deleteNote(note._id)}}>Delete</button>
@@ -105,7 +105,7 @@ function TeacherViewMyNotes() {
                       <button onClick={cancelDelete}>No</button>
                     </div>
                   )} */}
-                  {editingNoteId === note._id ? ( // Render inline editing form if editingNoteId matches note._id
+                  {editingNoteId === note._id ? ( 
                     <EditNote noteId={note._id} />
                   ) : (
                     <>
