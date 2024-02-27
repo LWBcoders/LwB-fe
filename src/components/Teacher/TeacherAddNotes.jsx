@@ -114,25 +114,27 @@ const { loggedInUser, setLoggedInUser } = useContext(UserContext);
     <div className="add-note-container">
       {completed ? (
         <div>
-          <h2>Add Note</h2>
+          <h2 className="addNoteTitle">Add Note</h2>
           <form className="add-note-form" onSubmit={handleSubmit}>
-            <div>
+            <div className="noteTitleInput">
               <label htmlFor="title">
-                Title:
-                <input
+                Title: </label>
+                <input className="inputFieldTitle"
                   type="text"
                   name="title"
                   value={noteData.title}
                   onChange={handleChange}
                   required
                 />
-              </label>
+              
             </div>
             
-            <div>
+            <div className="noteSubjYearWrapper">
+            <div className="addNotesSubj">
               <label htmlFor="subject">
-                Subject:
+                Subject: </label>
                 <select
+                className="video-dropdown notesDropdown"
                   name="subject"
                   value={noteData.subject}
                   onChange={handleChange}
@@ -145,12 +147,13 @@ const { loggedInUser, setLoggedInUser } = useContext(UserContext);
                     </option>
                   ))}
                 </select>
-              </label>
+             
             </div>
-            <div>
+            <div className="addNotesYear">
               <label htmlFor="year">
-                Year Group:
+                Year Group:</label>
                 <select
+                className="video-dropdown notesDropdown"
                   name="year"
                   value={noteData.year}
                   onChange={handleChange}
@@ -163,30 +166,32 @@ const { loggedInUser, setLoggedInUser } = useContext(UserContext);
                     </option>
                   ))}
                 </select>
-              </label>
+              
             </div>
-            <div>
+            </div>
+            <div className="previewImgWrapper">
               <label htmlFor="img_url">
-                Preview image:
-                <input
+                Preview image: </label>
+                <input className="previewImgInput"
                   type="text"
                   name="img_url"
                   value={noteData.img_url}
                   onChange={handleChange}
+                  placeholder="https//:"
                   required
                 />
-              </label>
+             
             </div>        
-            <div>
+            <div className="contentFieldWrapper">
               <label>Content: </label>
-              <Editor
+              <Editor className="editorInput"
                 data={editorData}
                 onChange={setEditorData}
                 editorblock="editor-block" 
               />
             </div>
             <div className="button-container">
-              <button type="submit">Publish</button>
+              <button className="publishNoteBtn" type="submit">Publish</button>
             </div>
           </form>
         </div>
