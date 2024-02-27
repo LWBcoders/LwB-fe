@@ -169,47 +169,53 @@ const TeacherCalendar = () => {
   }, [events]);
 
   return (
-    <div className={styles.calendar}>
-      <div></div>
-      <FullCalendar
-        events={events}
-        ref={calendarRef}
-        plugins={[dayGridPlugin, interactionPlugin, timeGridPlugin, listPlugin]}
-        initialView="dayGridMonth"
-        headerToolbar={{
-          left: "prev,next today",
-          center: "title",
-          right: "dayGridMonth,timeGridWeek,timeGridDay,listWeek",
-        }}
-        editable={true}
-        selectable={true}
-        selectMirror={true}
-        dayMaxEvents={true}
-        select={handleDateSelect}
-        eventClick={handleEventClick}
-        eventDidMount={eventDidMount}
-        viewDidMount={viewDidMount}
-      />
-      {showButtons && (
-        <div>
-          <button
-            className="edit-event-button"
-            onClick={() => handleEditEvent(currentEvent)}
-          >
-            Edit
-          </button>
-          <button
-            className="delete-event-button"
-            onClick={() => handleDeleteEvent({ event: clickInfo.event })}
-          >
-            Delete
-          </button>
+    <section id="calendar-section">
+      <div className={styles.calendar}>
+        <FullCalendar
+          events={events}
+          ref={calendarRef}
+          plugins={[
+            dayGridPlugin,
+            interactionPlugin,
+            timeGridPlugin,
+            listPlugin,
+          ]}
+          initialView="dayGridMonth"
+          headerToolbar={{
+            left: "prev,next today",
+            center: "title",
+            right: "dayGridMonth,timeGridWeek,timeGridDay,listWeek",
+          }}
+          editable={true}
+          selectable={true}
+          selectMirror={true}
+          dayMaxEvents={true}
+          select={handleDateSelect}
+          eventClick={handleEventClick}
+          eventDidMount={eventDidMount}
+          viewDidMount={viewDidMount}
+        />
+        {showButtons && (
+          <div>
+            <button
+              className="edit-event-button"
+              onClick={() => handleEditEvent(currentEvent)}
+            >
+              Edit
+            </button>
+            <button
+              className="delete-event-button"
+              onClick={() => handleDeleteEvent({ event: clickInfo.event })}
+            >
+              Delete
+            </button>
+          </div>
+        )}
+        <div className="delete-notification">
+          {notification && <div>{notification}</div>}
         </div>
-      )}
-      <div className="delete-notification">
-        {notification && <div>{notification}</div>}
       </div>
-    </div>
+    </section>
   );
 };
 
