@@ -5,7 +5,7 @@ function TeacherNavigation() {
   return (
     <section className="studentsMainScreen">
       <div className="studentblock-wrapper">
-        <Link className="studentblock-item" to="/teacher/home/calender">
+        <Link className="studentblock-item" to="/teacher/home/calendar">
           {" "}
           <i className="fa-regular fa-calendar-days icon-studentBlock"></i>{" "}
           Calendar of Events
