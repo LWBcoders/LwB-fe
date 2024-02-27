@@ -18,6 +18,8 @@ function TeacherAddQuiz() {
     
     const { loggedInUser, setLoggedInUser } = useContext(UserContext);
 
+
+    console.log(loggedInUser)
     useEffect(()=>{
       getAllSubjects()
       .then((response)=>{

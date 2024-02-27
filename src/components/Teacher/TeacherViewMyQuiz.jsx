@@ -1,14 +1,21 @@
 import { deleteQuizById, getAllQuizzes } from '../../../api';
 import { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import UserContext from "../../../contexts/UserContext";
 
 function TeacherViewMyQuiz() {
+    useEffect(()=>{
+        const storedUser = localStorage.getItem("user");
+        setLoggedInUser(JSON.parse(storedUser));
+    }, [])
     const [myQuizList, setMyQuizList] = useState([])
     const [isError, setIsError] = useState(null)
     const yearQuery="";
     const subjectQuery="";
-    const teacherQuery = "Miss Smith";
+    const { loggedInUser, setLoggedInUser } = useContext(UserContext);
 
+    const teacherQuery = loggedInUser.userName;
     let copyState = [...myQuizList];
 
     useEffect(()=>{
@@ -20,7 +27,6 @@ function TeacherViewMyQuiz() {
     },[])
 
     const deleteQuiz = (id)=>{
-        console.log(id)
         setMyQuizList((currentQuiz)=>{
             return currentQuiz.filter(quiz => quiz._id != id)
         })
