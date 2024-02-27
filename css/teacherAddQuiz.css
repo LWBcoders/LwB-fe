@@ -144,6 +144,7 @@
   font-size: 1.2rem;
   color:#fff;
   background: linear-gradient(90deg, #43c6ac 0%, #191654 100%);
+  background-color: #6b6b6b;
   /* text-align:center; */
   cursor: pointer;
   outline: none;
