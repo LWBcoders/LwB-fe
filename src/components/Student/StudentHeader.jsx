@@ -38,12 +38,9 @@ function StudentHeader() {
                 <span className="bar"></span>
               </div>
             </div>
-<<<<<<< HEAD
             <div className="mainLogo">
               <img src="https://i.ibb.co/6yyxLWN/image-9.png" alt="LwB logo" />
             </div>
-=======
->>>>>>> 015cbd9e84b298c1ae080114689e6c9b28cddfeb
             <ul className={`navmenu__list ${activeDropdownmenu}`}>
               <li className="nav-item" onClick={closeDropdown}>
                 <Link className="nav-link" to="/student/home">
@@ -52,20 +49,6 @@ function StudentHeader() {
               </li>
 
               <li className="nav-item" onClick={closeDropdown}>
-<<<<<<< HEAD
-                <Link className="nav-link" to="/student/home/notes">
-                  Notes
-                </Link>
-              </li>
-              <li className="nav-item" onClick={closeDropdown}>
-                <Link className="nav-link" to="/student/home/videos">
-                  Videos
-                </Link>
-              </li>
-              <li className="nav-item" onClick={closeDropdown}>
-                <Link className="nav-link" to="/student/home/quiz">
-                  Quizzes
-=======
                 <Link className="nav-link" to="/add-quiz">
                   Settings
                 </Link>
@@ -73,7 +56,6 @@ function StudentHeader() {
               <li className="nav-item" onClick={closeDropdown}>
                 <Link className="nav-link" to="/quiz">
                   All Quizzes
->>>>>>> 015cbd9e84b298c1ae080114689e6c9b28cddfeb
                 </Link>
               </li>
               <li className="nav-item" onClick={closeDropdown}>
@@ -84,10 +66,7 @@ function StudentHeader() {
             </ul>
           </nav>
         </div>
-<<<<<<< HEAD
-=======
         {/* <div className="mainLogo"><span>LwB</span> </div> */}
->>>>>>> 015cbd9e84b298c1ae080114689e6c9b28cddfeb
         <div className="right-side">
           <p className="active-use"> {loggedInUser.userName}</p>
         </div>
