@@ -38,7 +38,7 @@ function TeacherHeader() {
                 <span className="bar"></span>
               </div>
             </div>
-            <div className="mainLogo">
+            <div className="mainLogo1">
               <img src="https://i.ibb.co/6yyxLWN/image-9.png" alt="LwB logo" />
             </div>
             <ul className={`navmenu__list ${activeDropdownmenu}`}>
@@ -68,6 +68,14 @@ function TeacherHeader() {
         </div>
         <div className="right-side">
           <p className="active-use"> {loggedInUser.userName}</p>
+          {loggedInUser.userAvatarImg ? (
+            <img src={loggedInUser.userAvatarImg} alt="user avatar image" />
+          ) : (
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/6596/6596121.png"
+              alt="user avatar image"
+            />
+          )}
         </div>
       </header>
       <h1 className="companyName">Learning without Borders</h1>
