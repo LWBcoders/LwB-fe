@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { updateNote, getNoteById } from '../../../api';
+import Editor from './Editor';
+import Output from 'editorjs-react-renderer';
 
 function EditNote({ noteId }) {
     const [note, setNote] = useState(null);
@@ -30,7 +32,6 @@ function EditNote({ noteId }) {
                 setIsLoading(false);
             });
     }, [noteId]);
-
     const handleTitleChange = (event) => {
         setUpdatedTitle(event.target.value);
     };
@@ -88,23 +89,24 @@ function EditNote({ noteId }) {
         <div>
             <h1>Edit Note</h1>
             <form onSubmit={handleSubmit}>
-                <label htmlFor="title">Title:</label>
-                <input type="text" id="title" value={updatedTitle} onChange={handleTitleChange} />
+                <label htmlFor="title">Title: </label>
+                <input type="text" id="title" value={updatedTitle} onChange={handleTitleChange} /><br/>
 
-                <label htmlFor="teacher">Teacher:</label>
-                <input type="text" id="teacher" value={updatedTeacher} onChange={handleTeacherChange} />
+                <label htmlFor="teacher">Teacher: </label>
+                <input type="text" id="teacher" value={updatedTeacher} onChange={handleTeacherChange} /><br/>
 
-                <label htmlFor="subject">Subject:</label>
-                <input type="text" id="subject" value={updatedSubject} onChange={handleSubjectChange} />
+                <label htmlFor="subject">Subject: </label>
+                <input type="text" id="subject" value={updatedSubject} onChange={handleSubjectChange} /><br/>
 
-                <label htmlFor="category">Image:</label>
-                <input type="text" id="category" value={updatedImg} onChange={handleImgChange} />
+                <label htmlFor="category">Image: </label>
+                <input type="text" id="category" value={updatedImg} onChange={handleImgChange} /><br/>
 
                 <label htmlFor="year">Year:</label>
-                <input type="text" id="year" value={updatedYear} onChange={handleYearChange} />
+                <input type="text" id="year" value={updatedYear} onChange={handleYearChange} /><br/>
 
-                <label htmlFor="body">Body:</label>
-                <textarea id="body" value={updatedBody} onChange={handleBodyChange} />
+                <label htmlFor="body">Content: </label>
+                <Editor editorblock="editor-block" data={updatedBody} onChange={setUpdatedBody}/>
+                {/* <textarea  id="body" value={<Output data={updatedBody} />}onChange={handleBodyChange} /> */}
 
                 <button type="submit">Update Note</button>
             </form>
