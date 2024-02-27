@@ -48,6 +48,7 @@ function TeacherViewMyContent() {
 </nav>
 
         <Routes>
+          <Route path="/" element={<TeacherViewMyVideo yearsToDisplay={yearsToDisplay} subjectToDisplay={subjectToDisplay}/>}/> 
         <Route path="my-quiz" element={<TeacherViewMyQuiz />} />
         <Route path="my-quiz/quiz/:id" element={<StudentQuizSingleDisplay />} />
         <Route path="my-notes" element={<TeacherViewMyNotes />} />
