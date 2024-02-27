@@ -44,18 +44,18 @@ function TeacherHeader() {
             <ul className={`navmenu__list ${activeDropdownmenu}`}>
               <li className="nav-item" onClick={closeDropdown}>
                 <Link className="nav-link" to="/teacher/home">
-                  Main
+                  Home
                 </Link>
               </li>
 
               <li className="nav-item" onClick={closeDropdown}>
-                <Link className="nav-link" to="/add-quiz">
+                <Link className="nav-link" to="/teacher/home/view-my-content">
                   My Lessons
                 </Link>
               </li>
               <li className="nav-item" onClick={closeDropdown}>
-                <Link className="nav-link" to="/quiz">
-                  All Quizzes
+                <Link className="nav-link" to="/teacher/home/add-lesson">
+                 Add Lessons
                 </Link>
               </li>
               <li className="nav-item" onClick={closeDropdown}>

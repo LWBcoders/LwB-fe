@@ -4,7 +4,7 @@ import { getQuizById } from '../../../api';
 import StudentQuizGame from './StudentQuizGame';
 
 
-function StudentQuizSingleDisplay() {
+function StudentQuizSingleDisplay({pathToAllQuiz}) {
     const {id}  = useParams();
     const [quizDataById, setQuizDataById] = useState([])
     const [quiz, setQuiz] = useState({});
@@ -30,7 +30,7 @@ function StudentQuizSingleDisplay() {
     return (
         <>
     
-        <StudentQuizGame quizDataArr={quizDataById} quizObj={quiz}/>
+        <StudentQuizGame quizDataArr={quizDataById} quizObj={quiz} pathToAllQuiz={pathToAllQuiz}/>
         </>
          );
 }

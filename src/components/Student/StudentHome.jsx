@@ -29,7 +29,7 @@ function StudentHome() {
       setTeachersToDisplay(response);
     });
   }, []);
-
+const pathToAllQuiz = "/student/home/quiz";
   return (
     <>
       <StudentHeader />
@@ -78,7 +78,7 @@ function StudentHome() {
           }
         />
 
-        <Route path="/quiz/quiz/:id" element={<StudentQuizSingleDisplay />} />
+        <Route path="/quiz/quiz/:id" element={<StudentQuizSingleDisplay pathToAllQuiz={pathToAllQuiz}/>} />
         <Route
           path="quiz"
           element={
