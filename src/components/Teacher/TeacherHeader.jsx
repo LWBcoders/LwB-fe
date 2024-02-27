@@ -39,7 +39,11 @@ function TeacherHeader() {
               </div>
             </div>
             <div className="mainLogo">
+<<<<<<< HEAD
               <img src="https://i.ibb.co/6yyxLWN/image-9.png" alt="LwB logo" />
+=======
+              <img src="../../../public/logo1.png" alt="LwB logo" />
+>>>>>>> 015cbd9e84b298c1ae080114689e6c9b28cddfeb
             </div>
             <ul className={`navmenu__list ${activeDropdownmenu}`}>
               <li className="nav-item" onClick={closeDropdown}>
@@ -49,13 +53,22 @@ function TeacherHeader() {
               </li>
 
               <li className="nav-item" onClick={closeDropdown}>
+<<<<<<< HEAD
                 <Link className="nav-link" to="/teacher/home/view-my-content">
+=======
+                <Link className="nav-link" to="/add-quiz">
+>>>>>>> 015cbd9e84b298c1ae080114689e6c9b28cddfeb
                   My Lessons
                 </Link>
               </li>
               <li className="nav-item" onClick={closeDropdown}>
+<<<<<<< HEAD
                 <Link className="nav-link" to="/teacher/home/add-lesson">
                   Add new Lesson
+=======
+                <Link className="nav-link" to="/quiz">
+                  All Quizzes
+>>>>>>> 015cbd9e84b298c1ae080114689e6c9b28cddfeb
                 </Link>
               </li>
               <li className="nav-item" onClick={closeDropdown}>

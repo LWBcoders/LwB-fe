@@ -1,7 +1,11 @@
 
 .mainLogo{
   width: 80px;
+<<<<<<< HEAD
   margin-right: 1.2rem;
+=======
+ margin-right: 1.2rem;
+>>>>>>> 015cbd9e84b298c1ae080114689e6c9b28cddfeb
 }
 
 .companyName{
@@ -55,9 +59,7 @@
     color: #fff;
     background: linear-gradient(90deg, #283c86 0%, #45a247 100%);
   }
-  .mainLogo{
-    margin-right: 1.2rem;
-  }
+  
   .left-side{
     display: flex;
     align-items: center;

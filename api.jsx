@@ -199,7 +199,7 @@ export const getAllNotes = (subject, teacher, year) => {
 
 //get teacher's notes
 export const getNotesByTeacher = (teacherName) => {
-  return ncApi.get(`/items/?teacher=${teacherName}`).then((res) => {
+  return baseApi.get(`/items/?teacher=${teacherName}`).then((res) => {
     return res.data;
   });
 };
@@ -211,10 +211,19 @@ export const getNoteById = (id) => {
   });
 };
 
+//Delete note
 export const deleteNoteById = (id)=>{
   
   return baseApi.delete(`/notes/${id}`)
 }
+
+//Patch note
+export const updateNote = (noteId, updatedData) => {
+  return baseApi.patch(`/notes/${noteId}`, updatedData).catch((error) => {
+    console.error("Error updating event:", error);
+    throw error;
+  });
+};
 
 export const deleteVideo = (video_id) => {
   return baseApi.delete(`/videos/${video_id}`).then(() => {});
