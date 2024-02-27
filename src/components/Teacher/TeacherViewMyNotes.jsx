@@ -3,15 +3,24 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import EditNote from './EditNote'
 import "../../../css/teacherViewMyNotes.css";
+import { useContext } from "react";
+import UserContext from "../../../contexts/UserContext";
 
 function TeacherViewMyNotes() {
+
+  useEffect(() => {
+        const storedUser = localStorage.getItem("user");
+        setLoggedInUser(JSON.parse(storedUser));
+      }, []);
+      const { loggedInUser, setLoggedInUser } = useContext(UserContext);
+
   const [myNoteList, setMyNoteList] = useState([]);
   const [isError, setIsError] = useState(null);
   const [deleteNoteId, setDeleteNoteId] = useState(null);
   const [editingNoteId, setEditingNoteId] = useState(null);
   const yearQuery = "";
   const subjectQuery = "";
-  const teacherQuery = "jsmith";
+  const teacherQuery = loggedInUser.userName;
 
   let copyState = [...myNoteList];
 

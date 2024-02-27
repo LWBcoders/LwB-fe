@@ -4,9 +4,16 @@ import Editor from "./Editor";
 import ViewNote from "./ViewNote";
 import { postNote, getAllSubjects, getAllYears, getTeachers } from "../../../api";
 import "../../../css/notes.css";
+import { useContext } from "react";
+import UserContext from "../../../contexts/UserContext";
 
 const AddNote = () => {
-
+  
+  useEffect(() => {
+    const storedUser = localStorage.getItem("user");
+    setLoggedInUser(JSON.parse(storedUser));
+  }, []);
+const { loggedInUser, setLoggedInUser } = useContext(UserContext);
   const [allSubjects, setAllSubjects] = useState("");
   const [allTeachers, setAllTeachers] = useState("");
   const [allyears, setAllyears] = useState("");
@@ -32,6 +39,8 @@ const AddNote = () => {
   });
   const [editorData, setEditorData] = useState(INITIAL_DATA);
   const [addedNote, setAddedNote] = useState(null); // State to store the added note
+
+
   useEffect(() => {
     getAllSubjects()
       .then((response) => {
@@ -77,11 +86,12 @@ const AddNote = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      console.log(editorData);
-      const dataToSend = { ...noteData, body: editorData };
+      console.log(loggedInUser);
+      const dataToSend = { ...noteData, body: editorData, teacher: loggedInUser.userName };
+      console.log(dataToSend);
       const response = await postNote(dataToSend);
       const newNote = response;
-      console.log("New note:", newNote);
+      
       //onNoteAdded(newNote);
       setAddedNote(newNote);
       setNoteData({
@@ -117,24 +127,7 @@ const AddNote = () => {
                 />
               </label>
             </div>
-            <div>
-              <label htmlFor="teacher">
-                Teacher:
-                <select
-                  name="teacher"
-                  value={noteData.teacher}
-                  onChange={handleChange}
-                  required
-                >
-                  <option value="">Select Teacher</option>
-                  {allTeachers.map((teacher, index) => (
-                    <option key={index} value={teacher}>
-                      {teacher}
-                    </option>
-                  ))}
-                </select>
-              </label>
-            </div>
+            
             <div>
               <label htmlFor="subject">
                 Subject:
