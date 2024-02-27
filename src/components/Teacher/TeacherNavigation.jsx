@@ -5,10 +5,10 @@ function TeacherNavigation() {
   return (
     <section className="studentsMainScreen">
       <div className="studentblock-wrapper">
-        <Link className="studentblock-item" to="/teacher/home/calender">
+        <Link className="studentblock-item" to="/teacher/home/calendar">
           {" "}
           <i className="fa-regular fa-calendar-days icon-studentBlock"></i>{" "}
-          Calender of Events
+          Calendar of Events
         </Link>
       </div>
       <div className="studentblock-wrapper">
@@ -31,7 +31,7 @@ function TeacherNavigation() {
       </div>
       <div className="studentblock-wrapper">
         <Link className="studentblock-item" to="/teacher/home/view-my-content">
-          <i classNmae="fa-solid fa-book icon-studentBlock"></i>
+          <i className="fa-solid fa-book icon-studentBlock"></i>
           View My Lessons
         </Link>
       </div>

@@ -5,7 +5,7 @@ import VideoPlayer from "./VideoPlayer.jsx";
 
 const APP_ID = "9a856e8086954a67b2e3422ba6868fcd";
 const TOKEN =
-  "007eJxTYNB1l+Z9lmPUGKNafErC56II++JjDFMUv0svVb6wPqq3/6YCg2WihalZqoWBhZmlqUmimXmSUaqxiZFRUqKZhZlFWnLKY5fbqQ2BjAznk3cxMTJAIIjPwlCSWlzCwAAAgyMd7w==";
+  "007eJxTYNA/qZmUIvCrMWSBiJRW5+Kpz1ZW9KxpSwpLMZjRoK/OsF6BwTLRwtQs1cLAwszS1CTRzDzJKNXYxMgoKdHMwswiLTlF8fad1IZARgYJRX8WRgYIBPFZGEpSi0sYGACOBhyb";
 const CHANNEL = "test";
 
 const client = AgoraRTC.createClient({ mode: "rtc", codec: "vp8" });
@@ -73,7 +73,6 @@ export default function StudentViewStream() {
       <button
         onClick={() => {
           navigate("/student/home");
-          window.location.reload();
         }}
       >
         Leave Stream

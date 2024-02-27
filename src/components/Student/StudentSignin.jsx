@@ -1,10 +1,12 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../../../css/signupStyling.css";
 import { useContext, useState } from "react";
 import UserContext from "../../../contexts/UserContext";
 import { studentSignin } from "../../../api";
 
+
 function StudentSignin (){
+  const navigate = useNavigate();
     const { loggedInUser, setLoggedInUser } = useContext(UserContext);
     const [sUsernameLogin, setSUsernameLogin] = useState("");
     const [sPasswordLogin, setSPasswordLogin] = useState("");
@@ -43,12 +45,16 @@ function StudentSignin (){
           setSuccess(true);
           setIsLoading(false);
           localStorage.setItem("user", JSON.stringify(user))
+           
         })
         .then(() => {
           setSUsernameLogin("");
           setSPasswordLogin("");
+          navigate("/student/home")
+         
         })
         .catch((err) => {
+          setIsLoading(false)
           setError(err.response.data.message);
         });
     }
@@ -56,10 +62,11 @@ function StudentSignin (){
   
     return (
       <>
-        <div className="authenFormWrapper">
+      <h1 className="companyName homePageCompanyName companyNameForms">Learning without Borders</h1>
+        <div className="authenFormWrapper signInFormwrapper">
           <h2 className="formName">Welcome! Sign In</h2>
           {/* <p className=“descriptionForm”>We’re almost done. Before using our services you need to create an account</p> */}
-          <form className="registrationForm" onSubmit={studentLogin}>
+          <form className="registrationForm signInFormClass" onSubmit={studentLogin}>
             <label htmlFor="userName"></label>
             <input
               className="inputFields"
@@ -89,6 +96,8 @@ function StudentSignin (){
             <button disabled={success} className="joinBtn">
               Login
             </button>
+
+            <Link className="linkDontHaveAccount" to="/student/signup">Don't have an account? Sign Up!</Link>
           </form>
           <div hidden={!success}>
           <Link to="/student/home" className="home-button">

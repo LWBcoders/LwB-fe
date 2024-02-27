@@ -1,6 +1,6 @@
 import { Link, Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
-import StudentCalender from "./StudentCalender";
+import StudentCalendar from "./StudentCalendar";
 import StudentVideo from "./StudentVideo";
 import StudentNotes from "./StudentNotes";
 import StudentQuiz from "./StudentQuiz";
@@ -56,7 +56,7 @@ function StudentHome() {
 
       <Routes>
         <Route path="/" element={<StudentNavigation />} />
-        <Route path="calender" element={<StudentCalender />} />
+        <Route path="calendar" element={<StudentCalendar />} />
         <Route
           path="videos"
           element={
@@ -67,9 +67,16 @@ function StudentHome() {
             />
           }
         />
-        <Route path="notes" element={<StudentNotes subjectToDisplay={subjectToDisplay}
+        <Route
+          path="notes"
+          element={
+            <StudentNotes
+              subjectToDisplay={subjectToDisplay}
               yearsToDisplay={yearsToDisplay}
-              teachersToDisplay={teachersToDisplay} />} />
+              teachersToDisplay={teachersToDisplay}
+            />
+          }
+        />
 
         <Route path="/quiz/quiz/:id" element={<StudentQuizSingleDisplay />} />
         <Route

@@ -1,10 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../../../css/signupStyling.css";
 import { useContext, useState } from "react";
 import UserContext from "../../../contexts/UserContext";
 import { teacherSignin } from "../../../api";
 
 function TeacherSignin() {
+  const navigate = useNavigate();
   const { loggedInUser, setLoggedInUser } = useContext(UserContext);
   const [tUsernameLogin, setTUsernameLogin] = useState("");
   const [tPasswordLogin, setTPasswordLogin] = useState("");
@@ -46,18 +47,21 @@ function TeacherSignin() {
       .then(() => {
         setTUsernameLogin("");
         setTPasswordLogin("");
+        navigate("/teacher/home")
       })
       .catch((err) => {
+        setIsLoading(false)
         setError(err.response.data.message);
       });
   }
 
   return (
     <>
-      <div className="authenFormWrapper">
+     <h1 className="companyName homePageCompanyName companyNameForms">Learning without Borders</h1>
+      <div className="authenFormWrapper signInFormwrapper">
         <h2 className="formName">Welcome! Sign In</h2>
         {/* <p className=“descriptionForm”>We’re almost done. Before using our services you need to create an account</p> */}
-        <form className="registrationForm" onSubmit={teacherLogin}>
+        <form className="registrationForm signInFormClass" onSubmit={teacherLogin}>
           <label htmlFor="userName"></label>
           <input
             className="inputFields"
@@ -86,7 +90,9 @@ function TeacherSignin() {
           <button disabled={success} className="joinBtn">
             Login
           </button>
+          <Link className="linkDontHaveAccount" to="/teacher/signup">Don't have an account? Sign Up!</Link>
         </form>
+
         <div hidden={!success}>
           <Link to="/teacher/home" className="home-button">
             <button className="homeBtn">Home</button>

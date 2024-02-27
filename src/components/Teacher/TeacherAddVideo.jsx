@@ -87,6 +87,7 @@ function TeacherAddVideo({ allSubjects, allYears, completed }) {
         setIsUploading(false);
       }).then(()=>{
         setdbLoading(false);
+        window.location.reload()
       })
     }
   }
