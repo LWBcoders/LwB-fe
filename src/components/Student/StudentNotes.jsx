@@ -121,7 +121,7 @@ function StudentNotes({ subjectToDisplay, yearsToDisplay, teachersToDisplay }) {
         </>
 
         {allNotes.length === 0 ? (
-          <p>Sorry no Notes available ....</p>
+          <p className="sorryMsg">Sorry no Notes available ....</p>
         ) : (
           allNotes.map((note) => {
             return (
