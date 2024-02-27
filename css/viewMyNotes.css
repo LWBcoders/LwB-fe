@@ -1,0 +1,25 @@
+.noteFlexWrapper{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    max-width: 60%;
+}
+.myNotesImg{
+    margin: 0;
+    margin-right: 2rem;
+}
+.editmyNoteBtn{
+    width:120px;
+    height: 45px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 18px;
+    box-shadow: 0 0 5px 0.5px #D3D3D3;
+    border: none;
+    transition: 0.3s;
+    background: linear-gradient(90deg, #44a08d 0%, #093637 100%);
+}
+.editmyNoteBtn:hover{
+    font-weight: 600;
+}

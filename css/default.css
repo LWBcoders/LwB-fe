@@ -8,6 +8,7 @@
 @import url('./viewAllContentTeacher.css');
 @import url('./teacherViewMy.css');
 @import url('./viewVideo.css');
+@import url('./viewMyNotes.css');
 
 *{
     margin: 0;
