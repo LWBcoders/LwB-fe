@@ -54,16 +54,21 @@ function StudentNotes({ subjectToDisplay, yearsToDisplay, teachersToDisplay }) {
   return (
     <>
       {isLoading ? <p>Loading Notes ...</p> : null}
+      <div className="viewAllNotes-wrapper">
       <ul key="NotesList" className="note-list">
+      
         <h2 className="all-notes-title">All Notes</h2>
         
         <>
-        <div className="filter-container"><h4>Filter by:</h4>
-        
+        <h4 className="filterByHeading">Filter by:</h4> 
+        <div className="filter-container">
+          
           <div className="filter-options">
+
+          <div className="subjectFilter-wrapper ">
           <label htmlFor="subject"></label>
           <select
-            className="drop-down"
+            className="drop-down notesDrop-down"
             value={subject}
             onChange={handleSubject}
             required
@@ -75,11 +80,13 @@ function StudentNotes({ subjectToDisplay, yearsToDisplay, teachersToDisplay }) {
               </option>
             ))}
           </select>
+          </div>
           <br></br>
+          <div className="yearsFilter-wrapper ">
           <label htmlFor="years"></label>
           <select
             required
-            className="drop-down"
+            className="drop-down notesDrop-down"
             value={year}
             onChange={handleYear}
           >
@@ -90,9 +97,12 @@ function StudentNotes({ subjectToDisplay, yearsToDisplay, teachersToDisplay }) {
               </option>
             ))}
           </select>
+          </div>
           <br></br>
+
+          <div className="teacherFilter-wrapper ">
           <select
-            className="drop-down"
+            className="drop-down notesDrop-down"
             value={teacher}
             onChange={handleTeacher}
             required
@@ -104,6 +114,7 @@ function StudentNotes({ subjectToDisplay, yearsToDisplay, teachersToDisplay }) {
               </option>
             ))}
           </select>
+          </div>
           <br></br>
           </div>
           </div> 
@@ -121,7 +132,7 @@ function StudentNotes({ subjectToDisplay, yearsToDisplay, teachersToDisplay }) {
                   allNotes={allNotes}
                 /> */}
                  <div key={note._id} className="note-preview">
-              <Link to={`/student/home/notes/${note._id}`}>
+              <Link className="previewLink" to={`/student/home/notes/${note._id}`}>
                 <img src={note.img_url} alt="Note Preview" />
                 <h1>{note.title}</h1>
               </Link>
@@ -131,6 +142,7 @@ function StudentNotes({ subjectToDisplay, yearsToDisplay, teachersToDisplay }) {
           })
         )}
       </ul>
+      </div>
     </>
   );
 }
