@@ -12,9 +12,8 @@ const reorderAnswers = question =>{
     return answers;
 }
 
-function StudentQuizGame({quizDataArr, quizObj}) {
+function StudentQuizGame({quizDataArr, quizObj, pathToAllQuiz}) {
     let quizData = [...quizDataArr]
-console.log(quizDataArr)
     quizData.map((quiz)=>{
     let incorrect = [];
     incorrect.push(quiz["incorrect1"])
@@ -71,16 +70,13 @@ console.log(quizDataArr)
     if(isDone){
         return(
             <>
-            <ResultQuiz quizDataLength={quizDataLength} countCorrectAnswers={countCorrectAnswers}/>
+            <ResultQuiz quizDataLength={quizDataLength} countCorrectAnswers={countCorrectAnswers} pathToAllQuiz={pathToAllQuiz}/>
             </>
         )
     }
     if(err){
         return console.log({err}) 
     }
-
-    console.log(quizObj)
-
 
     return (
     <section className="quizGameField">

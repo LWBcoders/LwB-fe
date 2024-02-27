@@ -67,13 +67,17 @@ function TeacherViewMyVideo({ yearsToDisplay, subjectToDisplay }) {
   }
 
   return (
-    <>
+    <section className="displayMyVideo-section listOfQuizzes">
+      <h1>List of my Videos</h1>
       {isLoading ? <p>Loading Videos ...</p> : null}
+      
       <ul key="videosList" className="video-list">
         <>
+        <div className="sortMyVideos-wrapper">
+          <div className="subjectDropdownWrapperVideo">
           <label htmlFor="subject"></label>
           <select
-            className="drop-down"
+            className="drop-down video-dropdown"
             value={subject}
             onChange={handleSubject}
             required
@@ -85,11 +89,13 @@ function TeacherViewMyVideo({ yearsToDisplay, subjectToDisplay }) {
               </option>
             ))}
           </select>
+          </div>
           <br></br>
+          <div className="yearsDropdownWrapperVideo">
           <label htmlFor="years"></label>
           <select
             required
-            className="drop-down"
+            className="drop-down video-dropdown"
             value={year}
             onChange={handleYear}
           >
@@ -100,11 +106,13 @@ function TeacherViewMyVideo({ yearsToDisplay, subjectToDisplay }) {
               </option>
             ))}
           </select>
+          </div>
+          </div>
           <br></br>
         </>
 
         {allVideos.length === 0 ? (
-          <p>Sorry no videos available ....</p>
+          <p className="sorryMsg">Sorry no videos available ....</p>
         ) : (
           allVideos.map((video) => {
             return (
@@ -150,7 +158,7 @@ function TeacherViewMyVideo({ yearsToDisplay, subjectToDisplay }) {
           })
         )}
       </ul>
-    </>
+    </section>
   );
 }
 

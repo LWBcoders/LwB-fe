@@ -31,7 +31,7 @@ function TeacherViewContent() {
       setTeacherToDisplay(response);
     })
 }, [])
-
+  const pathToAllQuiz = "/teacher/home/view-content/quiz";
   return (
     <>
     
@@ -40,7 +40,7 @@ function TeacherViewContent() {
       <Routes>
         <Route path="/" element={<TeacherViewContentOptions />} />
         <Route path="quiz" element={<TeacherViewQuiz yearsToDisplay={yearsToDisplay} subjectToDisplay={subjectToDisplay} teacherToDisplay={teacherToDisplay}/>} />
-        <Route path="quiz/quiz/:id" element={<StudentQuizSingleDisplay/>} />
+        <Route path="quiz/quiz/:id" element={<StudentQuizSingleDisplay pathToAllQuiz={pathToAllQuiz}/>} />
         <Route path="notes" element={<StudentNotes yearsToDisplay={yearsToDisplay} subjectToDisplay={subjectToDisplay} teachersToDisplay={teacherToDisplay}/>} />
         <Route path="videos" element={<StudentVideo yearsToDisplay={yearsToDisplay} subjectToDisplay={subjectToDisplay} teachersToDisplay={teacherToDisplay}/>} />
       </Routes>

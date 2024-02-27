@@ -96,7 +96,7 @@ function TeacherAddVideo({ allSubjects, allYears, completed }) {
 
   return (
     <>
-    <div className="formWrapper">
+    <div className="formWrapper videoFormWrapper">
       <h2 className="formName">Upload a video</h2>
       <form onSubmit={uploadToDatabase}>
         <label htmlFor="teachers"></label>
@@ -119,9 +119,12 @@ function TeacherAddVideo({ allSubjects, allYears, completed }) {
         <br></br>
         {completed ? (
           <>
+          <div className="dropdownsWrapperVideo">
+
+            <div className="subjectDropdownWrapperVideo">
             <label htmlFor="subject"></label>
             <select
-              className="drop-down"
+              className="drop-down video-dropdown"
               value={subject}
               onChange={handleSubject}
               required
@@ -135,11 +138,13 @@ function TeacherAddVideo({ allSubjects, allYears, completed }) {
                 </option>
               ))}
             </select>
+            </div>
             <br></br>
+            <div className="yearsDropdownWrapperVideo">
             <label htmlFor="years"></label>
             <select
               required
-              className="drop-down"
+              className="drop-down video-dropdown"
               value={year}
               onChange={handleYear}
             >
@@ -152,7 +157,8 @@ function TeacherAddVideo({ allSubjects, allYears, completed }) {
                 </option>
               ))}
             </select>
-
+            </div>
+            </div>
             {/* <select
               className="drop-down"
               value={teacher}
@@ -171,7 +177,7 @@ function TeacherAddVideo({ allSubjects, allYears, completed }) {
             <br></br>
           </>
         ) : null}
-        <input required type="file" onChange={addFile} />
+        <input className="uploadFileInput" required type="file" onChange={addFile} />
         <button className="uploadBtn" onClick={upload}>
           upload
         </button>

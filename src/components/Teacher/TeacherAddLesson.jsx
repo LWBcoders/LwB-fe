@@ -80,6 +80,7 @@ function TeacherAddLesson() {
       <br></br> */}
 
       <Routes>
+        <Route path="/" element={<TeacherAddVideo allSubjects={allSubjects} allYears={allYears} completed={completed}/>} />
         <Route path="quiz" element={<TeacherAddQuiz/>} />
         <Route path="notes" element={<TeacherAddNotes />} />
         <Route path="videos" element={<TeacherAddVideo allSubjects={allSubjects} allYears={allYears} completed={completed}/>} />
