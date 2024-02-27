@@ -35,7 +35,8 @@ const { loggedInUser, setLoggedInUser } = useContext(UserContext);
     teacher: "",
     subject: "",
     category: "",
-    year: ""
+    year: "",
+    img_url: ""
   });
   const [editorData, setEditorData] = useState(INITIAL_DATA);
   const [addedNote, setAddedNote] = useState(null); // State to store the added note
@@ -164,6 +165,18 @@ const { loggedInUser, setLoggedInUser } = useContext(UserContext);
                 </select>
               </label>
             </div>
+            <div>
+              <label htmlFor="img_url">
+                Preview image:
+                <input
+                  type="text"
+                  name="img_url"
+                  value={noteData.img_url}
+                  onChange={handleChange}
+                  required
+                />
+              </label>
+            </div>        
             <div>
               <label>Content: </label>
               <Editor
