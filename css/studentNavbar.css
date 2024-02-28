@@ -148,7 +148,7 @@
     color: #fff;
   }
   
-  @media screen and (max-width:835px){
+  @media screen and (max-width:838px){
     .hamburger{
       display:block;
     }
