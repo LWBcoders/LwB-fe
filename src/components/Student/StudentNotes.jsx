@@ -4,7 +4,7 @@ import { getAllNotes } from "../../../api";
 import NoteCard from "./NoteCard";
 import "../../../css/notes.css"
 
-function StudentNotes({ subjectToDisplay, yearsToDisplay, teachersToDisplay }) {
+function StudentNotes({url, subjectToDisplay, yearsToDisplay, teachersToDisplay }) {
   const [allNotes, setAllNotes] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
   const [isLoading, setIsLoading] = useState(true);
@@ -132,7 +132,7 @@ function StudentNotes({ subjectToDisplay, yearsToDisplay, teachersToDisplay }) {
                   allNotes={allNotes}
                 /> */}
                  <div key={note._id} className="note-preview">
-              <Link className="previewLink" to={`/student/home/notes/${note._id}`}>
+              <Link className="previewLink" to={`/${url}/home/notes/${note._id}`}>
                 <img src={note.img_url} alt="Note Preview" />
                 <h1>{note.title}</h1>
               </Link>

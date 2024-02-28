@@ -126,18 +126,23 @@ function TeacherViewMyVideo({ yearsToDisplay, subjectToDisplay }) {
               //   />
               // </>
               <>
-                <div className="video-wrapper">
+                <div className="video-wrapper myvideo-wrapper">
                   <Link
                     className="video-titles"
                     to={`/teacher/home/view-my-content/my-videos/${video._id}`}
                   >
                     {video.title}
                   </Link>
-                  <p>Year: {video.year}</p>
-                  <p>{video.teacher}</p>
-                  <p>{video.subject}</p>
                   <video onPlay={() => handleView(video._id)} height="150px" src={video.url} controls></video>
+                  <div className="videoDetails-wrapper myvideoDetails-wrapper ">
+                  <div className="video-descrip-wrapper videodescrip-wrapper-extra">
+                  <p>{video.subject}</p>
+                  <p className="videoDesc-year">Year: {video.year}</p>
+                  <p>Teacher: {video.teacher}</p>
+                  
+                  </div>
                   <p>{video.views} Views</p>
+                  </div>
                   {video.teacher === loggedInUser.userName ? (
                     <button
                       id="delete-button"
