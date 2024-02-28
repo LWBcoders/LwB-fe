@@ -129,7 +129,7 @@ function TeacherViewMyVideo({ yearsToDisplay, subjectToDisplay }) {
                 <div className="video-wrapper">
                   <Link
                     className="video-titles"
-                    to={`/student/home/videos/${video._id}`}
+                    to={`/teacher/home/view-my-content/my-videos/${video._id}`}
                   >
                     {video.title}
                   </Link>

@@ -3,7 +3,7 @@ import { useSearchParams } from "react-router-dom";
 import { getAllVideos } from "../../../api";
 import VideoCard from "./VideoCard";
 
-function StudentVideo({ subjectToDisplay, yearsToDisplay, teachersToDisplay }) {
+function StudentVideo({ url, subjectToDisplay, yearsToDisplay, teachersToDisplay }) {
   const [allVideos, setAllVideos] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
   const [isLoading, setIsLoading] = useState(true);
@@ -119,10 +119,9 @@ function StudentVideo({ subjectToDisplay, yearsToDisplay, teachersToDisplay }) {
             return (
               <>
                 <VideoCard
+                url={url}
                   key={video.title}
                   video={video}
-                  allVideos={allVideos}
-                  setAllVideos={setAllVideos}
                 />
               </>
             );
