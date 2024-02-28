@@ -2,7 +2,7 @@ import { Link, Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getAllSubjects, getAllYears, getTeachers } from "../../../api";
 import TeacherCalendar from "./TeacherCalendar";
-import TeacherBroadcast from "./TeacherBroadcast";
+// import TeacherBroadcast from "./TeacherBroadcast";
 import TeacherAddQuiz from "./TeacherAddQuiz";
 import TeacherHeader from "./TeacherHeader";
 import TeacherNavigation from "./TeacherNavigation";
@@ -37,12 +37,13 @@ function TeacherHome() {
         <Route path="/" element={<TeacherNavigation />} />
         <Route path="add-lesson/*" element={<TeacherAddLesson />} />
         <Route path="calendar" element={<TeacherCalendar />} />
-        <Route path="live" element={<TeacherBroadcast />} />
+        {/* <Route path="live" element={<TeacherBroadcast />} /> */}
         <Route path="add-quiz" element={<TeacherAddQuiz />} />
         <Route path="view-my-content/*" element={<TeacherViewMyContent />} />
 
         <Route path="view-content/*" element={<TeacherViewContent />} />
         <Route path="profile" element={<TeacherProfile />} />
+
         <Route
           path="videos/:id"
           element={
@@ -54,6 +55,7 @@ function TeacherHome() {
             />
           }
         />
+
       </Routes>
     </section>
   );

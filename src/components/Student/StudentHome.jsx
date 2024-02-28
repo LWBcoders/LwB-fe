@@ -4,7 +4,7 @@ import StudentCalendar from "./StudentCalendar";
 import StudentVideo from "./StudentVideo";
 import StudentNotes from "./StudentNotes";
 import StudentQuiz from "./StudentQuiz";
-import StudentViewStream from "./StudentViewStream";
+// import StudentViewStream from "./StudentViewStream";
 import { getAllSubjects, getAllYears, getTeachers } from "../../../api";
 import StudentQuizSingleDisplay from "./StudentQuizSingleDisplay";
 import StudentHeader from "./StudentHeader";
@@ -30,8 +30,10 @@ function StudentHome() {
       setTeachersToDisplay(response);
     });
   }, []);
+
 const pathToAllQuiz = "/student/home/quiz";
 const url = "student"
+
   return (
     <>
       <StudentHeader />
@@ -81,7 +83,10 @@ const url = "student"
           }
         />
 
-        <Route path="/quiz/quiz/:id" element={<StudentQuizSingleDisplay pathToAllQuiz={pathToAllQuiz}/>} />
+        <Route
+          path="/quiz/quiz/:id"
+          element={<StudentQuizSingleDisplay pathToAllQuiz={pathToAllQuiz} />}
+        />
         <Route
           path="quiz"
           element={
@@ -92,10 +97,10 @@ const url = "student"
             />
           }
         />
-        <Route path="view" element={<StudentViewStream />} />
+        {/* <Route path="view" element={<StudentViewStream />} /> */}
         <Route path="/videos/:id" element={<SingleVideo />} />
         <Route path="/notes/:id" element={<SingleNote />} />
-        <Route path="profile" element={<StudentProfile/>}/>
+        <Route path="profile" element={<StudentProfile />} />
       </Routes>
     </>
   );
