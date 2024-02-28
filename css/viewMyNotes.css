@@ -23,3 +23,43 @@
 .editmyNoteBtn:hover{
     font-weight: 600;
 }
+/* editNote.css */
+.editNoteContainer {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+  }
+  
+  .editNoteContainer h1 {
+    margin-bottom: 10px;
+  }
+  
+  .editNoteForm label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .editNoteForm input[type="text"],
+  .editNoteForm textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .editNoteForm button[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .editNoteForm button[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  

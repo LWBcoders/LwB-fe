@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { updateNote, getNoteById } from '../../../api';
 import Editor from './Editor';
 import Output from 'editorjs-react-renderer';
+import '../../../css/teacherViewMyNotes.css'
 
 function EditNote({ noteId }) {
     const [note, setNote] = useState(null);
@@ -13,9 +14,9 @@ function EditNote({ noteId }) {
     const [updatedBody, setUpdatedBody] = useState('');
     const [isError, setIsError] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
+    const [isUpdated, setIsUpdated] = useState(false);
 
     useEffect(() => {
-        // Fetch the note by its ID when the component mounts
         getNoteById(noteId)
             .then((noteData) => {
                 setNote(noteData);
@@ -58,7 +59,6 @@ function EditNote({ noteId }) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        // Update the note with the new data
         updateNote(noteId, {
             title: updatedTitle,
             teacher: updatedTeacher,
@@ -68,7 +68,8 @@ function EditNote({ noteId }) {
             body: updatedBody
         })
             .then((updatedNote) => {
-                setNote(updatedNote); // Update the state with the updated note
+                setNote(updatedNote); 
+                setIsUpdated(true);
                 alert('Note updated successfully!');
             })
             .catch((error) => {
@@ -84,11 +85,14 @@ function EditNote({ noteId }) {
     if (isError || !note) {
         return <p>Error: Failed to load note.</p>;
     }
+    if (isUpdated) {
+        return <p>Note updated successfully!</p>; 
+    }
 
     return (
-        <div>
+        <div className="editNoteContainer">
             <h1>Edit Note</h1>
-            <form onSubmit={handleSubmit}>
+            <form className="editNoteForm" onSubmit={handleSubmit}>
                 <label htmlFor="title">Title: </label>
                 <input type="text" id="title" value={updatedTitle} onChange={handleTitleChange} /><br/>
 
@@ -110,6 +114,7 @@ function EditNote({ noteId }) {
 
                 <button type="submit">Update Note</button>
             </form>
+       
         </div>
     );
 }

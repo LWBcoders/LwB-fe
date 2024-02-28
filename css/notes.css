@@ -16,7 +16,19 @@
     font-weight: bold;
     cursor: pointer;
   }
-  
+  /* .clearBtn{
+    padding: 10px 20px; 
+    background-color: #007bff; 
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    background: linear-gradient(90deg, #fe8c00 0%, #f83600 100%);
+    color: #fff;
+    box-shadow: 0 0 5px 0.5px #D3D3D3;
+    cursor: pointer;
+    width: 230px;
+    height:45px;
+  } */
   /* AddNote styles */
   .add-note-container {
     width:700%;

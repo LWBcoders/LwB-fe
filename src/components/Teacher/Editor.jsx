@@ -1,6 +1,7 @@
 import React, { memo, useEffect, useRef } from "react";
 import EditorJS from "@editorjs/editorjs";
 import { EDITOR_JS_TOOLS } from "../tools";
+import '../../../css/notes.css'
 
 const Editor = ({ data, onChange, editorblock}) => {
   const ref = useRef();
@@ -35,7 +36,7 @@ const Editor = ({ data, onChange, editorblock}) => {
   };
   return (<>
     <div className="editor-container" id={editorblock}/>
-    <button type="button" onClick={handleClear}>Clear</button>
+    <button type="button" onClick={handleClear} className="clearBtn">Clear</button>
     </>
   );
 };
