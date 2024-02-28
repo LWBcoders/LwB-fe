@@ -11,6 +11,7 @@ import StudentHeader from "./StudentHeader";
 import StudentNavigation from "./StudentNavigation";
 import SingleVideo from "./SingleVideo";
 import SingleNote from "./SingleNote";
+import StudentProfile from "./StudentProfile";
 
 function StudentHome() {
   // GET ALL SUBJECTS/YEARS/TEACHERS to use in sorting:
@@ -92,6 +93,7 @@ const pathToAllQuiz = "/student/home/quiz";
         <Route path="view" element={<StudentViewStream />} />
         <Route path="/videos/:id" element={<SingleVideo />} />
         <Route path="/notes/:id" element={<SingleNote />} />
+        <Route path="profile" element={<StudentProfile/>}/>
       </Routes>
     </>
   );

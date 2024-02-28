@@ -7,6 +7,7 @@ import TeacherNavigation from "./TeacherNavigation";
 import TeacherAddLesson from "./TeacherAddLesson";
 import TeacherViewMyContent from "./TeacherViewMyContent";
 import TeacherViewContent from "./TeacherViewContent";
+import TeacherProfile from "./TeacherProfile";
 
 function TeacherHome() {
   return (
@@ -22,6 +23,7 @@ function TeacherHome() {
         <Route path="view-my-content/*" element={<TeacherViewMyContent />} />
 
         <Route path="view-content/*" element={<TeacherViewContent />} />
+        <Route path="profile" element={<TeacherProfile/>}/>
       </Routes>
     </section>
   );
