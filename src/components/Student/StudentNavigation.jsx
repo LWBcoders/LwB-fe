@@ -1,11 +1,19 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getAllSubjects, getAllYears } from "../../../api";
+import { useContext } from "react";
+import UserContext from "../../../contexts/UserContext";
 
 function StudentNavigation() {
   // GET ALL SUBJECTS/YEARS/TEACHERS to use in sorting:
   const [subjectToDisplay, setSubjectToDisplay] = useState([]);
   const [yearsToDisplay, setYearsToDisplay] = useState([]);
+  const { loggedInUser, setLoggedInUser } = useContext(UserContext);
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem("user");
+    setLoggedInUser(JSON.parse(storedUser));
+  }, []);
 
   useEffect(() => {
     getAllSubjects().then((response) => [
@@ -34,7 +42,6 @@ function StudentNavigation() {
         </div>
         <div className="studentblock-wrapper">
           <Link className="studentblock-item" to="/student/home/notes">
-            {" "}
             <i className="fa-solid fa-book-open-reader icon-studentBlock"></i>{" "}
             Notes
           </Link>
@@ -46,7 +53,10 @@ function StudentNavigation() {
           </Link>
         </div>
         <div className="studentblock-wrapper">
-          <Link className="studentblock-item" to="/student/home/view">
+          <Link
+            className="studentblock-item"
+            to={`http://lwb.onrender.com/lobby.html?displayName=${loggedInUser.userName}`}
+          >
             <i className="fa-solid fa-video icon-studentBlock"></i>
             View Stream
           </Link>

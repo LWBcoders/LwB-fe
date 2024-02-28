@@ -27,10 +27,6 @@ function TeacherNavigation() {
       <div className="studentblock-wrapper">
         <Link
           className="studentblock-item"
-          onClick={() => {
-            sessionStorage.setItem("display_name", loggedInUser.userName);
-            localStorage.setItem("roomId", 123);
-          }}
           to={`https://lwb.onrender.com//room.html?roomId=${loggedInUser.userName}&displayName=${loggedInUser.userName}`}
         >
           <i className="fa-solid fa-video icon-studentBlock"></i>
