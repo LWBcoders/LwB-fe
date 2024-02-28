@@ -83,57 +83,68 @@ function StudentProfile() {
   return (
     <>
       <div className="profile-form-wrapper">
-        <form onSubmit={handelSubmit}>
-          <label htmlFor="firstName">Firstname</label>
-          <br></br>
+      <h2> My Profile</h2>
+      <img className="currentAvatar" src={avatar} alt="profile avatar" />
+      <form className="profileForm" onSubmit={handelSubmit}>
+        <div className="labelInput-wrapper"> 
+          <label htmlFor="firstName">Your First Name:</label>
+        
           <input
-            className="inputFields"
+            className="inputFields inputFields1"
             id="firstName"
             value={firstname}
             onChange={handelFirstname}
           />
-          <br></br>
-          <label htmlFor="lastName">Lastname</label>
-          <br></br>
+          </div>
+          
+          <div className="labelInput-wrapper"> 
+          <label htmlFor="lastName">Your Last Name:</label>
+         
           <input
-            className="inputFields"
+            className="inputFields inputFields1"
             id="lastName"
             value={lastname}
             onChange={handelLastname}
           />
-          <br></br>
-          <label htmlFor="userName">Username</label>
-          <br></br>
+          </div>
+          
+          <div className="labelInput-wrapper"> 
+          <label htmlFor="userName">Your Username:</label>
+         
           <input
-            className="inputFields"
+            className="inputFields inputFields1"
             id="userName"
             value={username}
             onChange={handelUsername}
           />
-          <br></br>
-          <label htmlFor="userAvatarImg">Avatar URL</label>
-          <br></br>
+          </div>
+          <div className="labelInput-wrapper"> 
+          <label htmlFor="userAvatarImg">Your Avatar URL:</label>
+         
           <input
-            className="inputFields"
+            className="inputFields inputFields1"
             id="userAvatarImg"
             value={avatar}
             onChange={handelAvatar}
           />
-          <br></br>
+          </div>
+          
           {error ? <p>{error}</p> : null}
           {changedDetails ? <p>Your details have been changed!</p> : null}
-          <button>Make changes</button>
+          <button className="profileBtn">Make changes</button>
         </form>
 
-        <label htmlFor="password"></label>
+        <div className="labelInput-wrapper labelInput-wrapperPass"> 
+        <label htmlFor="password">New Password</label>
         <input
-          className="inputFields"
+          className="inputFields inputFields1"
           id="password"
           value={password}
           onChange={handleChange}
         />
+        </div>
         {changedPassword ? <p>Your password has been changed!</p> : null}
-        <button onClick={handelPassword}>Change password</button>
+        <button className="profileBtn" onClick={handelPassword}>Change password</button>
       </div>
     </>
   );
