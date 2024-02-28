@@ -27,7 +27,7 @@ function TeacherNavigation() {
       <div className="studentblock-wrapper">
         <Link
           className="studentblock-item"
-          to={`https://lwb.onrender.com//room.html?roomId=${loggedInUser.userName}&displayName=${loggedInUser.userName}`}
+          to={`https://lwb.onrender.com//teacherRoom.html?roomId=${loggedInUser.userName}&displayName=${loggedInUser.userName}`}
         >
           <i className="fa-solid fa-video icon-studentBlock"></i>
           Go Live
