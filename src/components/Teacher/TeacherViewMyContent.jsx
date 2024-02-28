@@ -6,6 +6,7 @@ import TeacherViewMyVideo from "./TeacherViewMyVideo";
 import StudentQuizSingleDisplay from "../Student/StudentQuizSingleDisplay";
 import { getAllSubjects, getTeachers, getAllYears } from "../../../api";
 import SingleNote from "../Student/SingleNote";
+import SingleVideo from "../Student/SingleVideo"
 
 function TeacherViewMyContent() {
 
@@ -54,6 +55,7 @@ function TeacherViewMyContent() {
         <Route path="my-notes" element={<TeacherViewMyNotes />} />
         <Route path="my-videos" element={<TeacherViewMyVideo yearsToDisplay={yearsToDisplay} subjectToDisplay={subjectToDisplay}/>} />
         <Route path="my-notes/:id" element={<SingleNote />} />
+        <Route path="my-videos/:id" element={<SingleVideo />} />
         {/* <Route path="notes/:id" element={<SingleNote />} /> */}
       </Routes>
     </section>

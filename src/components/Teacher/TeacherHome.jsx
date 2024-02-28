@@ -1,4 +1,6 @@
 import { Link, Routes, Route } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { getAllSubjects, getAllYears, getTeachers } from "../../../api";
 import TeacherCalendar from "./TeacherCalendar";
 // import TeacherBroadcast from "./TeacherBroadcast";
 import TeacherAddQuiz from "./TeacherAddQuiz";
@@ -8,8 +10,25 @@ import TeacherAddLesson from "./TeacherAddLesson";
 import TeacherViewMyContent from "./TeacherViewMyContent";
 import TeacherViewContent from "./TeacherViewContent";
 import TeacherProfile from "./TeacherProfile";
+import StudentVideo from "../Student/StudentVideo";
 
 function TeacherHome() {
+  const [subjectToDisplay, setSubjectToDisplay] = useState([]);
+  const [yearsToDisplay, setYearsToDisplay] = useState([]);
+  const [teachersToDisplay, setTeachersToDisplay] = useState([]);
+
+  useEffect(() => {
+    getAllSubjects().then((response) => [
+      setSubjectToDisplay(response.subjects),
+    ]);
+    getAllYears().then((response) => {
+      setYearsToDisplay(response.years);
+    });
+    getTeachers().then((response) => {
+      setTeachersToDisplay(response);
+    });
+  }, []);
+  const url = "teacher"
   return (
     <section className="teacherHome">
       <TeacherHeader />
@@ -24,6 +43,19 @@ function TeacherHome() {
 
         <Route path="view-content/*" element={<TeacherViewContent />} />
         <Route path="profile" element={<TeacherProfile />} />
+
+        <Route
+          path="videos/:id"
+          element={
+            <StudentVideo
+              url={url}
+              subjectToDisplay={subjectToDisplay}
+              yearsToDisplay={yearsToDisplay}
+              teachersToDisplay={teachersToDisplay}
+            />
+          }
+        />
+
       </Routes>
     </section>
   );

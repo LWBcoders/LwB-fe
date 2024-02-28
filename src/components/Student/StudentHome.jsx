@@ -30,7 +30,10 @@ function StudentHome() {
       setTeachersToDisplay(response);
     });
   }, []);
-  const pathToAllQuiz = "/student/home/quiz";
+
+const pathToAllQuiz = "/student/home/quiz";
+const url = "student"
+
   return (
     <>
       <StudentHeader />
@@ -62,6 +65,7 @@ function StudentHome() {
           path="videos"
           element={
             <StudentVideo
+            url={url}
               subjectToDisplay={subjectToDisplay}
               yearsToDisplay={yearsToDisplay}
               teachersToDisplay={teachersToDisplay}
