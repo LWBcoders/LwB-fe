@@ -15,8 +15,58 @@
   background: linear-gradient(90deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%);
 
 }
+
+.addLessons-section .singleVideWrapper{
+  height: 60vh;
+  width: 80vw;
+  padding-bottom: 0.8rem;
+  border: none;
+}
+ .singlevideo-title{
+ height: 4rem;
+ border-top-left-radius: 15px;
+ border-top-right-radius: 15px;
+ background:linear-gradient(90deg, #43c6ac 0%, #191654 100%);
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #fff;
+  width: 100%;
+  display: flex;
+  align-items: center;
+justify-content: center;
+
+  }
+ 
+
+  .singleVideWrapper .singleVideoDesc-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    margin-top: 4rem;
+    padding-left: 2rem;
+    padding-right: 3rem;
+  }
+  .singleVideoDetails{
+    display: flex;
+  }
+  .singleCountViews{
+    font-weight: 600;
+  }
+  .singlevideo-year{
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+  .singleVideoPlayer{
+    width: 90%;
+  }
+
 .video-list {
   margin-top: 1.5rem;
+}
+.singleVideo-views{
+  display: block
 }
 
 .queriesWrapper-videos {
@@ -115,6 +165,11 @@
   text-align: center;
   margin-top: 1rem;
 }
+@media screen and (min-width: 1160px){
+.addLessons-section .singleVideWrapper{
+  max-width: 65vw;
+}
+}
 @media screen and (max-width: 700px) {
   .video-wrapper {
     max-width: 80%;
@@ -123,6 +178,23 @@
 @media screen and (max-width: 675px) {
   .queriesWrapper-videos {
     flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 595px){
+  .singleVideoDetails{
+    flex-wrap: wrap;
+    max-width: 60%;
+    gap:10px;
+  }
+  .singlevideo-title{
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+  .singleVideWrapper .singleVideoDesc-wrapper{
+    margin-top: 2.2rem;
+  }
+  .addLessons-section .singleVideWrapper{
+    height: 55vh;
   }
 }
 @media screen and (max-width: 540px) {
@@ -179,6 +251,15 @@
     font-size: 0.8rem;
   }
 }
+@media screen and (max-width: 458px){
+  .singlevideo-year{
+    margin-left: 0;
+  }
+  .singleVideWrapper .singleVideoDesc-wrapper{
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+  }
+}
 @media screen and (max-width: 420px) {
   .queriesWrapper-videos {
     flex-direction: column;
@@ -199,5 +280,10 @@
   }
   .myvideo-wrapper{
     min-width: 96%;
+  }
+}
+@media screen and (max-width: 420px){
+  .singleVideoDetails p, .singleVideo-views{
+    font-size: 0.9rem;
   }
 }

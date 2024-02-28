@@ -38,13 +38,20 @@ function SingleVideo(){
       }
     return(
         <>
-        <li className="video-item">
-          <p id="video-title">{video.title}</p>
-          <p className="video-teacher">{video.teacher}</p>
-          <p className="video-subject">{video.subject}</p>
-          <p className="video-year">{video.year}</p>
-            <video onPlay={handleView} controls height="250px" src={video.url}></video>
-            <p>{video.views} Views</p>
+        <li className="video-item singleVideWrapper">
+          <p id="video-title" className="singlevideo-title">{video.title}</p>
+          <video className="singleVideoPlayer" onPlay={handleView} controls height="250px" src={video.url}></video>
+
+            <div className="singleVideoDesc-wrapper"> 
+            <div className="singleVideoDetails">
+            <p className="video-subject">{video.subject}</p>
+            <p className="video-year singlevideo-year">Year {video.year}</p>
+          <p className="video-teacher singlevideo-teacher">Teacher: {video.teacher}</p>
+          
+          
+          </div>
+            <p className="singleVideo-views"><span className="singleCountViews">{video.views} </span>Views</p>
+            </div>
           {/* <VideoComments id={id} video={video} setVideo={setVideo}/> */}
         </li>
         
