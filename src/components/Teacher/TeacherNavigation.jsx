@@ -1,12 +1,19 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { useContext } from "react";
+import UserContext from "../../../contexts/UserContext";
 
 function TeacherNavigation() {
+  const { loggedInUser, setLoggedInUser } = useContext(UserContext);
+  useEffect(() => {
+    const storedUser = localStorage.getItem("user");
+    setLoggedInUser(JSON.parse(storedUser));
+  }, []);
+
   return (
     <section className="studentsMainScreen">
       <div className="studentblock-wrapper">
         <Link className="studentblock-item" to="/teacher/home/calendar">
-          {" "}
           <i className="fa-regular fa-calendar-days icon-studentBlock"></i>{" "}
           Calendar of Events
         </Link>
@@ -18,7 +25,14 @@ function TeacherNavigation() {
         </Link>
       </div>
       <div className="studentblock-wrapper">
-        <Link className="studentblock-item" to="/teacher/home/live">
+        <Link
+          className="studentblock-item"
+          onClick={() => {
+            sessionStorage.setItem("display_name", loggedInUser.userName);
+            localStorage.setItem("roomId", 123);
+          }}
+          to={`https://lwb.onrender.com//room.html?roomId=${loggedInUser.userName}&displayName=${loggedInUser.userName}`}
+        >
           <i className="fa-solid fa-video icon-studentBlock"></i>
           Go Live
         </Link>
