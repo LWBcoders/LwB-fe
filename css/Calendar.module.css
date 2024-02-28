@@ -9,8 +9,8 @@ h2#fc-dom-1.fc-toolbar-title {
 
 
 .calendar {
-    max-width: 96%;
-    margin: 0 auto;
+    max-width: 900px;
+    margin: 1em;
     font-family: "Open Sans", sans-serif;
     
   }
