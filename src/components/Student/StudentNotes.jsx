@@ -49,7 +49,7 @@ function StudentNotes({url, subjectToDisplay, yearsToDisplay, teachersToDisplay 
     return <p>{error}</p>;
   }
 
-  console.log(url)
+
 
   return (
     <>
@@ -146,5 +146,5 @@ function StudentNotes({url, subjectToDisplay, yearsToDisplay, teachersToDisplay 
     </>
   );
 }
-// to={`/${url}/home/notes/${note._id}`}
+
 export default StudentNotes;
