@@ -11,6 +11,7 @@ import TeacherViewMyContent from "./TeacherViewMyContent";
 import TeacherViewContent from "./TeacherViewContent";
 import TeacherProfile from "./TeacherProfile";
 import StudentVideo from "../Student/StudentVideo";
+import StudentNotes from "../Student/StudentNotes";
 
 function TeacherHome() {
   const [subjectToDisplay, setSubjectToDisplay] = useState([]);
@@ -19,7 +20,7 @@ function TeacherHome() {
 
   useEffect(() => {
     getAllSubjects().then((response) => [
-      setSubjectToDisplay(response.subjects),
+      setSubjectToDisplay(response.subjects)
     ]);
     getAllYears().then((response) => {
       setYearsToDisplay(response.years);
@@ -28,7 +29,7 @@ function TeacherHome() {
       setTeachersToDisplay(response);
     });
   }, []);
-  const url = "teacher"
+  const url = "teacher";
   return (
     <section className="teacherHome">
       <TeacherHeader />
@@ -56,6 +57,17 @@ function TeacherHome() {
           }
         />
 
+        <Route
+          path="notes/:id"
+          element={
+            <StudentNotes
+              url={url}
+              subjectToDisplay={subjectToDisplay}
+              yearsToDisplay={yearsToDisplay}
+              teachersToDisplay={teachersToDisplay}
+            />
+          }
+        />
       </Routes>
     </section>
   );

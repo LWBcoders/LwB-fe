@@ -10,6 +10,8 @@ import { getAllSubjects, getAllYears, getTeachers } from "../../../api";
 import StudentQuizSingleDisplay from "../Student/StudentQuizSingleDisplay";
 import StudentVideo from "../Student/StudentVideo";
 import StudentNotes from "../Student/StudentNotes";
+import SingleNote from "../Student/SingleNote";
+import NoteCard from "../Student/NoteCard";
 
 function TeacherViewContent() {
   // GET ALL SUBJECTS/YEARS/TEACHERS to use in sorting:
@@ -32,6 +34,7 @@ function TeacherViewContent() {
     })
 }, [])
   const pathToAllQuiz = "/teacher/home/view-content/quiz";
+  const url= "/teacher/home/view-content/notes"
   return (
     <>
     
@@ -43,6 +46,7 @@ function TeacherViewContent() {
         <Route path="quiz/quiz/:id" element={<StudentQuizSingleDisplay pathToAllQuiz={pathToAllQuiz}/>} />
         <Route path="notes" element={<StudentNotes yearsToDisplay={yearsToDisplay} subjectToDisplay={subjectToDisplay} teachersToDisplay={teacherToDisplay}/>} />
         <Route path="videos" element={<StudentVideo yearsToDisplay={yearsToDisplay} subjectToDisplay={subjectToDisplay} teachersToDisplay={teacherToDisplay}/>} />
+        <Route path="notes/:id" element={<SingleNote url={url} />} />     
       </Routes>
     </>
   );

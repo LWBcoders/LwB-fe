@@ -76,6 +76,7 @@ const url = "student"
           path="notes"
           element={
             <StudentNotes
+            url={url}
               subjectToDisplay={subjectToDisplay}
               yearsToDisplay={yearsToDisplay}
               teachersToDisplay={teachersToDisplay}
@@ -99,7 +100,7 @@ const url = "student"
         />
         {/* <Route path="view" element={<StudentViewStream />} /> */}
         <Route path="/videos/:id" element={<SingleVideo />} />
-        <Route path="/notes/:id" element={<SingleNote />} />
+        <Route path="/notes/:id" element={<SingleNote url={url}/>} />
         <Route path="profile" element={<StudentProfile />} />
       </Routes>
     </>

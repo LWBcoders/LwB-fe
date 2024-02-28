@@ -5,7 +5,7 @@ import NoteCard from "./NoteCard";
 import "../../../css/notes.css";
 
 
-function SingleNote(){
+function SingleNote({url}){
     const { id } = useParams();
     const [note, setNote] = useState({})
     const [loading, setLoading] = useState(true);
@@ -34,6 +34,7 @@ function SingleNote(){
     
     return(
         <NoteCard
+        url={url}
         key={note.title}
         note={note}
       />
