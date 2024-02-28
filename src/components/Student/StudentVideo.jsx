@@ -119,7 +119,7 @@ function StudentVideo({ url, subjectToDisplay, yearsToDisplay, teachersToDisplay
             return (
               <>
                 <VideoCard
-                url={url}
+                  url={url}
                   key={video.title}
                   video={video}
                 />
