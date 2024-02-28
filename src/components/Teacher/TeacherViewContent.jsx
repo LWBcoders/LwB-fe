@@ -44,9 +44,9 @@ function TeacherViewContent() {
         <Route path="/" element={<TeacherViewContentOptions />} />
         <Route path="quiz" element={<TeacherViewQuiz yearsToDisplay={yearsToDisplay} subjectToDisplay={subjectToDisplay} teacherToDisplay={teacherToDisplay}/>} />
         <Route path="quiz/quiz/:id" element={<StudentQuizSingleDisplay pathToAllQuiz={pathToAllQuiz}/>} />
-        <Route path="notes" element={<StudentNotes yearsToDisplay={yearsToDisplay} subjectToDisplay={subjectToDisplay} teachersToDisplay={teacherToDisplay}/>} />
+        <Route path="notes" element={<StudentNotes url={url} yearsToDisplay={yearsToDisplay} subjectToDisplay={subjectToDisplay} teachersToDisplay={teacherToDisplay}/>} />
         <Route path="videos" element={<StudentVideo yearsToDisplay={yearsToDisplay} subjectToDisplay={subjectToDisplay} teachersToDisplay={teacherToDisplay}/>} />
-        <Route path="notes/:id" element={<SingleNote url={url} />} />     
+        <Route path="notes/:id" element={<SingleNote  />} />     
       </Routes>
     </>
   );
