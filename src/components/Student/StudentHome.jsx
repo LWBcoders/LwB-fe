@@ -31,6 +31,7 @@ function StudentHome() {
     });
   }, []);
 const pathToAllQuiz = "/student/home/quiz";
+const url = "student"
   return (
     <>
       <StudentHeader />
@@ -62,6 +63,7 @@ const pathToAllQuiz = "/student/home/quiz";
           path="videos"
           element={
             <StudentVideo
+            url={url}
               subjectToDisplay={subjectToDisplay}
               yearsToDisplay={yearsToDisplay}
               teachersToDisplay={teachersToDisplay}

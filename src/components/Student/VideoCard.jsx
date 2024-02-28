@@ -4,7 +4,7 @@ import { useContext, useState, useEffect } from "react";
 import UserContext from "../../../contexts/UserContext";
 import { deleteVideo, viewVideo } from "../../../api";
 
-function VideoCard({ video, allVideos, setAllVideos,}) {
+function VideoCard({ video, url}) {
   const { loggedInUser, setLoggedInUser } = useContext(UserContext);
   const [isDeleted, setIsDeleted] = useState(false);
   const [error, setError] = useState();
@@ -34,7 +34,7 @@ function VideoCard({ video, allVideos, setAllVideos,}) {
   return (
     <>
       <div className="video-wrapper">
-        <Link className="video-titles" to={`/student/home/videos/${video._id}`}>
+        <Link className="video-titles" to={`/${url}/home/videos/${video._id}`}>
           {video.title}
         </Link>
         <video  onPlay={handleView} height="150px" src={video.url} controls on></video>
