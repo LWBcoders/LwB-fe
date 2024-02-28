@@ -1,150 +1,155 @@
-.video-list{
-    margin-top: 1.5rem;
+#delete-button {
+  background-color: rgb(63, 63, 63);
+}
+#delete-button:hover {
+  background-color: red;
+}
+.video-list {
+  margin-top: 1.5rem;
 }
 
-.queriesWrapper-videos{
-    margin-top: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.queriesWrapper-videos {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.yearsQueryVideo-wrapper, .teachersQueryVideo-wrapper{
-    margin-left: 4rem;
-}
-
-.videoDetails-wrapper{
-    padding: 2rem;
-    padding-bottom: 0;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-.video-descrip-wrapper{
-    display: flex;
-}
-.videoDesc-year{
-    margin-left: 1rem;
-    margin-right: 1rem;
-}
-.video-titles{
-    text-decoration: none;
-    cursor: pointer;
-    margin-bottom: 1rem;
-    font-size: 1.2rem;
-    color: #033832;
-    font-weight: 600;
-}
-.drop-down-videos{
-    width: 170px;
-    text-align: center;
-    background: #d5fdee;
-    border: none;
-    box-shadow: 3px 6px 6px 2.5px #D3D3D3;
-}
-.video-wrapper{
-    margin: 2rem auto;
-    width: 650px;
-    height: auto;
-    border: 1px solid #808097;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-bottom: 1px solid #808097;
-    box-shadow: 3px 6px 6px 2.5px #D3D3D3;
-    padding-bottom: 25px;
-    padding-top: 25px;
-    border: none;
-}
-.all-videos-title{
-    padding: 1rem;
-    background: linear-gradient(90deg, #43c6ac 0%, #191654 100%);
-    color: #fff;
-    width: 100%;
-    text-align: center;
-    font-size: 1.3rem;
-    text-shadow: 1px 3px 2px #55575a;
-    cursor: pointer;
-}
-.video-item{
-    margin: 2rem auto;
-    width: 650px;
-    height: auto;
-    border: 1px solid #808097;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-bottom: 1px solid #808097;
-    box-shadow: 3px 6px 6px 2.5px #D3D3D3;
-    padding-bottom: 25px;
+.yearsQueryVideo-wrapper,
+.teachersQueryVideo-wrapper {
+  margin-left: 4rem;
 }
 
-.displayMyVideo-section{
-    margin: 2rem auto;
+.videoDetails-wrapper {
+  padding: 2rem;
+  padding-bottom: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
-.sortMyVideos-wrapper{
-    display: flex;
-    justify-content: center;
-    margin-top: 2rem;
+.video-descrip-wrapper {
+  display: flex;
 }
-.subjectDropdownWrapperVideo{
-    margin-right: 4rem;
+.videoDesc-year {
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
-.sorryMsg{
-    text-align: center;
-    margin-top: 1rem;
+.video-titles {
+  text-decoration: none;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  color: #033832;
+  font-weight: 600;
 }
-@media screen and (max-width: 700px){
-    .video-wrapper{
-        max-width: 80%;
-    }
+.drop-down-videos {
+  width: 170px;
+  text-align: center;
+  background: #d5fdee;
+  border: none;
+  box-shadow: 3px 6px 6px 2.5px #d3d3d3;
 }
-@media screen and (max-width: 675px){
-   .queriesWrapper-videos{
+.video-wrapper {
+  margin: 2rem auto;
+  width: 650px;
+  height: auto;
+  border: 1px solid #808097;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 1px solid #808097;
+  box-shadow: 3px 6px 6px 2.5px #d3d3d3;
+  padding-bottom: 25px;
+  padding-top: 25px;
+  border: none;
+}
+.all-videos-title {
+  padding: 1rem;
+  background: linear-gradient(90deg, #43c6ac 0%, #191654 100%);
+  color: #fff;
+  width: 100%;
+  text-align: center;
+  font-size: 1.3rem;
+  text-shadow: 1px 3px 2px #55575a;
+  cursor: pointer;
+}
+.video-item {
+  margin: 2rem auto;
+  width: 650px;
+  height: auto;
+  border: 1px solid #808097;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 1px solid #808097;
+  box-shadow: 3px 6px 6px 2.5px #d3d3d3;
+  padding-bottom: 25px;
+}
+
+.displayMyVideo-section {
+  margin: 2rem auto;
+}
+.sortMyVideos-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.subjectDropdownWrapperVideo {
+  margin-right: 4rem;
+}
+.sorryMsg {
+  text-align: center;
+  margin-top: 1rem;
+}
+@media screen and (max-width: 700px) {
+  .video-wrapper {
+    max-width: 80%;
+  }
+}
+@media screen and (max-width: 675px) {
+  .queriesWrapper-videos {
     flex-wrap: wrap;
-   }
+  }
 }
 
-@media screen and (max-width: 490px){
-    .teachersQueryVideo-wrapper{
-     margin-left: 0;
-    }
-    
-    .video-wrapper{
-        margin-bottom: 1.5rem;
-        margin-top: 0;
-    }
-    .video-descrip-wrapper p{
-        font-size: 0.9rem;
-    }
-    .videoDetails-wrapper p{
-        font-size: 0.9rem;
-    }
- }
+@media screen and (max-width: 490px) {
+  .teachersQueryVideo-wrapper {
+    margin-left: 0;
+  }
 
-
-
-@media screen and (max-width: 461px){
-    .sortMyVideos-wrapper{
-        flex-direction: column;
-        align-items: center;
-    }
-    .subjectDropdownWrapperVideo{
-        margin-right: 0;
-    }
+  .video-wrapper {
+    margin-bottom: 1.5rem;
+    margin-top: 0;
+  }
+  .video-descrip-wrapper p {
+    font-size: 0.9rem;
+  }
+  .videoDetails-wrapper p {
+    font-size: 0.9rem;
+  }
 }
-@media screen and (max-width: 420px){
-    .queriesWrapper-videos{
-        flex-direction: column;
-    }
-    .yearsQueryVideo-wrapper{
-        margin-left: 0;
-    }
-    .video-descrip-wrapper{
-       flex-wrap: wrap;
-       width: 70%;
-    }
+
+@media screen and (max-width: 461px) {
+  .sortMyVideos-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  .subjectDropdownWrapperVideo {
+    margin-right: 0;
+  }
+}
+@media screen and (max-width: 420px) {
+  .queriesWrapper-videos {
+    flex-direction: column;
+  }
+  .yearsQueryVideo-wrapper {
+    margin-left: 0;
+  }
+  .video-descrip-wrapper {
+    flex-wrap: wrap;
+    width: 70%;
+  }
 }
