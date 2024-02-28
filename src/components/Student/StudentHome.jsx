@@ -32,7 +32,7 @@ function StudentHome() {
   }, []);
 
 const pathToAllQuiz = "/student/home/quiz";
-const url = "student"
+const url = "/student/home/notes"
 
   return (
     <>
