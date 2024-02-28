@@ -141,15 +141,25 @@ font-size: 1rem;
 
   @media screen and (max-width: 470px){
     .querieswrapper {
-      margin-top: 1.2rem;
+      margin-top: 1rem;
       flex-direction: column;
       align-items: center;
+      margin-bottom: 1rem;
     }
     .querieswrapper .subjectWrapper, .querieswrapper .yearWrapper {
       max-width: 80%;
+      margin-bottom: 0.2rem;
     }
     .dropdownQueries{
       z-index: 101;
+    }
+    .teacherWrapper-query{
+      margin-left: 0;
+    }
+  }
+  @media screen and (max-width: 430px){
+    .quizUnOrdList li .quizLink{
+      font-size: 0.9rem;
     }
   }
   @media screen and (max-width: 400px){
@@ -183,6 +193,13 @@ font-size: 1rem;
     .quizLink, .year{
       font-size: 0.9rem;
     }
+
+  }
+  @media screen and (max-width: 310px){
+    .quizUnOrdList li{
+      padding-left: 0.2rem;
+      padding-right: 0.2rem;
+    }
   }
   @media screen and (max-width: 290px){
     .listOfQuizzes h1 {
@@ -206,6 +223,7 @@ font-size: 1rem;
   }
   .quizUnOrdList li{
     padding-top: 0;
+   
   }
   .quizLink, .year {
     font-size: 0.8rem;

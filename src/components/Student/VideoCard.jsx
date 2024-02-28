@@ -37,11 +37,17 @@ function VideoCard({ video, allVideos, setAllVideos,}) {
         <Link className="video-titles" to={`/student/home/videos/${video._id}`}>
           {video.title}
         </Link>
-        <p>Year: {video.year}</p>
-        <p>{video.teacher}</p>
-        <p>{video.subject}</p>
         <video  onPlay={handleView} height="150px" src={video.url} controls on></video>
-        <p>{video.views} Views</p>
+        <div className="videoDetails-wrapper">
+          <div className="video-descrip-wrapper">
+          <p>{video.subject}</p>
+          <p className="videoDesc-year">Year: {video.year}</p>
+          <p>Teacher: {video.teacher}</p>
+          
+         </div>
+
+          <p>{video.views} Views</p>
+        </div>
         {video.teacher === loggedInUser.userName ? (
           <button
             id="delete-button"

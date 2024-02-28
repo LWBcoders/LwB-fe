@@ -56,9 +56,12 @@ function StudentVideo({ subjectToDisplay, yearsToDisplay, teachersToDisplay }) {
       <div key="videosList" className="video-list">
         <h2 className="all-videos-title">All videos</h2>
         <>
+
+        <div className="queriesWrapper-videos">
+          <div className="subjectQueryVideo-wrapper">
           <label htmlFor="subject"></label>
           <select
-            className="drop-down"
+            className="drop-down drop-down-videos"
             value={subject}
             onChange={handleSubject}
             required
@@ -70,11 +73,14 @@ function StudentVideo({ subjectToDisplay, yearsToDisplay, teachersToDisplay }) {
               </option>
             ))}
           </select>
+          </div>
+
           <br></br>
+          <div className="yearsQueryVideo-wrapper">
           <label htmlFor="years"></label>
           <select
             required
-            className="drop-down"
+            className="drop-down drop-down-videos"
             value={year}
             onChange={handleYear}
           >
@@ -85,9 +91,11 @@ function StudentVideo({ subjectToDisplay, yearsToDisplay, teachersToDisplay }) {
               </option>
             ))}
           </select>
+          </div>
           <br></br>
+          <div className="teachersQueryVideo-wrapper">
           <select
-            className="drop-down"
+            className="drop-down drop-down-videos"
             value={teacher}
             onChange={handleTeacher}
             required
@@ -99,6 +107,8 @@ function StudentVideo({ subjectToDisplay, yearsToDisplay, teachersToDisplay }) {
               </option>
             ))}
           </select>
+          </div>
+          </div>
           <br></br>
         </>
 
