@@ -1,8 +1,19 @@
 #delete-button {
-  background-color: rgb(63, 63, 63);
+  background: linear-gradient(90deg, #cb2d3e 0%, #ef473a 100%);
+  width: 200px;
+  height: 45px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 18px;
+  box-shadow: 0 0 5px 0.5px #D3D3D3;
+  border: none;
+  transition: 0.3s;
+  margin-top: 2.5rem;
 }
 #delete-button:hover {
-  background-color: red;
+  background: linear-gradient(90deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%);
+
 }
 .video-list {
   margin-top: 1.5rem;
@@ -114,6 +125,27 @@
     flex-wrap: wrap;
   }
 }
+@media screen and (max-width: 540px) {
+  .myvideo-wrapper{
+    width: 98%;
+  }
+  .videodescrip-wrapper-extra {
+    display: flex;
+    flex-direction: column;
+  }
+  .videodescrip-wrapper-extra .videoDesc-year{
+    margin-left: 0;
+  }
+  #delete-button{
+    width: 60%;
+    margin-top: 1rem;
+  }
+  .myvideoDetails-wrapper{
+    padding-top: 1rem;
+  }
+
+}
+
 
 @media screen and (max-width: 490px) {
   .teachersQueryVideo-wrapper {
@@ -140,6 +172,12 @@
   .subjectDropdownWrapperVideo {
     margin-right: 0;
   }
+  #delete-button{
+    height: 30px;
+    width: 50%;
+    margin-top: 1rem;
+    font-size: 0.8rem;
+  }
 }
 @media screen and (max-width: 420px) {
   .queriesWrapper-videos {
@@ -151,5 +189,15 @@
   .video-descrip-wrapper {
     flex-wrap: wrap;
     width: 70%;
+  }
+  video{
+    max-width: 94%;
+  }
+  .video-titles{
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  .myvideo-wrapper{
+    min-width: 96%;
   }
 }
