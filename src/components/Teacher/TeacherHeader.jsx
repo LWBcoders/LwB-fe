@@ -67,6 +67,7 @@ function TeacherHeader() {
           </nav>
         </div>
         <div className="right-side">
+          <Link to="/teacher/home/profile">
           <p className="active-use"> {loggedInUser.userName}</p>
           {loggedInUser.userAvatarImg ? (
             <img src={loggedInUser.userAvatarImg} alt="user avatar image" />
@@ -76,6 +77,7 @@ function TeacherHeader() {
               alt="user avatar image"
             />
           )}
+          </Link>
         </div>
       </header>
       <h1 className="companyName">Learning without Borders</h1>

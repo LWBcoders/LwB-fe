@@ -225,12 +225,42 @@ export const updateNote = (noteId, updatedData) => {
   });
 };
 
+//delete video
 export const deleteVideo = (video_id) => {
   return baseApi.delete(`/videos/${video_id}`).then(() => {});
 };
 
+// get single video
 export const viewVideo = (video_id) => {
   return baseApi.put(`/videos/view/${video_id}`).then((response) => {
     return response.data;
   });
 };
+
+//update student
+export const updateStudent = (id, changes) => {
+  return baseApi.put(`/students/${id}`, changes).then((response) => {
+    return response.data;
+  });
+}
+//update teacher
+
+export const updateTeacher = (id, changes) => {
+  return baseApi.put(`/teachers/${id}`, changes).then((response) => {
+    return response.data;
+  });
+}
+
+//get student
+export const getStudent = (id) => {
+  return baseApi.get(`/students/${id}`).then((response) => {
+    return response.data;
+  });
+}
+
+//get teacher
+export const getTeacher = (id) => {
+  return baseApi.get(`/teachers/${id}`).then((response) => {
+    return response.data;
+  });
+}
