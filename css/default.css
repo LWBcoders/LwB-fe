@@ -9,6 +9,7 @@
 @import url('./teacherViewMy.css');
 @import url('./viewVideo.css');
 @import url('./viewMyNotes.css');
+@import url('./profilePage.css');
 
 *{
     margin: 0;
