@@ -49,7 +49,7 @@ function StudentNotes({url, subjectToDisplay, yearsToDisplay, teachersToDisplay 
     return <p>{error}</p>;
   }
 
-  
+  console.log(url)
 
   return (
     <>
@@ -132,7 +132,7 @@ function StudentNotes({url, subjectToDisplay, yearsToDisplay, teachersToDisplay 
                   allNotes={allNotes}
                 /> */}
                  <div key={note._id} className="note-preview">
-              <Link className="previewLink" to={`/${url}/home/notes/${note._id}`}>
+              <Link className="previewLink" to={`${url}/${note._id}`}>
                 <img src={note.img_url} alt="Note Preview" />
                 <h1>{note.title}</h1>
               </Link>
@@ -146,5 +146,5 @@ function StudentNotes({url, subjectToDisplay, yearsToDisplay, teachersToDisplay 
     </>
   );
 }
-
+// to={`/${url}/home/notes/${note._id}`}
 export default StudentNotes;

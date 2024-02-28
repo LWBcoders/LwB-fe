@@ -32,7 +32,7 @@ const StudentCalendar = () => {
     if (event.url && clickInfo.jsEvent.target.tagName !== "BUTTON") {
       const fullUrl = event.url.startsWith("http")
         ? event.url
-        : `http://${event.url}`;
+        : `http://${event.url}/`;
       window.open(fullUrl, "_blank");
     } else {
       // Display the event details modal when an event is clicked
