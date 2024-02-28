@@ -34,6 +34,7 @@ function StudentHome() {
 const pathToAllQuiz = "/student/home/quiz";
 const url = "/student/home/notes"
 
+const student = "student"
   return (
     <>
       <StudentHeader />
@@ -65,7 +66,7 @@ const url = "/student/home/notes"
           path="videos"
           element={
             <StudentVideo
-            url={url}
+            url={student}
               subjectToDisplay={subjectToDisplay}
               yearsToDisplay={yearsToDisplay}
               teachersToDisplay={teachersToDisplay}
