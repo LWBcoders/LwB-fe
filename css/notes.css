@@ -16,43 +16,77 @@
     font-weight: bold;
     cursor: pointer;
   }
-  
+  /* .clearBtn{
+    padding: 10px 20px; 
+    background-color: #007bff; 
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    background: linear-gradient(90deg, #fe8c00 0%, #f83600 100%);
+    color: #fff;
+    box-shadow: 0 0 5px 0.5px #D3D3D3;
+    cursor: pointer;
+    width: 230px;
+    height:45px;
+  } */
   /* AddNote styles */
   .add-note-container {
     width:700%;
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
-    border: 1px solid #ccc;
+    /* border: 1px solid #ccc; */
     border-radius: 5px;
     background-color: #f9f9f9;
     margin-top: 30px;
+    box-shadow: 3px 5px 6px 1.5px #D3D3D3;
+    margin-bottom: 4rem;
   }
-  
+  .addNoteTitle{
+    text-align: center;
+    font-size: 1.6rem;
+    text-shadow: 1px 3px 2px #0aaea1;
+  }
   .add-note-form {
-    margin-top: 50px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
   }
   
   .add-note-form label {
     display: block;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+    font-weight: 600;
   }
   
   .add-note-form input[type="text"] {
-    width: auto;
-    padding: 8px;
+    /* width: auto; */
+    /* padding: 8px; */
     margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
+    height: 2.7rem;
+    line-height: 1.5rem;
+    padding: 5px;
+    padding-left: 10px;
+    margin-top: 0.6rem;
+    outline: none;
+    border-radius: 10px;
+    border: 1.5px solid #D3D3D3;
+    outline-width: thin;
+    box-shadow: 0 0 5px 0.5px #D3D3D3;
   }
   
   .add-note-form button {
     padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
+    /* background-color: #007bff; */
     border: none;
     border-radius: 3px;
     cursor: pointer;
+    background: linear-gradient(90deg, #fe8c00 0%, #f83600 100%);
+    color: #fff;
+    box-shadow: 0 0 5px 0.5px #D3D3D3;
+    cursor: pointer;
+    width: 230px;
+    height:45px;
   }
   
   .add-note-form button:hover {
@@ -65,8 +99,59 @@
   }
   
   .button-container{
-    margin-top: 20px;
+    margin-top: 5px;
   }
+  .noteSubjYearWrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .noteTitleInput{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 98%;
+    margin: 0 auto 1rem;
+  }
+  .inputFieldTitle, .previewImgInput, .editorInput{
+    width: 100%;
+  }
+  .addNotesYear{
+    margin-left: 3rem;
+  }
+  .contentFieldWrapper{
+    width: 100%;
+    margin-top: 2rem;
+  }
+  .addNotesYear, .addNotesSubj, .contentFieldWrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+
+  }
+.notesDropdown{
+  height: 40px;
+  cursor: pointer;
+}
+.previewImgWrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.button-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.button-container .publishNoteBtn{
+  background: linear-gradient(90deg, #43c6ac 0%, #191654 100%);
+}
   
   /* ViewNote styles */
   .view-note-container {
@@ -95,7 +180,8 @@
   .editor-container {
     box-shadow: 0px 0px 20px 0px rgba(76, 87, 125, 0.02);
     max-width: 700px;
-    margin: 20px auto;
+    width: 98%;
+    margin: 10px auto 20px;
     padding: 20px;
     border: 3px solid #ccc;
     border-radius: 6px;

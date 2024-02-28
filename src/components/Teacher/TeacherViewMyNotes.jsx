@@ -56,7 +56,7 @@ function TeacherViewMyNotes() {
   };
 
   const editNote = (id) => {
-    console.log(`Editing note with ID: ${id}`);
+    //console.log(`Editing note with ID: ${id}`);
     setEditingNoteId(id);
   };
 
@@ -69,51 +69,32 @@ function TeacherViewMyNotes() {
         <h1>List of my Notes:</h1>
 
         {myNoteList.length === 0 ? (
-          <p className="noNoteyet">You have no Notes yet..</p>
+          <p className="noNoteyet sorryMsg">You have no Notes yet..</p>
         ) : (
           <ul className="noteUnOrdList">
             {myNoteList.map((note, i) => {
               return (
                 <li className="showMystuffLi" key={i}>
                   <Link
-                    className="noteLink showMyLink"
+                    className="noteLink showMyLink noteFlexWrapper"
                     to={`${note["_id"]}`}
                   >
-                    {note.title} -{" "}<img src={note.img_url} alt= 'preview image' />
+                    <img className="myNotesImg" src={note.img_url} alt= 'preview image' />
+                    <div className="noteDescriptionWrapper">
+                    {note.title} -{" "}
                     <span className="year">Year {note.year} </span>
-                  </Link>
-                  {/* <button className="deletemyNoteBtn" onClick={()=>{deleteNote(note._id)}}>Delete</button>
-            <button className='editmyNoteBtn' onClick={()=>{editNote(note._id)}}>Edit</button>   */}
-                  {/* <button
-                    className="deletemyNoteBtn"
-                    onClick={() => setDeleteNoteId(note._id)}
-                  >
-                    Delete
-                  </button>
-                  <button
-                    className="editmyNoteBtn"
-                    onClick={() => {
-                      editNote(note._id);
-                    }}
-                  >
-                    Edit
-                  </button>
-                  {deleteNoteId === note._id && (
-                    <div className="deleteConfirmation">
-                      <p>Are you sure you want to delete this note?</p>
-                      <button onClick={confirmDelete}>Yes</button>
-                      <button onClick={cancelDelete}>No</button>
                     </div>
-                  )} */}
-                  {editingNoteId === note._id ? ( 
+                  </Link>
+  
+                  {/* {editingNoteId === note._id ? ( 
                     <EditNote noteId={note._id} />
                   ) : (
-                    <>
+                    <> */}
                       {/* Render note content */}
                       <button className="editmyNoteBtn" onClick={() => editNote(note._id)}>Edit</button>
                       <button className="deletemyNoteBtn" onClick={() => setDeleteNoteId(note._id)}>Delete</button>
-                    </>
-                  )}
+                    {/* </>
+                  )} */}
                   {deleteNoteId === note._id && (
                     <div className="deleteConfirmation">
                       <p>Are you sure you want to delete this note?</p>
@@ -121,6 +102,7 @@ function TeacherViewMyNotes() {
                       <button onClick={cancelDelete}>No</button>
                     </div>
                   )}
+                  {editingNoteId=== note._id &&( <EditNote noteId={note._id} />)}
                 </li>
               );
             })}
