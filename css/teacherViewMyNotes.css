@@ -74,3 +74,75 @@ img{
   display: block; 
   margin: 10px auto;
 }
+
+@media screen and (max-width:870px) {
+  .listOfNotes{
+    width: 80vw;
+  }
+}
+@media screen and (max-width:650px) {
+  .listOfNotes{
+    width: 90vw;
+  }
+}
+
+@media screen and (max-width:600px) {
+  .deletemyNoteBtn{
+    width: 100px;
+  }
+}
+@media screen and (max-width:530px) {
+  .deletemyNoteBtn{
+    width: 90px;
+    font-size: 1rem;
+    height:40px;
+  }
+  .noteFlexWrapper{
+    min-width: 68%;
+  }
+  .noteDescriptionWrapper{
+    font-size: 0.9rem;
+  }
+  .noteDescriptionWrapper .year{
+    font-size: 0.9rem;
+  }
+  .myNotesImg{
+    width: 100px;
+  }
+}
+@media screen and (max-width:470px){
+  .myNotesImg{
+    width: 80px;
+    margin-right: 1rem;
+  }
+}
+@media screen and (max-width:429px){
+  .myNotesImg{
+    width: 70px;
+    margin-right: 1rem;
+  }
+  .deletemyNoteBtn{
+    width: 60px;
+    font-size: 0.8rem;
+    height:35px;
+  }
+  .listOfNotes h1{
+    font-size: 1rem;
+  }
+  .showMystuffLi{
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
+@media screen and (max-width:350px){
+  .noteDescriptionWrapper{
+    font-size: 0.8rem;
+  }
+  .noteDescriptionWrapper .year{
+    font-size: 0.8rem;
+  }
+  .myNotesImg{
+    width: 70px;
+    margin-right: 0.5rem;
+  }
+}
