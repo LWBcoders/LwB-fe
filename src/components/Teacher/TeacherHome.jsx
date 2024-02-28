@@ -10,8 +10,8 @@ import TeacherAddLesson from "./TeacherAddLesson";
 import TeacherViewMyContent from "./TeacherViewMyContent";
 import TeacherViewContent from "./TeacherViewContent";
 import TeacherProfile from "./TeacherProfile";
-import StudentVideo from "../Student/StudentVideo";
 import StudentNotes from "../Student/StudentNotes";
+import SingleVideo from "../Student/SingleVideo";
 
 function TeacherHome() {
   const [subjectToDisplay, setSubjectToDisplay] = useState([]);
@@ -48,7 +48,7 @@ function TeacherHome() {
         <Route
           path="videos/:id"
           element={
-            <StudentVideo
+            <SingleVideo
               url={url}
               subjectToDisplay={subjectToDisplay}
               yearsToDisplay={yearsToDisplay}
