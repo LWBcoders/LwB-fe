@@ -29,9 +29,17 @@ function StudentNavigation() {
       <section className="studentsMainScreen">
         <div className="studentblock-wrapper">
           <Link className="studentblock-item" to="/student/home/calendar">
-            {" "}
-            <i className="fa-regular fa-calendar-days icon-studentBlock"></i>{" "}
-            Calendar of Events
+            <i className="fa-regular fa-calendar-days icon-studentBlock"></i>
+            Calendar
+          </Link>
+        </div>
+        <div className="studentblock-wrapper">
+          <Link
+            className="studentblock-item"
+            to={`http://lwb.onrender.com/lobby.html?displayName=${loggedInUser.userName}`}
+          >
+            <i className="fa-solid fa-video icon-studentBlock"></i>
+            Watch Streams
           </Link>
         </div>
         <div className="studentblock-wrapper">
@@ -42,23 +50,14 @@ function StudentNavigation() {
         </div>
         <div className="studentblock-wrapper">
           <Link className="studentblock-item" to="/student/home/notes">
-            <i className="fa-solid fa-book-open-reader icon-studentBlock"></i>{" "}
+            <i className="fa-solid fa-book-open-reader icon-studentBlock"></i>
             Notes
           </Link>
         </div>
         <div className="studentblock-wrapper">
           <Link className="studentblock-item" to="/student/home/quiz">
-            <i className="fa-solid fa-circle-question icon-studentBlock"></i>{" "}
+            <i className="fa-solid fa-circle-question icon-studentBlock"></i>
             Quiz
-          </Link>
-        </div>
-        <div className="studentblock-wrapper">
-          <Link
-            className="studentblock-item"
-            to={`http://lwb.onrender.com/lobby.html?displayName=${loggedInUser.userName}`}
-          >
-            <i className="fa-solid fa-video icon-studentBlock"></i>
-            View Stream
           </Link>
         </div>
       </section>
