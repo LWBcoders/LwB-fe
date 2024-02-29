@@ -31,7 +31,7 @@
   } */
   /* AddNote styles */
   .add-note-container {
-    width:700%;
+    width:90%;
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
@@ -336,7 +336,32 @@
       margin-right: 0;
     }
   }
-
+  @media screen and (max-width: 500px){
+    .addNoteTitle {
+      font-size: 1.3rem;
+    }
+    .add-note-form label{
+      margin-bottom: 0;
+      font-size: 0.9rem;
+    }
+    .add-note-form input[type="text"]{
+      height: 2.1rem;
+    }
+    .addNotesSubj label, .addNotesYear label{
+      margin-bottom: 8px;
+    }
+    .editor-container{
+      height: 17rem;
+    }
+  }
+  @media screen and (max-width: 450px){
+    .noteSubjYearWrapper{
+      flex-direction: column;
+    }
+    .addNotesYear{
+      margin-left: 0;
+    }
+  }
   @media screen and (max-width: 365px){
     .yearsFilter-wrapper{
       margin-right: 2rem;
@@ -376,3 +401,9 @@
       font-size: 0.78rem;
     }
   }
+  @media screen and (max-width: 310px){
+    .add-note-form button{
+      width: 60%;
+    }
+  }
+

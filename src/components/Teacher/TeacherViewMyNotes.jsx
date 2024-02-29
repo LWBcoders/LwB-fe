@@ -91,7 +91,7 @@ function TeacherViewMyNotes() {
                   ) : (
                     <> */}
                       {/* Render note content */}
-                      <button className="editmyNoteBtn" onClick={() => editNote(note._id)}>Edit</button>
+                      {/* <button className="editmyNoteBtn" onClick={() => editNote(note._id)}>Edit</button> */}
                       <button className="deletemyNoteBtn" onClick={() => setDeleteNoteId(note._id)}>Delete</button>
                     {/* </>
                   )} */}
@@ -102,7 +102,7 @@ function TeacherViewMyNotes() {
                       <button onClick={cancelDelete}>No</button>
                     </div>
                   )}
-                  {editingNoteId=== note._id &&( <EditNote noteId={note._id} />)}
+                  {/* {editingNoteId=== note._id &&( <EditNote noteId={note._id} />)} */}
                 </li>
               );
             })}
