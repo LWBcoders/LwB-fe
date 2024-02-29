@@ -25,15 +25,6 @@ function TeacherNavigation() {
         </Link>
       </div>
       <div className="studentblock-wrapper">
-        <Link
-          className="studentblock-item"
-          to={`https://lwb.onrender.com//teacherRoom.html?roomId=${loggedInUser.userName}&displayName=${loggedInUser.userName}`}
-        >
-          <i className="fa-solid fa-video icon-studentBlock"></i>
-          Go Live
-        </Link>
-      </div>
-      <div className="studentblock-wrapper">
         <Link className="studentblock-item" to="/teacher/home/view-content">
           <i className="fa-solid fa-book icon-studentBlock"></i>
           View All Lessons
@@ -43,6 +34,15 @@ function TeacherNavigation() {
         <Link className="studentblock-item" to="/teacher/home/view-my-content">
           <i className="fa-solid fa-book icon-studentBlock"></i>
           View My Lessons
+        </Link>
+      </div>
+      <div className="studentblock-wrapper">
+        <Link
+          className="studentblock-item"
+          to={`https://lwb.onrender.com//teacherRoom.html?roomId=${loggedInUser.userName}&displayName=${loggedInUser.userName}`}
+        >
+          <i className="fa-solid fa-video icon-studentBlock"></i>
+          Go Live
         </Link>
       </div>
     </section>
