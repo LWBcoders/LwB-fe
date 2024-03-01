@@ -8,6 +8,7 @@ Welcome to the Learning Without Borders (LwB) project! This repository contains 
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Deployed version](#deployed-version)
 - [Setting up Firebase Configuration](#setting-up-firebase-configuration)
 - [Contributing](#contributing)
 - [License](#license)
@@ -57,6 +58,10 @@ To start the frontend server, run:
 npm run dev
 ```
 The server will start running at the specified port.
+
+### Deployed version
+
+https://learning-without-borders.netlify.app/
 
 ### Setting up Firebase configuration
 - Sign up on Firebase and create a new project.
