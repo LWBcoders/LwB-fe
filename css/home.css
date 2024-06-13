@@ -21,7 +21,7 @@
     transform: scale(1.1);
 }
 .main-studentWrapper:hover{
-    transform: rotate(360deg);
+    transform: scale(1.1);
 }
 .main-teacherWrapper{
     margin-bottom: 5rem;
